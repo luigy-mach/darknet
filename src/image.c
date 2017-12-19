@@ -297,16 +297,15 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             //dibuja todos los rectagulos
             //draw_box_width(im, left, top, right, bot, width, red, green, blue);
-            char strtemp[]="person";
-            if(0==strcmp(names[j],strtemp))
-                draw_box_width(im, left, top, right, bot, width, red, green, blue);
+
+            draw_box_width(im, left, top, right, bot, width, red, green, blue);
 
             //dibuja todos las etiquetas
-            if (alphabet) {
+            /*if (alphabet) {
                 image label = get_label(alphabet, labelstr, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
-            }
+            }*/
 
             //float **masks
             //      **masks = 0
