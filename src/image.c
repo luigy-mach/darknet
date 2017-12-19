@@ -237,6 +237,8 @@ image **load_alphabet()
 //   draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes)
 {
+    printf("demo_detections: %d \n", num );
+    printf("tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
     for(i = 0; i < num; ++i)
     {
