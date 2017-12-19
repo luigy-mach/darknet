@@ -240,11 +240,13 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
     printf("1demo_detections: %d \n", num );
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
-    num=600;
+    //num=600;
     for(i = 0; i < num; ++i)
     {
         char labelstr[4096] = {0};
         int class = -1;
+        //classes=cantidada de clases del entrenamiento 
+        //en este caso 80
         for(j = 0; j < classes; ++j){
             if (probs[i][j] > thresh){
                 if (class < 0) {
@@ -310,6 +312,11 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 image label = get_label(alphabet, labelstr, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
+
+                char strtemp[]="xxx,yyy,zzzz";
+                image label1 = get_label(alphabet, labelstr, (im.h*.03)/10);
+                draw_label(im, top + width, left, label1, rgb);
+                free_image(label1);
             }
 
             //float **masks
