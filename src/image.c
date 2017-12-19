@@ -240,7 +240,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
     printf("1demo_detections: %d \n", num );
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
-    num=100;
+    num=600;
     for(i = 0; i < num; ++i)
     {
         char labelstr[4096] = {0};
