@@ -242,14 +242,22 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
     for(i = 0; i < num; ++i){
         char labelstr[4096] = {0};
         int class = -1;
-        for(j = 0; j < classes; ++j){
-            if (probs[i][j] > thresh){
+        for(j = 0; j < classes; ++j)
+        {
+            if (probs[i][j] > thresh)
+            {
                 if (class < 0) {
-                    strcat(labelstr, names[j]);
-                    class = j;
+                    char strtemp[]="person";
+                    if(0==strcmp(names[j],strtemp)){
+                        strcat(labelstr, names[j]);
+                        class = j;
+                    }
                 } else {
-                    strcat(labelstr, ", ");
-                    strcat(labelstr, names[j]);
+                    char strtemp[]="person";
+                    if(0==strcmp(names[j],strtemp)){
+                        strcat(labelstr, ", ");
+                        strcat(labelstr, names[j]);
+                    }
                 }
 
                 //modificacion!!!
@@ -262,7 +270,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
         char strtemp[]="person";
         if(0==strcmp(names[j],strtemp))
         {
-            if(class >= 0){
+            if(class >= 0)
+            {
                 //int width = im.h * .1006; //test grosor linea recuadro (box)
                 int width = im.h * .006;
 
