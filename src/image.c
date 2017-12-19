@@ -238,7 +238,6 @@ image **load_alphabet()
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes)
 {
     int i,j;
-
     for(i = 0; i < num; ++i)
     {
         char labelstr[4096] = {0};
