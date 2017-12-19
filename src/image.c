@@ -237,9 +237,10 @@ image **load_alphabet()
 //   draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes)
 {
-    printf("demo_detections: %d \n", num );
-    printf("tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
+    printf("1demo_detections: %d \n", num );
+    printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
+    num=100;
     for(i = 0; i < num; ++i)
     {
         char labelstr[4096] = {0};
@@ -299,8 +300,9 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             //dibuja todos los rectagulos
             //es totalmente independiente
+
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
-            draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
+            //draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
             //dibuja todos las etiquetas
             //es totalmente independiente
