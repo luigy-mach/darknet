@@ -314,7 +314,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 //free_image(label);
 
                 char strtemp[]="xxx,yyy,zzzz";
-                image label1 = get_label(alphabet, labelstr, (im.h*.03)/10);
+                image label1 = get_label(alphabet, strtemp, (im.h*.03)/10);
                 draw_label(im, top + width, left, label1, rgb);
                 free_image(label1);
             }
