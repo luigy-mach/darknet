@@ -253,10 +253,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 }
 
                 //modificacion!!!
-                printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
-                //char strtemp[]="person";
-                //if(0==strcmp(names[j],strtemp))
-                //    printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
+                //printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
+                char strtemp[]="person";
+                if(0==strcmp(names[j],strtemp))
+                    printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
             }
         }
 
@@ -296,7 +296,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             if(bot > im.h-1) bot = im.h-1;
 
             //dibuja todos los rectagulos
-            draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            //draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            char strtemp[]="person";
+            if(0==strcmp(names[j],strtemp))
+                draw_box_width(im, left, top, right, bot, width, red, green, blue);
 
             //dibuja todos las etiquetas
             if (alphabet) {
