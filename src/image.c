@@ -239,7 +239,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 {
     int i,j;
 
-    for(i = 0; i < num; ++i){
+
+    char strtemp[]="person";
+    //if(0==strcmp(names[j],strtemp))
+    for(i = 0; i < num && 0==strcmp(names[j],strtemp) ; ++i){
         char labelstr[4096] = {0};
         int class = -1;
         for(j = 0; j < classes; ++j){
@@ -309,7 +312,11 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             //float **masks
             //      **masks = 0
-            /*if (masks){
+
+
+            //no es importante
+            //quitandolo no sucede nada
+            if (masks){
                 image mask         = float_to_image(14, 14, 1, masks[i]);
                 image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
                 image tmask        = threshold_image(resized_mask, .5);
@@ -318,7 +325,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 free_image(resized_mask);
                 free_image(tmask);
             }
-            */
+            
         }
     }
 }
