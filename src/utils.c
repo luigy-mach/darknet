@@ -127,6 +127,7 @@ int find_arg(int argc, char* argv[], char *arg)
     return 0;
 }
 
+
 int find_int_arg(int argc, char **argv, char *arg, int def)
 {
     int i;
@@ -141,6 +142,7 @@ int find_int_arg(int argc, char **argv, char *arg, int def)
     }
     return def;
 }
+
 
 float find_float_arg(int argc, char **argv, char *arg, float def)
 {
