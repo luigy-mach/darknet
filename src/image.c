@@ -254,7 +254,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
                 //modificacion!!!
                 //printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
-                if(names[j]=="person")
+                char strtemp[]="person"
+                if(0==strcmp(names[j],strtemp))
                     printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
             }
         }
