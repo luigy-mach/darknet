@@ -296,12 +296,11 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             if(bot > im.h-1) bot = im.h-1;
 
             //dibuja todos los rectagulos
-            //draw_box_width(im, left, top, right, bot, width, red, green, blue);
-
-            //draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            //es totalmente independiente
+            draw_box_width(im, left, top, right, bot, width, red, green, blue);
 
             //dibuja todos las etiquetas
-            //no es importante
+            //es totalmente independiente
             if (alphabet) {
                 image label = get_label(alphabet, labelstr, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
@@ -310,7 +309,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             //float **masks
             //      **masks = 0
-            if (masks){
+            /*if (masks){
                 image mask         = float_to_image(14, 14, 1, masks[i]);
                 image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
                 image tmask        = threshold_image(resized_mask, .5);
@@ -319,6 +318,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 free_image(resized_mask);
                 free_image(tmask);
             }
+            */
         }
     }
 }
