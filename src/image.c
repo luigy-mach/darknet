@@ -239,10 +239,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 {
     int i,j;
 
-
-    char strtemp[]="person";
-    //if(0==strcmp(names[j],strtemp))
-    for(i = 0; i < num && 0==strcmp(names[j],strtemp) ; ++i){
+    for(i = 0; i < num; ++i)
+    {
         char labelstr[4096] = {0};
         int class = -1;
         for(j = 0; j < classes; ++j){
@@ -301,6 +299,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             //dibuja todos los rectagulos
             //es totalmente independiente
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
             //dibuja todos las etiquetas
             //es totalmente independiente
