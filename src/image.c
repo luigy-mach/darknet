@@ -264,7 +264,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 if(0==strcmp(names[j],strtemp))
                     printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
             }
-            printf("::::::::::::%s:::::\n", labelstr);
+            if(labelstr[0])
+                printf("::::::::::::%s:::::\n", labelstr);
         }
 
         if(class >= 0){
