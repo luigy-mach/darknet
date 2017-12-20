@@ -481,10 +481,10 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
     int i,j;
     //num=600;
     char buff[200]={0};
-    fprintf(fp, "///////////////////////");
-    sprintf(buff,"%d",num_frame);
+    fprintf(fp, "///////////////////////\n");
+    sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
-    fprintf(fp, "-----------------------");
+    fprintf(fp, "-----------------------\n");
 
     for(i = 0; i < num; ++i)
     {
