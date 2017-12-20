@@ -480,9 +480,11 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
     //num=600;
-    //fprintf(fp, "///////////////////////");
-    //fprintf(fp, num_frame);
-    //fprintf(fp, "-----------------------");
+    char buff[200]={0};
+    fprintf(fp, "///////////////////////");
+    sprintf(buff,"%d",num_frame);
+    fprintf(fp, buff);
+    fprintf(fp, "-----------------------");
 
     for(i = 0; i < num; ++i)
     {
