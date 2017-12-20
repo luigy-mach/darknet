@@ -247,8 +247,15 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
         int class = -1;
         //classes=cantidada de clases del entrenamiento 
         //en este caso 80
+        float thresh_temp = 0.0;
+        char  labelstr_high[30] = {0};
+
         for(j = 0; j < classes; ++j){
             if (probs[i][j] > thresh){
+                if(thresh_temp < thresh){
+                    thresh_temp=thresh;
+                    sprintf(labelstr_high, "%s", names[j] );
+                }
                 if (class < 0) {
                     strcat(labelstr, names[j]);
                     class = j;
@@ -266,7 +273,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             }
         }
         if(labelstr[0])
-            printf("::::::::::::%s:::::\n", labelstr);
+            printf("::     %s     ::\n", labelstr_high);
 
         if(class >= 0){
             //int width = im.h * .1006; //test grosor linea recuadro (box)
@@ -315,7 +322,6 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 image label = get_label(alphabet, labelstr, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
-
                 //##char strtemp[]="xxx, yyy, zzzz";
                 //##image label1 = get_label(alphabet, strtemp, (im.h*.03)/10);
                 //##draw_label(im, top + width, left, label1, rgb);
