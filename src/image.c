@@ -277,6 +277,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
         //labelstr_high: solo tiene la etiqueta de mayor thresh 
         //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
+
+        //palabra q filtrare
         char strtemp[]="person";
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
@@ -484,7 +486,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
     fprintf(fp, "///////////////////////\n");
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
-    fprintf(fp, "-----------------------\n");
+    
 
     for(i = 0; i < num; ++i)
     {
@@ -559,6 +561,8 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
 
+            sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
+            fprintf(fp, buff);
             //dibuja todos los rectagulos
             //es totalmente independiente
 
@@ -595,6 +599,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
             
         }
     }
+    fprintf(fp, "-----------------------\n");
 }
 
 
