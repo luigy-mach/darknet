@@ -43,7 +43,7 @@ double demo_time;
 
 
 //open file
-static FILE *fp;
+//static FILE *fp;
 
 
 
@@ -80,6 +80,7 @@ void *detect_in_thread(void *ptr)
     //printf("demo_detections: %d \n", demo_detections );
     //printf("tamano demo_names: %d \n", sizeof(demo_names)/sizeof(demo_names[0]) );
     //draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
+    FILE *fp;
     fp = fopen("test22.txt", "w+");
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
     my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
