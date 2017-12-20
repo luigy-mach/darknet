@@ -30,6 +30,9 @@ static float demo_thresh = 0;
 static float demo_hier = .5;
 static int running = 0;
 
+//numero de frame que extraje
+static int demo_num_frame = 0;
+
 static int demo_frame = 3;
 static int demo_detections = 0;
 static float **predictions;
@@ -65,6 +68,7 @@ void *detect_in_thread(void *ptr)
     printf("\033[1;1H");
     printf("\nFPS:%.1f\n",fps);
     printf("Objects:\n\n");
+    printf("numero de frame: %d\n\n",demo_num_frame);
     image display = buff[(buff_index+2) % 3];
     //printf("demo_detections: %d \n", demo_detections );
     //printf("tamano demo_names: %d \n", sizeof(demo_names)/sizeof(demo_names[0]) );
@@ -77,6 +81,7 @@ void *detect_in_thread(void *ptr)
 
 void *fetch_in_thread(void *ptr)
 {
+    demo_num_frame++;
     int status = fill_image_from_stream(cap, buff[buff_index]);
     letterbox_image_into(buff[buff_index], net->w, net->h, buff_letter[buff_index]);
     if(status == 0) demo_done = 1;
@@ -122,6 +127,7 @@ void *detect_loop(void *ptr)
 
 void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)
 {
+    //demo_num_frame = 0
     demo_frame       = avg_frames;
     predictions      = calloc(demo_frame, sizeof(float*));
     image **alphabet = load_alphabet();

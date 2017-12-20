@@ -275,7 +275,8 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
         //##if(labelstr[0])
         //##    printf("::     %s     ::\n", labelstr_high);
 
-
+        //labelstr_high: solo tiene la etiqueta de mayor thresh 
+        //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
         char strtemp[]="person";
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
