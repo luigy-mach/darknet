@@ -272,10 +272,13 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                     printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
             }
         }
-        if(labelstr[0])
-            printf("::     %s     ::\n", labelstr_high);
+        //##if(labelstr[0])
+        //##    printf("::     %s     ::\n", labelstr_high);
 
-        if(class >= 0){
+
+        char strtemp[]="person";
+    
+        if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
 

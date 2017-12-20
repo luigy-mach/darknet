@@ -17,5 +17,10 @@ int main(){
     sprintf(labelstr_high, "%s", labelstr_high2 );
 	printf("%s:\n", labelstr_high );
 
+
+	char strtemp[]="luigy";
+	if(0==strcmp(labelstr_high,strtemp))
+       printf("%s<:  ok\n ", labelstr_high);
+
     return 0;
 }
