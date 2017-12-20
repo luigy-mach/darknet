@@ -83,8 +83,9 @@ void *detect_in_thread(void *ptr)
     fp = fopen("test22.txt", "w+");
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
     my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
+    fprintf(fp, demo_num_frame);
     fclose(fp);
-    
+
     demo_index = (demo_index + 1)%demo_frame;
     running = 0;
     return 0;
