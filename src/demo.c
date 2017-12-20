@@ -72,7 +72,8 @@ void *detect_in_thread(void *ptr)
     image display = buff[(buff_index+2) % 3];
     //printf("demo_detections: %d \n", demo_detections );
     //printf("tamano demo_names: %d \n", sizeof(demo_names)/sizeof(demo_names[0]) );
-    draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
+    //draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
+    my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
 
     demo_index = (demo_index + 1)%demo_frame;
     running = 0;
