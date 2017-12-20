@@ -264,9 +264,9 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
                 if(0==strcmp(names[j],strtemp))
                     printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
             }
+            printf("::::::::::::%s:::::\n", labelstr);
         }
-                printf("::::::::::::%s:::::\n", labelstr);
-        
+
         if(class >= 0){
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
