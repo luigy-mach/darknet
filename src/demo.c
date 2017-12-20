@@ -43,7 +43,7 @@ double demo_time;
 
 
 //open file
-//static FILE *fp;
+static FILE *fp;
 
 
 
@@ -80,12 +80,10 @@ void *detect_in_thread(void *ptr)
     //printf("demo_detections: %d \n", demo_detections );
     //printf("tamano demo_names: %d \n", sizeof(demo_names)/sizeof(demo_names[0]) );
     //draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
-    FILE *fp;
-    fp = fopen("test22.txt", "wa");
+    //FILE *fp;
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
     my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
-    //fprintf(fp, "demo_num_frame");
-    fclose(fp);
+
 
     demo_index = (demo_index + 1)%demo_frame;
     running = 0;
@@ -141,6 +139,9 @@ void *detect_loop(void *ptr)
 void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)
 {
     //demo_num_frame = 0
+    fp = fopen("test22.txt", "a");
+    //fprintf(fp, "demo_num_frame");
+    
     demo_frame       = avg_frames;
     predictions      = calloc(demo_frame, sizeof(float*));
     image **alphabet = load_alphabet();
@@ -248,6 +249,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
         pthread_join(detect_thread, 0);
         ++count;
     }
+    fclose(fp);
 }
 
 void demo_compare(char *cfg1, char *weight1, char *cfg2, char *weight2, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)
