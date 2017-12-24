@@ -9,7 +9,12 @@
 #include "stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+
+
+//my tracking
 #include "tracking.h"
+
+
 
 int windows = 0;
 
@@ -616,11 +621,12 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     fprintf(fp, "///////////////////////\n");
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
-    
+
+    tracking_obj test_obj;
+    tracking_array_obj[0]=test_obj;
 
     for(i = 0; i < num; ++i)
-    {
-        
+    {    
         char labelstr[4096] = {0};
         int class = -1;
         //classes=cantidada de clases del entrenamiento 
@@ -641,10 +647,8 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
                     strcat(labelstr, ", ");
                     strcat(labelstr, names[j]);
                 }
-
                 //modificacion!!!
                 //printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
-                
                 char strtemp[]="person";
                 if(0==strcmp(names[j],strtemp))
                     printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
@@ -676,7 +680,6 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
             float rgb[3];
 
             //width = prob*20+2;
-
             rgb[0] = red;
             rgb[1] = green;
             rgb[2] = blue;
