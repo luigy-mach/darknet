@@ -88,7 +88,7 @@ void *detect_in_thread(void *ptr)
     //FILE *fp;
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
     //my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
-    my_draw_detections3(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
+    my_draw_detections3(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp,tracking_array_obj);
 
 
     demo_index = (demo_index + 1)%demo_frame;

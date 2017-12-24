@@ -9,6 +9,7 @@
 #include "stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include "tracking.h"
 
 int windows = 0;
 
@@ -604,7 +605,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 }
 
 
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp)
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj *tracking_array_obj)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
