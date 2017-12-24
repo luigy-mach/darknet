@@ -34,7 +34,9 @@ static int running = 0;
 //numero de frame que extraje
 static int demo_num_frame = 0;
 //array de obj-tracking
-static obj_tracking p_objs_on_frame[10]={0};
+//probaremos con solo 50 objetos del tipo "tracking_obj" como maximo
+//static tracking_obj tracking_array_obj[50]={0};
+static tracking_obj *tracking_array_obj;
 
 static int demo_frame = 3;
 static int demo_detections = 0;
@@ -85,7 +87,8 @@ void *detect_in_thread(void *ptr)
     //draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes);
     //FILE *fp;
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
-    my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
+    //my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
+    my_draw_detections3(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
 
 
     demo_index = (demo_index + 1)%demo_frame;
@@ -143,6 +146,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 {
     //demo_num_frame = 0
     fp = fopen("test22.txt", "a");
+    tracking_array_obj = calloc(20,sizeof(tracking_obj));
     //fprintf(fp, "demo_num_frame");
     
     demo_frame       = avg_frames;
