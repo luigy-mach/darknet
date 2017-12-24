@@ -661,7 +661,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
-            tracking_array_obj a;
+            tracking_array_obj;
 
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
