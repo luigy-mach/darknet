@@ -1,16 +1,20 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 
 
 typedef struct {
 	int a;
-	char name[10]={0};
-}test;
+}tracking_obj;
+
+
+
 
 int main(){
-	test test1;
-	test1.a=10;
 
-	printf("%d\n",test1.a );
+	tracking_obj **tracking_array_obj=NULL;
+
+	tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
+	
+	//printf("%d\n",test1.a );
 	return 0;
 }

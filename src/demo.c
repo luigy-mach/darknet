@@ -151,7 +151,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 {
     //demo_num_frame = 0
     fp = fopen("test22.txt", "a");
-    tracking_array_obj = calloc(20,sizeof(*tracking_obj));
+    tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
     //fprintf(fp, "demo_num_frame");
     
     demo_frame       = avg_frames;
