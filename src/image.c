@@ -490,7 +490,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 
     for(i = 0; i < num; ++i)
     {
-        delay(500);                         
+        delay(1000);                         
 
         char labelstr[4096] = {0};
         int class = -1;
