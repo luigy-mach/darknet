@@ -33,6 +33,8 @@ static int running = 0;
 
 //numero de frame que extraje
 static int demo_num_frame = 0;
+//array de obj-tracking
+static obj_tracking *p_objs_on_frame;
 
 static int demo_frame = 3;
 static int demo_detections = 0;

@@ -6,7 +6,14 @@
 //#include "list.h"
 
 
-int myxxx(int i);
+typedef struct{
+   char *name;
+   //clase point
+} obj_tracking;
+
+
+
+//int myxxx(int i);
 
 
 
