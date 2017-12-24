@@ -6,7 +6,7 @@
 //#include "list.h"
 
 
-int my test1(int i);
+int myxxx(int i);
 
 
 

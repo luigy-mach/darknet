@@ -13,7 +13,7 @@
 
 
 
-int my_test1(int i)
+int myxxx(int i)
 {
 	if(i!=0)
     	return 1
