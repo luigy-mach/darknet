@@ -9,7 +9,9 @@
 typedef struct{
    char *name;
    //clase point
-} obj_tracking;
+} tracking_obj;
+
+
 
 
 
