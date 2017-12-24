@@ -705,7 +705,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 void my_draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame);
 void my_draw_detections2(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp);
 #include "tracking.h"
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj);
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj,int tam_array);
 
 matrix network_predict_data(network *net, data test);
 image **load_alphabet();

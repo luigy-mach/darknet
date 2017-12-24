@@ -14,7 +14,9 @@ int main(){
 	tracking_obj **tracking_array_obj=NULL;
 
 	tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
+	if( tracking_array_obj[0]==NULL ){
+		printf("hola %d: \n",  tracking_array_obj[0]);
+	}
 	
-	//printf("%d\n",test1.a );
 	return 0;
 }

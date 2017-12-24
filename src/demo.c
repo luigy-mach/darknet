@@ -41,7 +41,8 @@ static int demo_num_frame = 0;
 //array de obj-tracking
 //probaremos con solo 50 objetos del tipo "tracking_obj" como maximo
 //static tracking_obj tracking_array_obj[50]={0};
-static tracking_obj **tracking_array_obj;
+static tracking_obj **demo_tracking_array_obj;
+static int demo_tam_tracking_array_obj;
 
 static int demo_frame = 3;
 static int demo_detections = 0;
