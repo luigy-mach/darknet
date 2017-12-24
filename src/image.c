@@ -610,7 +610,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 }
 
 
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj *tracking_array_obj)
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
@@ -622,8 +622,6 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
 
-    tracking_obj test_obj;
-    tracking_array_obj[0]=test_obj;
 
     for(i = 0; i < num; ++i)
     {    
@@ -662,6 +660,10 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
         char strtemp[]="person";
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
+
+            tracking_obj test_obj;
+            tracking_array_obj[0]=test_obj;
+
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
 
