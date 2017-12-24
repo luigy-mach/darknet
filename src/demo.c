@@ -94,7 +94,7 @@ void *detect_in_thread(void *ptr)
     //FILE *fp;
     //my_draw_detections(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame);
     //my_draw_detections2(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp);
-    my_draw_detections3(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp,tracking_array_obj);
+    my_draw_detections3(display, demo_detections, demo_thresh, boxes, probs, 0, demo_names, demo_alphabet, demo_classes, demo_num_frame,fp,demo_tracking_array_obj,demo_tam_tracking_array_obj,demo_tam_tracking_array_obj);
 
 
     demo_index = (demo_index + 1)%demo_frame;
@@ -152,7 +152,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 {
     //demo_num_frame = 0
     fp = fopen("test22.txt", "a");
-    tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
+    demo_tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
     //fprintf(fp, "demo_num_frame");
     
     demo_frame       = avg_frames;
