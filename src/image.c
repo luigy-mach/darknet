@@ -661,11 +661,11 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
-            //int i;
-            //int j=10;
-            //for(i=0;i<tam_array;i++){
-            //    j++;
-            //}
+            int ii;
+            int jj=10;
+            for(ii=0;ii<tam_array;ii++){
+                jj++;
+            }
             
 
             //int width = im.h * .1006; //test grosor linea recuadro (box)
