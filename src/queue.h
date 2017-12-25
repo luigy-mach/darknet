@@ -6,17 +6,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node_struct{
+struct mynode_struct{
   int data;
-  struct node_struct* next;
+  struct mynode_struct* next;
 };
 
-typedef struct node_struct node;
+typedef struct mynode_struct mynode;
 
 
 typedef struct{
-  node* front;
-  node* rear;
+  mynode* front;
+  mynode* rear;
 }queue;
 
 

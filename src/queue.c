@@ -11,7 +11,7 @@ void start_queue(queue* myqueue){
 
 
 void enqueue(queue* myqueue, int x){
-  node* temp = (node*)malloc(sizeof(node));
+  mynode* temp = (mynode*)malloc(sizeof(mynode));
   temp->data = x; 
   temp->next = NULL;
   if(myqueue->front == NULL && myqueue->rear == NULL){
@@ -24,7 +24,7 @@ void enqueue(queue* myqueue, int x){
 
 
 void dequeue(queue* myqueue) {
-  node* temp = myqueue->front;
+  mynode* temp = myqueue->front;
   if(myqueue->front == NULL){
     printf("Queue is Empty\n");
     return;
@@ -48,7 +48,7 @@ int front(queue* myqueue){
 }
 
 void print(queue* myqueue) {
-  node* temp = myqueue->front;
+  mynode* temp = myqueue->front;
   while(temp != NULL) {
     printf("%d ",temp->data);
     temp = temp->next;
