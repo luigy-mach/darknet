@@ -6,12 +6,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node{
+struct node_struct{
   int data;
-  struct node* next;
+  struct node_struct* next;
 };
 
-typedef struct node node;
+typedef struct node_struct node;
 
 
 typedef struct{
