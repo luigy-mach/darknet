@@ -565,16 +565,16 @@ load_args get_base_args(network *net);
 
 void free_data(data d);
 
-typedef struct mymynode{
+typedef struct node{
     void *val;
-    struct mymynode *next;
-    struct mymynode *prev;
-} mymynode;
+    struct node *next;
+    struct node *prev;
+} node;
 
 typedef struct list{
     int size;
-    mymynode *front;
-    mymynode *back;
+    node *front;
+    node *back;
 } list;
 
 pthread_t load_data(load_args args);
