@@ -24,6 +24,8 @@ typedef struct
 
 typedef struct{
    char *name;
+   int x;
+   int y;
    Rectangle bounding_box;
    //agregar cola para la persistencia del recorrido.
    //Rectangle recorrido_bounding_box[10];

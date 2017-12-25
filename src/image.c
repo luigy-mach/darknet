@@ -610,6 +610,13 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 }
 
 
+double compare_tracking_obj(tracking_obj* p1,tracking_obj* p2){
+    if(p1.x!=p2.x)
+        return 0.25
+    return 0.8;
+}
+
+
 int is_empty_tracking_array_obj(tracking_obj** array,int tam){
     int i;
     for(i=0;i<tam;i++){
@@ -620,20 +627,23 @@ int is_empty_tracking_array_obj(tracking_obj** array,int tam){
     return 1;
 }
 
-void insert_tracking_array_obj(tracking_obj** array,int tam){
+void insert_tracking_array_obj(tracking_obj* temp ,tracking_obj** array,int tam, double mythreshold){
     int i;
     for(i=0;i<tam;i++){
         if(array[i]!=NULL){
-            continue;
+            //continue;
+            array[i] = temp;
         }else{
-            //array[i]=;
+            if(mythreshold < compare_tracking_obj(array[i],temp)){
+                //array[i]=
+            }
         }
     }
     return;
 }
 
 
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tracking_tam_array)
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tracking_tam_array, double mythreshold)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
@@ -686,16 +696,18 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
             if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
-                tracking_array_obj[0]=(tracking_obj*)malloc(sizeof(tracking_obj));
+                //tracking_array_obj[0]=(tracking_obj*)malloc(sizeof(tracking_obj));
+                tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
+                temp.x=10;
+                temp.y=10;
+                tracking_array_obj[0] = temp;
             }else{
-                insert_tracking_array_obj(tracking_array_obj,tracking_tam_array);
+                tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
+                temp.x=10;
+                temp.y=10;
+                insert_tracking_array_obj(temp,tracking_array_obj,tracking_tam_array, mythreshold);
             }
-            //int ii;
-            //for(ii=0 ; ii < tracking_tam_array ; ii++){
-            //    //tracking_array_obj            
-            //}
-            
-
+     
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
 
