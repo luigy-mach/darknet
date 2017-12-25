@@ -696,16 +696,15 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
             if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
-                //tracking_array_obj[0]=(tracking_obj*)malloc(sizeof(tracking_obj));
-                tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
-                temp->x=10;
-                temp->y=10;
-                tracking_array_obj[0] = temp;
+                //tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
+                //temp->x=10;
+                //temp->y=10;
+                //tracking_array_obj[0] = temp;
             }else{
-                tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
-                temp->x=10;
-                temp->y=10;
-                insert_tracking_array_obj(temp,tracking_array_obj,tracking_tam_array, mythreshold);
+                //tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
+                //temp->x=10;
+                //temp->y=10;
+                //insert_tracking_array_obj(temp,tracking_array_obj,tracking_tam_array, mythreshold);
             }
      
             //int width = im.h * .1006; //test grosor linea recuadro (box)
