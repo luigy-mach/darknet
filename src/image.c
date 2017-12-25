@@ -688,7 +688,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
             if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
                 tracking_array_obj[0]=alloc(sizeof(tracking_obj));
             }else{
-                insert_tracking_array_obj(tracking_array_obj,tracking_tam_array){
+                insert_tracking_array_obj(tracking_array_obj,tracking_tam_array);
             }
             //int ii;
             //for(ii=0 ; ii < tracking_tam_array ; ii++){
