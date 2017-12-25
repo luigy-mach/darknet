@@ -1,14 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <math.h>
-#include <assert.h>
-#include <unistd.h>
-#include <float.h>
-#include <limits.h>
-#include <time.h>
 
-#include "tracking.h"
+typedef struct 
+{
+	int x;
+	int y;
+}Point;
+
+typedef struct 
+{
+	Point topleft;
+	Point bottomright; 
+	
+}Rectangle;
 
 
 int max(int a, int b)
@@ -53,12 +57,26 @@ void overlap(Rectangle A, Rectangle B)
 
 
 
-//int myxxx(int i)
-//{
-//	if(i!=0)
-//    	return 1;
-//    return 0;
-//}
-
-
-
+int main()
+{
+	Point p1;
+	Point p2;
+	p1.x=20;
+	p1.y=20;
+	p2.x=30;
+	p2.y=30;
+	Point p3;
+	Point p4;
+	p3.x=12;
+	p3.y=12;
+	p4.x=100;
+	p4.y=110;
+	Rectangle rec1;
+	Rectangle rec2;
+	rec1.topleft=p1;
+	rec1.bottomright=p2;
+	rec2.topleft=p3;
+	rec2.bottomright=p4;
+	overlap(rec1,rec2);
+	return 0;
+}

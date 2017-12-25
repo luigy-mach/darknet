@@ -662,9 +662,9 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
             int ii;
-            int jj=10;
             for(ii=0;ii<tam_array;ii++){
-                jj++;
+                //tracking_array_obj            
+
             }
             
 
