@@ -610,7 +610,30 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 }
 
 
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tam_array)
+int is_empty_tracking_array_obj(tracking_obj** array,int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(array[i]!=NULL){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void insert_tracking_array_obj(tracking_obj** array,int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(array[i]!=NULL){
+            continue;
+        }else{
+            //array[i]=;
+        }
+    }
+    return;
+}
+
+
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tracking_tam_array)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
@@ -622,6 +645,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
 
+    
 
     for(i = 0; i < num; ++i)
     {    
@@ -661,11 +685,15 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
-            int ii;
-            for(ii=0;ii<tam_array;ii++){
-                //tracking_array_obj            
-
+            if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
+                tracking_array_obj[0]=alloc(sizeof(tracking_obj));
+            }else{
+                insert_tracking_array_obj(tracking_array_obj,tracking_tam_array){
             }
+            //int ii;
+            //for(ii=0 ; ii < tracking_tam_array ; ii++){
+            //    //tracking_array_obj            
+            //}
             
 
             //int width = im.h * .1006; //test grosor linea recuadro (box)

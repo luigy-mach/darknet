@@ -565,16 +565,16 @@ load_args get_base_args(network *net);
 
 void free_data(data d);
 
-typedef struct node{
+typedef struct mymynode{
     void *val;
-    struct node *next;
-    struct node *prev;
-} node;
+    struct mymynode *next;
+    struct mymynode *prev;
+} mymynode;
 
 typedef struct list{
     int size;
-    node *front;
-    node *back;
+    mymynode *front;
+    mymynode *back;
 } list;
 
 pthread_t load_data(load_args args);
@@ -705,7 +705,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 void my_draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame);
 void my_draw_detections2(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp);
 #include "tracking.h"
-void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj, int tam_array);
+void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj, int tracking_tam_array);
 
 matrix network_predict_data(network *net, data test);
 image **load_alphabet();
