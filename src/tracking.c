@@ -27,7 +27,7 @@ int min(int a, int b)
 
 
 
-void overlap(Rectangle A, Rectangle B)
+void myoverlap(Rectangle A, Rectangle B)
 {
 	int w1=fabs(A.bottomright.x-A.topleft.x);
 	int h1=fabs(A.bottomright.y-A.topleft.y);
@@ -46,8 +46,8 @@ void overlap(Rectangle A, Rectangle B)
     float si = max(0, iRight - iLeft) * max(0, iBottom - iTop);
     
     float su=SA + SB -si;
-    float overlap=si/su;
-    printf("overlap es: %f \n",overlap);
+    float myoverlap=si/su;
+    printf("myoverlap es: %f \n",myoverlap);
 
 }
 
