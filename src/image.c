@@ -612,7 +612,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 
 double compare_tracking_obj(tracking_obj* p1,tracking_obj* p2){
     if(p1->x!=p2->x)
-        return 0.25
+        return 0.25;
     return 0.8;
 }
 
