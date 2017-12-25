@@ -611,7 +611,7 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
 
 
 double compare_tracking_obj(tracking_obj* p1,tracking_obj* p2){
-    if(p1.x!=p2.x)
+    if(p1->x!=p2->x)
         return 0.25
     return 0.8;
 }
@@ -698,13 +698,13 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
             if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
                 //tracking_array_obj[0]=(tracking_obj*)malloc(sizeof(tracking_obj));
                 tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
-                temp.x=10;
-                temp.y=10;
+                temp->x=10;
+                temp->y=10;
                 tracking_array_obj[0] = temp;
             }else{
                 tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
-                temp.x=10;
-                temp.y=10;
+                temp->x=10;
+                temp->y=10;
                 insert_tracking_array_obj(temp,tracking_array_obj,tracking_tam_array, mythreshold);
             }
      
