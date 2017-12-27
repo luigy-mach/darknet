@@ -4,8 +4,8 @@
 #define TRACKING_OBJ_H
 
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "queue.h"
 #include "rect.h"
@@ -30,6 +30,10 @@ struct tracking_obj{
    //Rectangle recorrido_bounding_box[10];
    queue* queue_rectangles;
 };
+
+
+
+void create_new_tracking_obj(tracking_obj** obj);
 
 
 #endif //end TRACKING_OBJ_H

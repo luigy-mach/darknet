@@ -4,8 +4,8 @@
 #define MYLIST_H
 
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "tracking_obj.h"
 #include "queue.h"
@@ -22,6 +22,8 @@ typedef struct Rectangle Rectangle;
 typedef struct mylist mylist;
 
 
+#define LIMIT_PERDIDA 3
+
 
 struct mynodelist{
        tracking_obj* data_obj;
@@ -34,15 +36,19 @@ struct mylist{
 };
 
 
-//struct mylist_t{
-//  mynodelist* root;
-//  int x;
-//};
-//typedef struct mylist_t mylist;
+void create_mynodelist(mynodelist** n);
+void create_mylist(mylist** l);
+void my_insert_list2_rect(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle);
+void my_insert_list_rect(mylist* l, Rectangle* myrect, double threshold_rectangle);
 
 
+void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectangle, int number_frame);
+void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle, int number_frame);
 
+void update_perdida(mylist* l, int number_frame);
+void update_per2(mynodelist* pnode, int number_frame);
 
+void limpiar_perdida(mylist* l);
 
 
 

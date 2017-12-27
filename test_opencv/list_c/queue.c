@@ -1,6 +1,7 @@
 #include "queue.h"
 
 
+
 void create_queue(queue** myqueue){
     queue* temp=malloc(sizeof(queue));
            temp->front=NULL;
@@ -58,9 +59,7 @@ void dequeue_rectangle(queue* myqueue) {
 
 
 
-
-
-
+/*
 
 void enqueue(queue* myqueue, int x){
   mynode* temp = (mynode*)malloc(sizeof(mynode));
@@ -89,3 +88,4 @@ void dequeue(queue* myqueue) {
   free(temp);
 }
 
+*/
