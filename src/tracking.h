@@ -21,7 +21,6 @@ typedef struct
 }Rectangle;
 
 
-
 typedef struct{
    char *name;
    int x;

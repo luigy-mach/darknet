@@ -1,6 +1,7 @@
 #include "queue.h"
 
 
+
 void create_queue(queue** myqueue){
     queue* temp=malloc(sizeof(queue));
     temp->front=NULL;
@@ -8,8 +9,6 @@ void create_queue(queue** myqueue){
     *myqueue = temp;
     return;
 }
-
-
 
 void enqueue(queue* myqueue, int x){
   mynode* temp = (mynode*)malloc(sizeof(mynode));

@@ -17,9 +17,13 @@ typedef struct{
   mynode* rear;
 }queue;
 
-void start_queue(queue* myqueue){
-    myqueue->front=NULL;
-    myqueue->rear=NULL;
+
+
+void create_queue(queue** myqueue){
+    queue* temp=malloc(sizeof(queue));
+    temp->front=NULL;
+    temp->rear=NULL;
+    *myqueue = temp;
     return;
 }
 
@@ -73,8 +77,8 @@ void print(queue* myqueue) {
 
 int main(){
 
-  queue* myqueue=malloc(sizeof(queue));
-  start_queue(myqueue);
+  queue* myqueue;
+  create_queue(&myqueue);
   enqueue(myqueue,2); 
   print(myqueue); 
   enqueue(myqueue,4); 
