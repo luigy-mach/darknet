@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "queue.h"
-#include "rect.h"
+#include "myqueue.h"
+#include "myrect.h"
 
 
 //extern struct mynode;

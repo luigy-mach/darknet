@@ -4,10 +4,8 @@
 #include <math.h>
 
 
-#include "tracking_obj.h"
+#include "mytracking_obj.h"
 
-#include "rect.h"
-#include "queue.h"
 
 #include "mylist.h"
 
