@@ -741,7 +741,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
 
 
 
-void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold)
+void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame, FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold_overlap)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
@@ -792,9 +792,10 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         char strtemp[]="person";
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
-
+                   
             
-     
+            
+
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
 
@@ -822,6 +823,16 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             int right = (b.x+b.w/2.)*im.w;
             int top   = (b.y-b.h/2.)*im.h;
             int bot   = (b.y+b.h/2.)*im.h;
+
+
+
+            Rectangle* myrect_temp;
+            create_myRectangle(&myrect_temp);
+            fill_myRectangle(myrect_temp, left,top,right,bot);
+            //int num_frame = 12;
+            my_insert_list_rect2(demo_list_tracking_obj, myrect_temp, demo_mythreshold_overlap, num_frame);
+
+
 
             if(left < 0) left = 0;
             if(right > im.w-1) right = im.w-1;
