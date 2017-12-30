@@ -46,6 +46,8 @@ static int demo_num_frame = 0;
 static tracking_obj **demo_tracking_array_obj;
 static int demo_tracking_tam_array_obj=20;
 static int demo_mythreshold = 0.6;
+static mylist* l = NULL;  
+//create_mylist(&l);
 
 static int demo_frame = 3;
 static int demo_detections = 0;
