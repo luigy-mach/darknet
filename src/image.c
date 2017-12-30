@@ -610,14 +610,15 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
     fprintf(fp, "-----------------------\n");
 }
 
+/*
 
 double compare_tracking_obj(tracking_obj* p1,tracking_obj* p2){
     if(p1->x!=p2->x)
         return 0.25;
     return 0.8;
-}
+}*/
 
-
+/*
 int is_empty_tracking_array_obj(tracking_obj** array,int tam){
     int i;
     for(i=0;i<tam;i++){
@@ -626,8 +627,8 @@ int is_empty_tracking_array_obj(tracking_obj** array,int tam){
         }
     }
     return 1;
-}
-
+}*/
+/*
 void insert_tracking_array_obj(tracking_obj* temp ,tracking_obj** array,int tam, double mythreshold){
     int i;
     for(i=0;i<tam;i++){
@@ -642,7 +643,7 @@ void insert_tracking_array_obj(tracking_obj* temp ,tracking_obj** array,int tam,
     }
     return;
 }
-
+*/
 
 void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tracking_tam_array, double mythreshold)
 {
@@ -696,7 +697,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     
         if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
 
-            if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
+            /*if(is_empty_tracking_array_obj(tracking_array_obj,tracking_tam_array)){
                 //tracking_obj* temp = (tracking_obj*)malloc(sizeof(tracking_obj));
                 //temp->x=10;
                 //temp->y=10;
@@ -706,7 +707,7 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
                 //temp->x=10;
                 //temp->y=10;
                 //insert_tracking_array_obj(temp,tracking_array_obj,tracking_tam_array, mythreshold);
-            }
+            }*/
      
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
