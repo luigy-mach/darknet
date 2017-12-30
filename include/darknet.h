@@ -704,8 +704,7 @@ box float_to_box(float *f, int stride);
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes);
 void my_draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame);
 void my_draw_detections2(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp);
-#include "mytracking_obj.h"
-#include "mylist.h"
+#include "mycommon.h"
 void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj, int tracking_tam_array, double mythreshold);
 void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold);
 

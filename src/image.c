@@ -11,9 +11,9 @@
 #include "stb_image_write.h"
 
 
-//my tracking
-#include "mytracking_obj.h"
-#include "mylist.h"
+//include todo
+#include "mycommon.h"
+
 
 
 
