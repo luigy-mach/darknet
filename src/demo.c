@@ -44,9 +44,9 @@ static int demo_num_frame = 0;
 //array de obj-tracking
 //probaremos con solo 50 objetos del tipo "tracking_obj" como maximo
 //static tracking_obj tracking_array_obj[50]={0};
-static tracking_obj **demo_tracking_array_obj;
+//static tracking_obj **demo_tracking_array_obj;
 static mylist* demo_list_tracking_obj = NULL;  
-static int demo_tracking_tam_array_obj=20;
+//static int demo_tracking_tam_array_obj=20;
 static double demo_mythreshold = 0.6;
 
 
@@ -162,7 +162,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 {
     //demo_num_frame = 0
     fp = fopen("test22.txt", "a");
-    demo_tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
+    //demo_tracking_array_obj = (tracking_obj**)calloc(20,sizeof(tracking_obj*));
     create_mylist(&demo_list_tracking_obj);
     //fprintf(fp, "demo_num_frame");
 

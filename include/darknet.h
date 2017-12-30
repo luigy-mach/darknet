@@ -702,10 +702,11 @@ data load_all_cifar10();
 box_label *read_boxes(char *filename, int *n);
 box float_to_box(float *f, int stride);
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes);
+#include "mycommon.h"
 void my_draw_detections(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame);
 void my_draw_detections2(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp);
-#include "mycommon.h"
 void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp,tracking_obj **tracking_array_obj, int tracking_tam_array, double mythreshold);
+//30 dic 2017
 void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold);
 
 
