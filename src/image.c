@@ -610,40 +610,6 @@ void my_draw_detections2(image im, int num, float thresh, box *boxes, float **pr
     fprintf(fp, "-----------------------\n");
 }
 
-/*
-
-double compare_tracking_obj(tracking_obj* p1,tracking_obj* p2){
-    if(p1->x!=p2->x)
-        return 0.25;
-    return 0.8;
-}*/
-
-/*
-int is_empty_tracking_array_obj(tracking_obj** array,int tam){
-    int i;
-    for(i=0;i<tam;i++){
-        if(array[i]!=NULL){
-            return 0;
-        }
-    }
-    return 1;
-}*/
-/*
-void insert_tracking_array_obj(tracking_obj* temp ,tracking_obj** array,int tam, double mythreshold){
-    int i;
-    for(i=0;i<tam;i++){
-        if(array[i]!=NULL){
-            //continue;
-            array[i] = temp;
-        }else{
-            if(mythreshold < compare_tracking_obj(array[i],temp)){
-                //array[i]=
-            }
-        }
-    }
-    return;
-}
-*/
 
 void my_draw_detections3(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame,FILE *fp, tracking_obj **tracking_array_obj, int tracking_tam_array, double mythreshold)
 {
@@ -782,11 +748,6 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
     }
     fprintf(fp, "-----------------------\n");
 }
-
-
-
-
-
 
 
 
