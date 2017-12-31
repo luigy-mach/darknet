@@ -180,11 +180,7 @@ int main(){
 printf("******************************************\n");
   printf("*******************xxx***********************\n");
 
-  char buffer[128];
-
-  print_list(ll, buffer,fp);
-
-  printf("%s\n", buffer );
+  print_list(ll,fp);
 
 
   

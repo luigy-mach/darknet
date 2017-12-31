@@ -55,7 +55,8 @@ void update_per2(mynodelist* pnode, int number_frame);
 
 void limpiar_perdida(mylist* l);
 //void print_list(mylist* l, char** buffer);
-void print_list(mylist* l, char buffer[SIZEOF_BUFF],FILE* fp);
+//void print_list(mylist* l, char buffer[SIZEOF_BUFF],FILE* fp);
+void print_list(mylist* l, FILE* fp);
 
 
 

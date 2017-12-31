@@ -195,7 +195,8 @@ void limpiar_perdida(mylist* l){
 }
 
 
-void print_list(mylist* l, char buffer[SIZEOF_BUFF], FILE* fp){
+//void print_list(mylist* l, char buffer[SIZEOF_BUFF], FILE* fp){
+void print_list(mylist* l, FILE* fp){
   mynodelist* ptemp = l->root;
   int i=0;
 
@@ -210,7 +211,8 @@ void print_list(mylist* l, char buffer[SIZEOF_BUFF], FILE* fp){
                               ,temp_boundingbox->bottomright.x
                               ,temp_boundingbox->bottomright.y );
     fprintf(fp, temp);
-    print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp, fp);  
+    //print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp, fp);  
+    print_queue_rectagles(ptemp->data_obj->queue_rectangles, fp);  
     //strcat(buffer, temp);
 
     //char buff[2048];

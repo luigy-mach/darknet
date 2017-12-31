@@ -61,7 +61,8 @@ void dequeue_rectangle(queue* myqueue) {
 
 
 
-void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp)
+//void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp)
+void print_queue_rectagles(queue* myqueue,FILE* fp)
 {
   mynode* temp_rect = myqueue->front;
   int i = 0;
@@ -80,6 +81,8 @@ void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp)
   }
   return;
 }
+
+
 
 
 /*
