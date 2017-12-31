@@ -748,7 +748,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
     //num=600;
-    char buff[4096]={0};
+    //char buff[4096]={0};
+    char buff[2048];
     fprintf(fp, "///////////////////////\n");
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
@@ -826,6 +827,16 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
 
 
+            if(left < 0) left = 0;
+            if(right > im.w-1) right = im.w-1;
+            if(top < 0) top = 0;
+            if(bot > im.h-1) bot = im.h-1;
+
+
+            sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
+            fprintf(fp, buff);
+
+
             Rectangle* myrect_temp;
             create_myRectangle(&myrect_temp);
             fill_myRectangle(myrect_temp, left,top,right,bot);
@@ -836,15 +847,6 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             //print_list(demo_list_tracking_obj, buff);
             //printf("%s\n", buffer );
 
-
-            if(left < 0) left = 0;
-            if(right > im.w-1) right = im.w-1;
-            if(top < 0) top = 0;
-            if(bot > im.h-1) bot = im.h-1;
-
-
-            sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
-            fprintf(fp, buff);
 
             //dibuja todos los rectagulos
             //es totalmente independiente
