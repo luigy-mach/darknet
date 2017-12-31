@@ -885,8 +885,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         }
     }
     fprintf(fp, "-----------------------\n");
-    char buffer2[4096];
-    print_list(demo_list_tracking_obj, buff);
+    char buffer2[4096]="luigy por qué no imprime?";
+    //print_list(demo_list_tracking_obj, buff);
     //printf("%s\n", buffer2);
     fprintf(fp, buffer2);
     fprintf(fp, "-----------------------\n");
