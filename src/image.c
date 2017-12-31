@@ -833,7 +833,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             my_insert_list_rect2(demo_list_tracking_obj, myrect_temp, demo_mythreshold_overlap, num_frame);
 
             //char buffer[4096];
-            print_list(l, buff);
+            print_list(demo_list_tracking_obj, buff);
             //printf("%s\n", buffer );
 
 
