@@ -886,6 +886,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     }
     fprintf(fp, "-----------------------\n");
 
+    //update_perdida funciona-ok 
     update_perdida(demo_list_tracking_obj, num_frame);
 
     //if((num_frame%8)==0){
@@ -896,8 +897,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     //fprintf(fp, "\n");
 
 
-    //limpiar_perdida funciona-ok
-    //limpiar_perdida(demo_list_tracking_obj);
+    //limpiar_perdida funciona-ok 
+    limpiar_perdida(demo_list_tracking_obj);
 
     //}
 
