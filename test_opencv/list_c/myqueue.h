@@ -47,7 +47,7 @@ void create_queue(queue** myqueue);
 void create_mynode_queue(mynode** pnode);
 void enqueue_rectangle(queue* myqueue, Rectangle* rect);
 void dequeue_rectangle(queue* myqueue);
-void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF]);
+void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp);
 
 
 #endif //end QUEUE_H

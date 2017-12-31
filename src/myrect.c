@@ -109,3 +109,19 @@ double myoverlap_rectangle(Rectangle* A, Rectangle* B)
     return overlapp; 
 }
 
+void copy_rectangle(Rectangle* rect1, Rectangle* rect2){
+	if( rect1 == NULL ){
+		printf("Error, puntero vacio, rect1.\n");
+		return;
+	}
+	if( rect2 == NULL ){
+		printf("Error, puntero vacio, rect2.\n");
+		//create_myRectangle(&rect2);
+		return;
+	}
+	rect1->topleft.x 	 = rect2->topleft.x;
+	rect1->topleft.y 	 = rect2->topleft.y;
+	rect1->bottomright.x = rect2->bottomright.x;
+	rect1->bottomright.y = rect2->bottomright.y;
+	return;
+}

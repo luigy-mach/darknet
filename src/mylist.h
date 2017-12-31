@@ -14,6 +14,7 @@
 
 #include "mycommon.h"
 //#define SIZEOF_BUFF 4096
+//#define LIMIT_PERDIDA 3
 
 
 
@@ -27,7 +28,6 @@ typedef struct Rectangle Rectangle;
 typedef struct mylist mylist;
 
 
-#define LIMIT_PERDIDA 3
 
 
 struct mynodelist{
@@ -55,7 +55,7 @@ void update_per2(mynodelist* pnode, int number_frame);
 
 void limpiar_perdida(mylist* l);
 //void print_list(mylist* l, char** buffer);
-void print_list(mylist* l, char buffer[SIZEOF_BUFF]);
+void print_list(mylist* l, char buffer[SIZEOF_BUFF],FILE* fp);
 
 
 

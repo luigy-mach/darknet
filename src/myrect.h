@@ -32,5 +32,7 @@ int min(int a, int b);
 float my_overlap(Rectangle A, Rectangle B);
 double myoverlap_rectangle(Rectangle* A, Rectangle* B);
 
+void copy_rectangle(Rectangle* rect1, Rectangle* rect2);
+
 
 #endif //end RECT_H

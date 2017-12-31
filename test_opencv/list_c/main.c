@@ -1,8 +1,12 @@
 
 #include<stdio.h>
-#include<stdlib.h>
 #include <math.h>
 #include <string.h>
+
+
+
+#include <time.h>
+#include <stdlib.h>
 
 
 #include "mycommon.h"
@@ -17,7 +21,7 @@
 
 
 int main(){
-  tracking_obj* test;
+  /*tracking_obj* test;
   create_new_tracking_obj(&test);
   printf("%s\n", test->name);
   printf("%d\n", test->flag);
@@ -112,95 +116,86 @@ int main(){
   printf("%d\n", l->root->data_obj->perdida );
   printf("%d\n", l->root->next->data_obj->perdida);
   printf("%d\n", l->root->next->next->data_obj->perdida);
-  
+  */
   printf("******************************************\n");
   printf("*****************00000**********************\n");
   
   //char *buffer = (char*)malloc(sizeof(char));
-  char buffer[4096];
-  print_list(l, buffer);
+  //char buffer[4096];
+  //print_list(l, buffer);
+//
+  //printf("%s\n", buffer );
+  
+
+
+  //srand(time(NULL));   // should only be called once
+  //int r = rand(); 
+
+  FILE *fp;
+
+  fp = fopen("test22.txt", "a");
+
+  
+  int i;
+  int number_frame = 10;
+  mylist* ll;
+  double demo_mythreshold_overlap = 0.40;
+  create_mylist(&ll);
+  int j;
+
+  int max_boundingbox_per_frame = 10;
+
+  for(j=0;j<number_frame;j++){
+    char buff[2048];
+    fprintf(fp, "///////////////////////\n");
+    sprintf(buff,"Frame numero: %d\n",j);
+    fprintf(fp, buff);
+
+    for(i=0 ; i<max_boundingbox_per_frame ; i++){
+      //int left  = rand()%100;
+      //int right = rand()%100;
+      //int top   = rand()%100;
+      //int bot   = rand()%100;
+
+      
+      int zzz = rand()%300;
+      int left  = zzz;
+      int top   = zzz;
+      int right = zzz+10;
+      int bot   = zzz+10;
+
+      Rectangle* myrect_temp;
+      create_myRectangle(&myrect_temp);
+      fill_myRectangle(myrect_temp,left,top,right,bot);
+      //int num_frame = 12;
+      my_insert_list_rect2(ll, myrect_temp, demo_mythreshold_overlap, j);
+    }
+    printf("update_perdida\n");
+    update_perdida(ll, j);
+    printf("limpiar_perdida\n");
+    limpiar_perdida(ll);
+
+  }
+
+printf("******************************************\n");
+  printf("*******************xxx***********************\n");
+
+  char buffer[128];
+
+  print_list(ll, buffer,fp);
 
   printf("%s\n", buffer );
+
+
   
- /* printf("******************************************\n");
-  printf("********************1111**********************\n");
-    char tagstr1[SIZEOF_BUFF];
-    int pos = 0;
-    int k1;
-    int n1 = 5;
 
-    for (k1=0; k1 < n1; k1++) {
-        pos += sprintf(&tagstr1[pos], ", val%d", k1);
-    }
-    printf ("String is now: %s\n", tagstr1);
-  printf("******************************************\n");
-  printf("********************222*********************\n");
+  fclose(fp);
 
-    char tagstr[60] = {0};
-        int k;
-        int n = 5;
-        for (k=0; k < n; k++) {
-            char temp[10]  = {0};
-            sprintf(temp, ", val%d", k);
-            strcat(tagstr, temp);
-        }
-        printf("[%s]\n", tagstr);
+
+
   printf("******************************************\n");
-  printf("******************************************\n");
-*/
+  printf("*******************zzzz***********************\n");
 /*
-  printf("++++++++++++++++++++++++++++++++++++++++++\n");
-  char* buff[4096];
-  int length = 0;
-  length += sprintf(buff+length, "Hello World");
-  length += sprintf(buff+length, "Good Morning");
-  length += sprintf(buff+length, "Good Afternoon");
-  printf("%s\n", buff );
-  printf("++++++++++++++++++++++++++++++++++++++++++\n");
-
-#include <stdio.h>
-#include <string.h>
-
-#define LOC_MAXLEN 33
-  char* buff2[4096];
-  snprintf(buff2 , LOC_MAXLEN,"Hello World");
-  snprintf(buff2 + strlen(buff2), LOC_MAXLEN - strlen(buff2),"Good Morning");
-  snprintf(buff2 + strlen(buff2), LOC_MAXLEN - strlen(buff2),"Good Afternoon");
-  printf("%s\n", buff2 );
-  //double ddd;
-  //ddd = myoverlap_rectangle(myrect1,myrect2);
-  //printf("myrect1 y myrect2: %lf \n",ddd);
-  //ddd = myoverlap_rectangle(myrect2,myrect3);
-  //printf("myrect2 y myrect3: %lf \n",ddd);
-  //ddd = myoverlap_rectangle(myrect1,myrect3);
-  //printf("myrect1 y myrect3: %lf \n",ddd);
-
-
-
-
-  printf("++++++++++++++++++++++++++++++++++++++++++\n");
-
-
-
-  
-  char dest[LOC_MAXLEN];
-  snprintf(dest, LOC_MAXLEN, "%s%s", "abc", "def");
-  snprintf(dest + strlen(dest), LOC_MAXLEN - strlen(dest), "%s", "ghi");
-  snprintf(dest + strlen(dest), LOC_MAXLEN - strlen(dest), "%s", "jkl");
-  printf("%s\n", dest);
-  printf("%s\n", dest);
-
-  printf("%s\n", dest);
-  
- */
-
-
-
-
-
-  printf("******************************************\n");
-  printf("******************************************\n");
-
   Rectangle* myrect33;
   create_myRectangle(&myrect33);
   fill_myRectangle(myrect33, 0,0,10,10);
@@ -219,6 +214,6 @@ int main(){
   fff = my_overlap(*myrect33,*myrect44); 
   printf("extern - overlap es fff: %lf \n",fff);
 
-
+*/
   return 0;
 }

@@ -36,6 +36,7 @@ struct tracking_obj{
 
 
 void create_new_tracking_obj(tracking_obj** obj);
+void update_tracking_obj(tracking_obj* obj, Rectangle* rect1);
 
 
 #endif //end TRACKING_OBJ_H

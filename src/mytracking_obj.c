@@ -15,3 +15,23 @@ void create_new_tracking_obj(tracking_obj** obj){
   (*obj)=temp;
   return;
 }
+
+
+void update_tracking_obj(tracking_obj* obj, Rectangle* rect1){
+  if( obj->bounding_box == NULL ){
+    printf("Error, puntero vacio, rect1.\n");
+    return;
+  }
+  if( rect1 == NULL ){
+    printf("Error, puntero vacio, rect2.\n");
+    //create_myRectangle(&rect2);
+    return;
+  }
+
+  obj->bounding_box->topleft.x     = rect1->topleft.x;
+  obj->bounding_box->topleft.y     = rect1->topleft.y;
+  obj->bounding_box->bottomright.x = rect1->bottomright.x;
+  obj->bounding_box->bottomright.y = rect1->bottomright.y;
+
+  return;
+}

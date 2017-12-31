@@ -76,11 +76,13 @@ void my_insert_list_rect(mylist* l, Rectangle* myrect, double threshold_rectangl
 void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle, int number_frame){
   
   if(threshold_rectangle < myoverlap_rectangle(pnode->data_obj->bounding_box, myrect)){
-     enqueue_rectangle( pnode->data_obj->queue_rectangles, myrect);
-     pnode->data_obj->flag = number_frame % 2;
+    copy_rectangle(pnode->data_obj->bounding_box, myrect);
+    enqueue_rectangle( pnode->data_obj->queue_rectangles, myrect);
+    pnode->data_obj->flag = number_frame % 2;
 
-     return;
+    return;
   }
+
   if(pnode->next == NULL){
     mynodelist* temp;
     create_mynodelist(&temp);
@@ -91,11 +93,20 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
     temp_tracking_obj->flag = number_frame % 2;
     
     temp->data_obj = temp_tracking_obj;
+
+    Rectangle* myrect_temp = NULL;
+    create_myRectangle(&myrect_temp);
+    copy_rectangle(myrect_temp, myrect);
+    enqueue_rectangle( temp->data_obj->queue_rectangles, myrect_temp);
+
     pnode->next = temp;
     return;
   }
   my_insert_list2_rect2(pnode->next, myrect, threshold_rectangle,number_frame);
 }
+
+
+
 
 
 
@@ -113,12 +124,21 @@ void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectang
     temp_tracking_obj->bounding_box = myrect;
 
     temp->data_obj = temp_tracking_obj;
+
+    Rectangle* myrect_temp = NULL;
+    create_myRectangle(&myrect_temp);
+    copy_rectangle(myrect_temp, myrect);
+    enqueue_rectangle( temp->data_obj->queue_rectangles, myrect_temp);
+
     l->root = temp;
+
     return;
   }
 
   my_insert_list2_rect2(l->root ,myrect, threshold_rectangle,number_frame);
 }
+
+
 
 
 
@@ -175,7 +195,7 @@ void limpiar_perdida(mylist* l){
 }
 
 
-void print_list(mylist* l, char buffer[SIZEOF_BUFF]){
+void print_list(mylist* l, char buffer[SIZEOF_BUFF], FILE* fp){
   mynodelist* ptemp = l->root;
   int i=0;
 
@@ -189,9 +209,13 @@ void print_list(mylist* l, char buffer[SIZEOF_BUFF]){
                               ,temp_boundingbox->topleft.y
                               ,temp_boundingbox->bottomright.x
                               ,temp_boundingbox->bottomright.y );
-    print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp);  
-    strcat(buffer, temp);
+    fprintf(fp, temp);
+    print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp, fp);  
+    //strcat(buffer, temp);
 
+    //char buff[2048];
+    //fprintf(fp, "///////////////////////\n");
+    //sprintf(buff,"Frame numero: %d\n",number_frame);
     //print_queue_rectagles(ptemp->data_obj->queue_rectangles, buffer);
     ptemp = ptemp->next;
     i++;

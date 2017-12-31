@@ -33,7 +33,8 @@ void enqueue_rectangle(queue* myqueue, Rectangle* rect){
   }
   if( myqueue->limit > LIMIT_QUEUE ){
       dequeue_rectangle(myqueue);
-      printf("borrando \n");
+      //cola llena
+      //printf("borrando \n");
   }
   myqueue->rear->next = temp;
   myqueue->rear = temp;
@@ -60,7 +61,7 @@ void dequeue_rectangle(queue* myqueue) {
 
 
 
-void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF])
+void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp)
 {
   mynode* temp_rect = myqueue->front;
   int i = 0;
@@ -71,7 +72,9 @@ void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF])
                                       ,temp_rect->data_rect->topleft.y
                                       ,temp_rect->data_rect->bottomright.x
                                       ,temp_rect->data_rect->bottomright.y ); 
-    strcat(buffer, temp);
+    //strcat(buffer, temp);
+    fprintf(fp, temp);
+
     temp_rect = temp_rect->next;
     i++;
   }

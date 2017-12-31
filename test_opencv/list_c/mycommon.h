@@ -16,7 +16,9 @@
 
 #define SIZEOF_BUFF 4096
 #define LIMIT_QUEUE 10
-#define VACIOSTRING "vacio-string"
+#define VACIOSTRING ""
+#define LIMIT_PERDIDA 3
+
 
 
 //#endif //end MYCOMMON_H
