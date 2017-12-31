@@ -886,7 +886,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     }
     fprintf(fp, "-----------------------\n");
 
-    //update_perdida(demo_list_tracking_obj, num_frame);
+    update_perdida(demo_list_tracking_obj, num_frame);
 
     //if((num_frame%8)==0){
     //char buffer2[4096]={0};
@@ -894,7 +894,11 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     ////printf("%s\n", buffer2);
     //fprintf(fp, buffer2);
     //fprintf(fp, "\n");
-    limpiar_perdida(demo_list_tracking_obj);
+
+
+    //limpiar_perdida funciona-ok
+    //limpiar_perdida(demo_list_tracking_obj);
+
     //}
 
 
