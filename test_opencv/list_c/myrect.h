@@ -3,9 +3,10 @@
 #ifndef RECT_H
 #define RECT_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+
+
+#include "mycommon.h"
+
 
 
 typedef struct Point Point;

@@ -2,14 +2,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <math.h>
+#include <string.h>
 
 
-#include "mytracking_obj.h"
+#include "mycommon.h"
 
 
-#include "mylist.h"
-
-
+//#define SIZEOF_BUFF 4096
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -53,7 +52,7 @@ int main(){
   //implementar funcion delete de list para 
 
 
-  double threshold_rectangle = 0.5;
+  double threshold_rectangle = 0.4;
 
 
   Rectangle* myrect1;
@@ -76,6 +75,14 @@ int main(){
   create_myRectangle(&myrect5);
   fill_myRectangle(myrect5, 40,40,50,50);
 
+  Rectangle* myrect6;
+  create_myRectangle(&myrect6);
+  fill_myRectangle(myrect6, 1,1,11,11);
+
+  Rectangle* myrect7;
+  create_myRectangle(&myrect7);
+  fill_myRectangle(myrect7, 2,2,12,12);
+
   int number_frame = 12;
 
   mylist* l;
@@ -85,6 +92,8 @@ int main(){
   my_insert_list_rect2(l, myrect3, threshold_rectangle,number_frame);
   my_insert_list_rect2(l, myrect4, threshold_rectangle,number_frame);
   my_insert_list_rect2(l, myrect5, threshold_rectangle,number_frame);
+  my_insert_list_rect2(l, myrect6, threshold_rectangle,number_frame);
+  my_insert_list_rect2(l, myrect7, threshold_rectangle,number_frame);
 
   
   l->root->data_obj->perdida=2;
@@ -105,8 +114,59 @@ int main(){
   printf("%d\n", l->root->next->next->data_obj->perdida);
   
   printf("******************************************\n");
-  printf("******************************************\n");
+  printf("*****************00000**********************\n");
+  
+  //char *buffer = (char*)malloc(sizeof(char));
+  char buffer[4096];
+  print_list(l, buffer);
 
+  printf("%s\n", buffer );
+  
+ /* printf("******************************************\n");
+  printf("********************1111**********************\n");
+    char tagstr1[SIZEOF_BUFF];
+    int pos = 0;
+    int k1;
+    int n1 = 5;
+
+    for (k1=0; k1 < n1; k1++) {
+        pos += sprintf(&tagstr1[pos], ", val%d", k1);
+    }
+    printf ("String is now: %s\n", tagstr1);
+  printf("******************************************\n");
+  printf("********************222*********************\n");
+
+    char tagstr[60] = {0};
+        int k;
+        int n = 5;
+        for (k=0; k < n; k++) {
+            char temp[10]  = {0};
+            sprintf(temp, ", val%d", k);
+            strcat(tagstr, temp);
+        }
+        printf("[%s]\n", tagstr);
+  printf("******************************************\n");
+  printf("******************************************\n");
+*/
+/*
+  printf("++++++++++++++++++++++++++++++++++++++++++\n");
+  char* buff[4096];
+  int length = 0;
+  length += sprintf(buff+length, "Hello World");
+  length += sprintf(buff+length, "Good Morning");
+  length += sprintf(buff+length, "Good Afternoon");
+  printf("%s\n", buff );
+  printf("++++++++++++++++++++++++++++++++++++++++++\n");
+
+#include <stdio.h>
+#include <string.h>
+
+#define LOC_MAXLEN 33
+  char* buff2[4096];
+  snprintf(buff2 , LOC_MAXLEN,"Hello World");
+  snprintf(buff2 + strlen(buff2), LOC_MAXLEN - strlen(buff2),"Good Morning");
+  snprintf(buff2 + strlen(buff2), LOC_MAXLEN - strlen(buff2),"Good Afternoon");
+  printf("%s\n", buff2 );
   //double ddd;
   //ddd = myoverlap_rectangle(myrect1,myrect2);
   //printf("myrect1 y myrect2: %lf \n",ddd);
@@ -114,6 +174,28 @@ int main(){
   //printf("myrect2 y myrect3: %lf \n",ddd);
   //ddd = myoverlap_rectangle(myrect1,myrect3);
   //printf("myrect1 y myrect3: %lf \n",ddd);
+
+
+
+
+  printf("++++++++++++++++++++++++++++++++++++++++++\n");
+
+
+
+  
+  char dest[LOC_MAXLEN];
+  snprintf(dest, LOC_MAXLEN, "%s%s", "abc", "def");
+  snprintf(dest + strlen(dest), LOC_MAXLEN - strlen(dest), "%s", "ghi");
+  snprintf(dest + strlen(dest), LOC_MAXLEN - strlen(dest), "%s", "jkl");
+  printf("%s\n", dest);
+  printf("%s\n", dest);
+
+  printf("%s\n", dest);
+  
+ */
+
+
+
 
 
   printf("******************************************\n");

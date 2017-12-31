@@ -10,6 +10,11 @@
 #include "mytracking_obj.h"
 #include "myqueue.h"
 #include "myrect.h"
+#include <string.h>
+
+#include "mycommon.h"
+//#define SIZEOF_BUFF 4096
+
 
 
 typedef struct mynodelist mynodelist;
@@ -49,6 +54,9 @@ void update_perdida(mylist* l, int number_frame);
 void update_per2(mynodelist* pnode, int number_frame);
 
 void limpiar_perdida(mylist* l);
+//void print_list(mylist* l, char** buffer);
+void print_list(mylist* l, char buffer[SIZEOF_BUFF]);
+
 
 
 

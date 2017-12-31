@@ -175,7 +175,30 @@ void limpiar_perdida(mylist* l){
 }
 
 
+void print_list(mylist* l, char buffer[SIZEOF_BUFF]){
+  mynodelist* ptemp = l->root;
+  int i=0;
 
+  while(ptemp){
+    Rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+
+    char temp[100]  = {0};
+    //sprintf(temp, ", val%d", k);
+    sprintf(temp,"list-(%d): (%d,%d) (%d,%d)\n", i
+                              ,temp_boundingbox->topleft.x 
+                              ,temp_boundingbox->topleft.y
+                              ,temp_boundingbox->bottomright.x
+                              ,temp_boundingbox->bottomright.y );
+    print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp);  
+    strcat(buffer, temp);
+
+    //print_queue_rectagles(ptemp->data_obj->queue_rectangles, buffer);
+    ptemp = ptemp->next;
+    i++;
+  }
+
+  return;
+}
 
 
 /*

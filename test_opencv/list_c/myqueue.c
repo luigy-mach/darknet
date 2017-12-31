@@ -59,6 +59,26 @@ void dequeue_rectangle(queue* myqueue) {
 
 
 
+
+void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF])
+{
+  mynode* temp_rect = myqueue->front;
+  int i = 0;
+  while(temp_rect){
+    char temp[100]  = {0};
+    sprintf(temp,"     cola-(%d): (%d,%d) (%d,%d)\n", i
+                                      ,temp_rect->data_rect->topleft.x 
+                                      ,temp_rect->data_rect->topleft.y
+                                      ,temp_rect->data_rect->bottomright.x
+                                      ,temp_rect->data_rect->bottomright.y ); 
+    strcat(buffer, temp);
+    temp_rect = temp_rect->next;
+    i++;
+  }
+  return;
+}
+
+
 /*
 
 void enqueue(queue* myqueue, int x){

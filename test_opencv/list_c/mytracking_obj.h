@@ -4,11 +4,14 @@
 #define TRACKING_OBJ_H
 
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "myqueue.h"
+#include "mytracking_obj.h"
+#include "mylist.h"
 #include "myrect.h"
+#include "myqueue.h"
+
+#include "mycommon.h"
+//#define VACIOSTRING "vacio-string"
+
 
 
 //extern struct mynode;
@@ -18,7 +21,6 @@ typedef struct queue queue;
 
 typedef struct tracking_obj tracking_obj;
 
-#define VACIOSTRING "vacio-string"
 
 
 struct tracking_obj{

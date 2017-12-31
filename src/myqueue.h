@@ -8,8 +8,12 @@
 
 #include "mytracking_obj.h"
 
+#include "mycommon.h"
 
-#define LIMIT_QUEUE 10
+
+
+//#define SIZEOF_BUFF 4096
+//#define LIMIT_QUEUE 10
 
 
 //struct tracking_obj;	
@@ -43,6 +47,7 @@ void create_queue(queue** myqueue);
 void create_mynode_queue(mynode** pnode);
 void enqueue_rectangle(queue* myqueue, Rectangle* rect);
 void dequeue_rectangle(queue* myqueue);
+void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF]);
 
 
 #endif //end QUEUE_H

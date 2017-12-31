@@ -832,6 +832,9 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             //int num_frame = 12;
             my_insert_list_rect2(demo_list_tracking_obj, myrect_temp, demo_mythreshold_overlap, num_frame);
 
+            //char buffer[4096];
+            //print_list(l, buffer);
+            //printf("%s\n", buffer );
 
 
             if(left < 0) left = 0;
@@ -839,8 +842,10 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
 
+
             sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
             fprintf(fp, buff);
+
             //dibuja todos los rectagulos
             //es totalmente independiente
 
@@ -877,6 +882,9 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             
         }
     }
+    fprintf(fp, "-----------------------\n");
+    sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
+    fprintf(fp, buff);
     fprintf(fp, "-----------------------\n");
 }
 
