@@ -189,7 +189,7 @@ void print_list(mylist* l, char buffer[SIZEOF_BUFF]){
                               ,temp_boundingbox->topleft.y
                               ,temp_boundingbox->bottomright.x
                               ,temp_boundingbox->bottomright.y );
-    print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp);  
+    //print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp);  
     strcat(buffer, temp);
 
     //print_queue_rectagles(ptemp->data_obj->queue_rectangles, buffer);
