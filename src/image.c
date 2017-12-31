@@ -883,7 +883,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         }
     }
     fprintf(fp, "-----------------------\n");
-    sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
+    //sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
     fprintf(fp, buff);
     fprintf(fp, "-----------------------\n");
 }
