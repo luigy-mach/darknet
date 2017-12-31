@@ -748,7 +748,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
     int i,j;
     //num=600;
-    char buff[200]={0};
+    char buff[4096]={0};
     fprintf(fp, "///////////////////////\n");
     sprintf(buff,"Frame numero: %d\n",num_frame);
     fprintf(fp, buff);
@@ -833,7 +833,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             my_insert_list_rect2(demo_list_tracking_obj, myrect_temp, demo_mythreshold_overlap, num_frame);
 
             //char buffer[4096];
-            //print_list(l, buffer);
+            print_list(l, buff);
             //printf("%s\n", buffer );
 
 
@@ -883,7 +883,6 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         }
     }
     fprintf(fp, "-----------------------\n");
-    //sprintf(buff,"%s: (%d,%d) (%d,%d)\n",labelstr_high,left,top,right,bot);
     fprintf(fp, buff);
     fprintf(fp, "-----------------------\n");
 }
