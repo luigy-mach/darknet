@@ -898,7 +898,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
 
     //limpiar_perdida funciona-ok 
-    //limpiar_perdida(demo_list_tracking_obj);
+    limpiar_perdida(demo_list_tracking_obj);
 
     //}
 
