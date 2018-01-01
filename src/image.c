@@ -887,8 +887,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     fprintf(fp, "-----------------------\n");
 
     //update_perdida funciona-ok 
-    //update_perdida(demo_list_tracking_obj, num_frame);
-    //
+    update_perdida(demo_list_tracking_obj, num_frame);
+    
     //if((num_frame%8)==0){
     //char buffer2[4096]={0};
     //print_list(demo_list_tracking_obj, fp);
