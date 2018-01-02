@@ -180,43 +180,6 @@ void update_perdida(mylist* l, int number_frame){
 
 //backup limpiar_perdida
 /*
-void limpiar_perdida(mylist* l){
-  
-  if( l->root == NULL ){
-    return;
-  }
-  while(l->root!=NULL && l->root->data_obj->perdida >= LIMIT_PERDIDA  ){
-        mynodelist* pnode = l->root;
-        l->root = pnode->next;
-        free(pnode);
-  }
-  
-  if( l->root == NULL ){
-    return;
-  }
-
-  
-  mynodelist* pnode = l->root;        
-  while( pnode->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
-        mynodelist** ppnodeAvance = &(pnode->next);
-        mynodelist* borrado = pnode->next;
-        (*ppnodeAvance) = borrado->next;
-        free(borrado);
-        pnode = pnode->next;
-  }  
-
-  return;
-
-}
-*/
-
-
-
-/*
-void limpiar_perdida_recursiva(){
-  
-}
-*/
 
 void limpiar_perdida(mylist* l){
   if( l->root == NULL ){
@@ -242,6 +205,50 @@ void limpiar_perdida(mylist* l){
         mynodelist** ppnodeAvance = &(pnode->next);
         mynodelist* borrado = pnode->next;
         (*ppnodeAvance) = borrado->next;
+        free(borrado);
+        pnode = pnode->next;
+  }  
+
+  return;
+
+}
+
+*/
+
+
+
+
+void limpiar_perdida_recursiva(){
+  
+}
+
+
+
+void limpiar_perdida(mylist* l){
+  if( l->root == NULL ){
+    return;
+  }
+
+  while(l->root!=NULL && l->root->data_obj->perdida >= LIMIT_PERDIDA  ){
+        mynodelist* pnode = l->root;
+        l->root = pnode->next;
+        l->root->prev = NULL;
+        free_mynodelist( &pnode );
+        printf("llamado a: free_mynodelist\n");
+        free(pnode);
+  }
+  
+  if( l->root == NULL ){
+    return;
+  }
+
+  
+  mynodelist* pnode = l->root;        
+  while( pnode->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
+        mynodelist** ppnodeAvance = &(pnode->next);
+        mynodelist* borrado = pnode->next;
+        (*ppnodeAvance) = borrado->next;
+        free_mynodelist( &borrado );
         free(borrado);
         pnode = pnode->next;
   }  
