@@ -329,8 +329,8 @@ void limpiar_perdida(mylist* l){
     return;
   }
 
-  printf("*11puntero:%s\n",l->root );
-  printf("*22perdida: %d\n",l->root->data_obj->perdida );
+  //printf("*11puntero:%s\n",l->root );
+  //printf("*22perdida: %d\n",l->root->data_obj->perdida );
   while( (l->root!=NULL) && (l->root->data_obj->perdida >= LIMIT_PERDIDA)  ){
         mynodelist* pnode = l->root;
         l->root = pnode->next;
@@ -346,8 +346,8 @@ void limpiar_perdida(mylist* l){
   }
 
   mynodelist* pnode = l->root;        
-  printf("*55puntero:%s\n",pnode->next );
-  printf("*66perdida: %d\n",pnode->next->data_obj->perdida );
+  //printf("*55puntero:%s\n",pnode->next );
+  //printf("*66perdida: %d\n",pnode->next->data_obj->perdida );
   while( pnode->next!=NULL ){
     if( pnode->next->next==NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA){
       mynodelist* borrado = pnode->next;
