@@ -333,18 +333,31 @@ void limpiar_perdida(mylist* l){
   //printf("*11puntero:%s\n",l->root );
   //printf("*22perdida: %d\n",l->root->data_obj->perdida );
   while( (l->root!=NULL) && (l->root->data_obj->perdida >= LIMIT_PERDIDA)  ){
-    printf("limpiar_perdida: 33\n");
+    if(l->root->next == NULL ){
+      mynodelist* pnode = l->root;
+      printf("limpiar_perdida: 1-44\n");
+      l->root = NULL;
+      printf("limpiar_perdida: 1-55\n");
+      printf("limpiar_perdida: 1-55.1\n");
+      free_mynodelist( &pnode );
+      printf("limpiar_perdida: 1-66\n");
+      printf("llamado a: free_mynodelist 1-11\n");
+      free(pnode);
+      printf("limpiar_perdida: 1-77\n");
+    }else{
+      printf("limpiar_perdida: 2-33\n");
         mynodelist* pnode = l->root;
-    printf("limpiar_perdida: 44\n");
+      printf("limpiar_perdida: 2-44\n");
         l->root = pnode->next;
-    printf("limpiar_perdida: 55\n");
+      printf("limpiar_perdida: 2-55\n");
         l->root->prev = NULL;
-    printf("limpiar_perdida: 55.1\n");
+      printf("limpiar_perdida: 2-55.1\n");
         free_mynodelist( &pnode );
-    printf("limpiar_perdida: 66\n");
-        printf("llamado a: free_mynodelist11\n");
-    printf("limpiar_perdida: 77\n");
+      printf("limpiar_perdida: 2-66\n");
+        printf("llamado a: free_mynodelist 2-11\n");
+      printf("limpiar_perdida: 2-77\n");
         free(pnode);
+    }
   }
   
     printf("limpiar_perdida: 77\n");
