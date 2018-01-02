@@ -137,13 +137,13 @@ int main(){
 
   
   int i;
-  int number_frame = 20;
+  int number_frame = 50;
   mylist* ll;
   double demo_mythreshold_overlap = 0.40;
   create_mylist(&ll);
   int j;
 
-  int max_boundingbox_per_frame = 5;
+  int max_boundingbox_per_frame = 50;
 
   for(j=0;j<number_frame;j++){
     char buff[2048];

@@ -322,11 +322,16 @@ void limpiar_perdida_recursiva(mylist* l){
 
 
 void limpiar_perdida(mylist* l){
+    printf("--------------------\n");
+
   if( l->root == NULL ){
+    printf("primer caso\n");
     return;
   }
 
-  while(l->root!=NULL && l->root->data_obj->perdida >= LIMIT_PERDIDA  ){
+  printf("*11puntero:%s\n",l->root );
+  printf("*22perdida: %d\n",l->root->data_obj->perdida );
+  while( (l->root!=NULL) && (l->root->data_obj->perdida >= LIMIT_PERDIDA)  ){
         mynodelist* pnode = l->root;
         l->root = pnode->next;
         l->root->prev = NULL;
@@ -336,23 +341,51 @@ void limpiar_perdida(mylist* l){
   }
   
   if( l->root == NULL ){
+    printf("segundo caso\n");
     return;
   }
 
-  
   mynodelist* pnode = l->root;        
-  while( pnode->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
-        mynodelist** ppnodeAvance = &(pnode->next);
-        mynodelist* borrado = pnode->next;
-        (*ppnodeAvance) = borrado->next;
-        free_mynodelist( &borrado );
-        printf("llamado a: free_mynodelist22\n");
-        free(borrado);
-        pnode = pnode->next;
+  printf("*55puntero:%s\n",pnode->next );
+  printf("*66perdida: %d\n",pnode->next->data_obj->perdida );
+  while( pnode->next!=NULL ){
+    if( pnode->next->next==NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA){
+      mynodelist* borrado = pnode->next;
+      borrado->next = NULL;
+      borrado->prev = NULL;
+
+      pnode->next = NULL;
+      free_mynodelist( &borrado );
+      printf("llamado a: free_mynodelist22\n");
+      free(borrado);
+      break;
+    }
+
+
+    if( pnode->next->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
+      mynodelist* temp1 = pnode->next;
+      mynodelist* temp2 = pnode->next->next;
+
+      temp2->prev = pnode;
+      pnode->next = temp2;
+
+      temp1->next = NULL;
+      temp1->prev = NULL;
+      free_mynodelist( &temp1 );
+      printf("llamado a: free_mynodelist33\n");
+      free(temp1);
+    }else{
+      printf("llamado a: paso sin ver\n");
+      pnode = pnode->next;
+    }
   }  
 
-  return;
 
+
+  printf("la cague\n");
+    printf("--------------------\n");
+
+  return;
 }
 
 
