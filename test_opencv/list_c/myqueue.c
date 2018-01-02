@@ -1,6 +1,32 @@
 #include "myqueue.h"
 
 
+void create_mynode_queue(mynode** pnode){
+ mynode* temp = (mynode*)malloc(sizeof(mynode));
+         temp->data_rect = NULL; 
+         temp->next = NULL;
+ (*pnode) = temp;
+ return;
+}
+
+void free_mynode_queue(mynode** pnode){
+  //printf("dentro de free_mynode_queue11\n");
+  //free_myRectangle( &((*pnode)->data_rect) );
+  free( &((*pnode)->data_rect) );
+  //printf("dentro de free_mynode_queue22\n");
+  (*pnode)->next = NULL;
+  //printf("dentro de free_mynode_queue33\n");
+  //free( *pnode );
+  //printf("dentro de free_mynode_queue44\n");
+  //return;
+}
+
+
+
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
 
 void create_queue(queue** myqueue){
     queue* temp=malloc(sizeof(queue));
@@ -11,13 +37,17 @@ void create_queue(queue** myqueue){
     return;
 }
 
- void create_mynode_queue(mynode** pnode){
-  mynode* temp = (mynode*)malloc(sizeof(mynode));
-          temp->data_rect = NULL; 
-          temp->next = NULL;
-  (*pnode) = temp;
+
+void free_queue(queue** myqueue){
+  while( (*myqueue)->front ){
+    //printf("llamando dentro de while de: dequeue_rectangle11 \n");
+    dequeue_rectangle( *myqueue );
+    //printf("llamando dentro de while de: dequeue_rectangle22 \n");
+  }
+  free( *myqueue );
   return;
- }
+}
+
 
 
 
@@ -54,8 +84,13 @@ void dequeue_rectangle(queue* myqueue) {
   }else{
     myqueue->front = myqueue->front->next;
   }
-  free(temp);
+  
+  //printf("llamando a: free_mynode_queue11\n");
+  free_mynode_queue( &temp );
+  //printf("llamando a: free_mynode_queue22\n");
+
   myqueue->limit--;
+  return;
 }
 
 

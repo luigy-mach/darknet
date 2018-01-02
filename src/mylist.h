@@ -33,6 +33,7 @@ typedef struct mylist mylist;
 struct mynodelist{
        tracking_obj* data_obj;
        mynodelist* next;
+       mynodelist* prev;
   //struct mynodelist* prev;
 };
 
@@ -42,7 +43,10 @@ struct mylist{
 
 
 void create_mynodelist(mynodelist** n);
+void free_mynodelist(mynodelist** n);
+
 void create_mylist(mylist** l);
+
 void my_insert_list2_rect(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle);
 void my_insert_list_rect(mylist* l, Rectangle* myrect, double threshold_rectangle);
 

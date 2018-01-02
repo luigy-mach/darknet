@@ -5,6 +5,7 @@
 void create_mynodelist(mynodelist** n){
   mynodelist* temp = (mynodelist*)malloc(sizeof(mynodelist));
   temp->next = NULL;
+  temp->prev = NULL;
   temp->data_obj = NULL;
   (*n)=temp;
   return;
@@ -21,6 +22,18 @@ void create_mylist(mylist** l){
 }
 
 
+void free_mynodelist(mynodelist** n){
+  (*n)->next = NULL;
+  (*n)->prev = NULL;
+  //printf("llamado a: free_new_tracking_obj11\n");
+  free_new_tracking_obj( &((*n)->data_obj) );
+  //printf("llamado a: free_new_tracking_obj22\n");
+  //printf("llamado a: free(*n);11  \n");
+  free(*n);  
+  //printf("llamado a: free(*n);22  \n");
+  (*n) = NULL;
+
+}
 
 void my_insert_list2_rect(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle){
 	
@@ -79,7 +92,6 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
     copy_rectangle(pnode->data_obj->bounding_box, myrect);
     enqueue_rectangle( pnode->data_obj->queue_rectangles, myrect);
     pnode->data_obj->flag = number_frame % 2;
-
     return;
   }
 
@@ -100,6 +112,7 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
     enqueue_rectangle( temp->data_obj->queue_rectangles, myrect_temp);
 
     pnode->next = temp;
+    temp->prev = pnode;
     return;
   }
   my_insert_list2_rect2(pnode->next, myrect, threshold_rectangle,number_frame);
@@ -142,6 +155,8 @@ void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectang
 
 
 
+
+
 void update_per2(mynodelist* pnode,int number_frame){
   if( pnode->data_obj->flag != (number_frame%2) ){
     ( pnode->data_obj->perdida)++;
@@ -163,8 +178,8 @@ void update_perdida(mylist* l, int number_frame){
 
 
 
-
-
+//backup limpiar_perdida
+/*
 void limpiar_perdida(mylist* l){
   
   if( l->root == NULL ){
@@ -193,6 +208,50 @@ void limpiar_perdida(mylist* l){
   return;
 
 }
+*/
+
+
+
+/*
+void limpiar_perdida_recursiva(){
+  
+}
+*/
+
+void limpiar_perdida(mylist* l){
+  if( l->root == NULL ){
+    return;
+  }
+
+  while(l->root!=NULL && l->root->data_obj->perdida >= LIMIT_PERDIDA  ){
+        mynodelist* pnode = l->root;
+        l->root = pnode->next;
+        l->root->prev = NULL;
+        free_mynodelist( &pnode );
+        printf("llamado a: free_mynodelist\n");
+        free(pnode);
+  }
+  
+  if( l->root == NULL ){
+    return;
+  }
+
+  
+  mynodelist* pnode = l->root;        
+  while( pnode->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
+        mynodelist** ppnodeAvance = &(pnode->next);
+        mynodelist* borrado = pnode->next;
+        (*ppnodeAvance) = borrado->next;
+        free(borrado);
+        pnode = pnode->next;
+  }  
+
+  return;
+
+}
+
+
+
 
 
 //void print_list(mylist* l, char buffer[SIZEOF_BUFF], FILE* fp){

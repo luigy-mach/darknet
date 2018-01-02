@@ -34,7 +34,7 @@ struct tracking_obj{
 };
 
 
-
+void free_new_tracking_obj(tracking_obj** obj);
 void create_new_tracking_obj(tracking_obj** obj);
 void update_tracking_obj(tracking_obj* obj, Rectangle* rect1);
 

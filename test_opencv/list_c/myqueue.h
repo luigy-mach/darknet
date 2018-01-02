@@ -42,7 +42,8 @@ struct queue{
 
 
 
-
+void free_queue(queue** myqueue);
+void free_mynode_queue(mynode** pnode);
 void create_queue(queue** myqueue);
 void create_mynode_queue(mynode** pnode);
 void enqueue_rectangle(queue* myqueue, Rectangle* rect);

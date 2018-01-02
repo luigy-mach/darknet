@@ -14,6 +14,14 @@ void init_myPoint(Point* p){
 	p->y = -1;
 }
 
+
+void free_myPoint(Point* pp){
+	printf("llamanado a: free(pp);11\n");
+	free(pp);
+	printf("llamanado a: free(pp);22\n");
+	return;
+}
+
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
@@ -23,6 +31,20 @@ void create_myRectangle(Rectangle** rect){
 	init_myPoint(&(temp->topleft));
 	init_myPoint(&(temp->bottomright));
 	(*rect)=temp;
+}
+
+void free_myRectangle(Rectangle** rect){
+	printf("llamando a: free_myPoint1-11\n");
+	free_myPoint( &((*rect)->topleft) );
+	//free( &((*rect)->topleft) );
+	printf("llamando a: free_myPoint1-22\n");
+
+
+	printf("llamando a: free_myPoint2-11\n");
+	free_myPoint( &((*rect)->bottomright) );
+	//free( &((*rect)->bottomright) );
+	printf("llamando a: free_myPoint2-22\n");
+	return;
 }
 
 void fill_myRectangle(Rectangle* myrect, int p1x, int p1y, int p2x, int p2y){
