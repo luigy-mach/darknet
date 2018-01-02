@@ -15,9 +15,9 @@
 
 
 #define SIZEOF_BUFF 4096
-#define LIMIT_QUEUE 10
+#define LIMIT_QUEUE 5
 #define VACIOSTRING ""
-#define LIMIT_PERDIDA 3
+#define LIMIT_PERDIDA 10
 
 
 

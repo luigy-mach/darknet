@@ -137,13 +137,13 @@ int main(){
 
   
   int i;
-  int number_frame = 10;
+  int number_frame = 20;
   mylist* ll;
   double demo_mythreshold_overlap = 0.40;
   create_mylist(&ll);
   int j;
 
-  int max_boundingbox_per_frame = 10;
+  int max_boundingbox_per_frame = 5;
 
   for(j=0;j<number_frame;j++){
     char buff[2048];
@@ -171,16 +171,16 @@ int main(){
       my_insert_list_rect2(ll, myrect_temp, demo_mythreshold_overlap, j);
     }
     printf("update_perdida\n");
-    update_perdida(ll, j);
+    update_perdida_v2(ll, j);
     printf("limpiar_perdida\n");
+    
     limpiar_perdida(ll);
-
+    print_list2(ll,fp);
   }
 
 printf("******************************************\n");
   printf("*******************xxx***********************\n");
 
-  print_list(ll,fp);
 
 
   

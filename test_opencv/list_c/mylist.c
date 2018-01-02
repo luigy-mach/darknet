@@ -91,7 +91,8 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
   if(threshold_rectangle < myoverlap_rectangle(pnode->data_obj->bounding_box, myrect)){
     copy_rectangle(pnode->data_obj->bounding_box, myrect);
     enqueue_rectangle( pnode->data_obj->queue_rectangles, myrect);
-    pnode->data_obj->flag = number_frame % 2;
+    //pnode->data_obj->flag = number_frame % 2;
+    pnode->data_obj->flag = 1;
     return;
   }
 
@@ -102,7 +103,8 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
     tracking_obj* temp_tracking_obj;
     create_new_tracking_obj(&temp_tracking_obj);
     temp_tracking_obj->bounding_box = myrect;
-    temp_tracking_obj->flag = number_frame % 2;
+    //temp_tracking_obj->flag = number_frame % 2;
+    temp_tracking_obj->flag = 1;
     
     temp->data_obj = temp_tracking_obj;
 
@@ -132,7 +134,8 @@ void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectang
 
     tracking_obj* temp_tracking_obj;
     create_new_tracking_obj(&temp_tracking_obj);
-    temp_tracking_obj->flag = number_frame % 2;
+    //temp_tracking_obj->flag = number_frame % 2;
+    temp_tracking_obj->flag = 1;
 
     temp_tracking_obj->bounding_box = myrect;
 
@@ -176,6 +179,25 @@ void update_perdida(mylist* l, int number_frame){
 }
 
 
+void update_perdida_v2(mylist* l, int number_frame){
+  if(l->root==NULL){
+    return;
+  }
+  mynodelist* temp;
+  temp = l->root;
+  while(temp){
+    if(temp->data_obj->flag == 0){
+      (temp->data_obj->perdida)++;   
+    }
+    if(temp->data_obj->flag == 1){
+      temp->data_obj->flag = 0;   
+      temp->data_obj->perdida = 0;
+    }
+    temp = temp->next;
+  }
+  return;
+}
+
 
 
 //backup limpiar_perdida
@@ -216,10 +238,85 @@ void limpiar_perdida(mylist* l){
 */
 
 
+void retroceder(mynodelist** pnode){
+  while( (*pnode)->prev != NULL ){
+    (*pnode) = (*pnode)->prev;
+  }
+  return;
+}
 
 
-void limpiar_perdida_recursiva(){
-  
+
+void limpiar_perdida_recursiva_interior(mynodelist** pnode){
+    printf("hola00\n");
+  if( (*pnode)==NULL ){
+    return;
+  }
+
+    printf("hola11\n");
+  if( (*pnode)->prev==NULL && (*pnode)->next==NULL && (*pnode)->data_obj->perdida >= LIMIT_PERDIDA  ){
+    free_mynodelist( pnode );
+    printf("llamado a: free_mynodelist11\n");
+    free( (*pnode) );
+    return;
+  }
+
+    printf("hola22\n");
+  if( (*pnode)->prev!=NULL && (*pnode)->next==NULL && (*pnode)->data_obj->perdida >= LIMIT_PERDIDA  ){
+    mynodelist* temp = (*pnode);
+    (*pnode)       = (*pnode)->prev;
+    (*pnode)->next = NULL;
+
+    temp->next = NULL;
+    temp->prev = NULL;
+    free_mynodelist( &temp );
+    printf("llamado a: free_mynodelist11\n");
+    free( temp );
+    return;
+  }
+
+    printf("hola33\n");
+  if( (*pnode)->prev!=NULL && (*pnode)->next!=NULL && (*pnode)->data_obj->perdida >= LIMIT_PERDIDA  ){
+    mynodelist* temp = (*pnode);
+    (*pnode)       = (*pnode)->next;
+    (*pnode)->prev = temp->prev;
+
+    (*pnode)->prev->next = (*pnode);
+
+    temp->prev = NULL;
+    temp->next = NULL;
+
+    free_mynodelist( &temp );
+    printf("llamado a: free_mynodelist11\n");
+    free(temp);
+    limpiar_perdida_recursiva_interior(pnode);
+    return;
+  }else{
+    printf("hola44\n");
+    limpiar_perdida_recursiva_interior( &((*pnode)->next) );
+  }
+
+
+}
+
+
+
+void limpiar_perdida_recursiva(mylist* l){
+  if( l->root == NULL ){
+    printf("test0001\n");
+    return;
+  }
+  printf("test00\n");
+  mynodelist** pnode = NULL;
+  printf("test11\n");
+  limpiar_perdida_recursiva_interior(pnode);
+  printf("test22\n");
+  retroceder(pnode);
+  printf("test33\n");
+  l->root = (*pnode);
+  printf("test44\n");
+
+  return;
 }
 
 
@@ -292,6 +389,51 @@ void print_list(mylist* l, FILE* fp){
 
   return;
 }
+
+
+
+void print_list2(mylist* l, FILE* fp){
+  mynodelist* ptemp = l->root;
+  int i=0;
+
+  while(ptemp){
+    Rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+
+    char temp[100]  = {0};
+    
+    //char *name;
+    //int flag; //0-1
+    //int perdida; //maximo 10
+
+    sprintf(temp,"list-(%d): (%s) (perdida:%d)", i
+                              ,ptemp->data_obj->name
+                              ,ptemp->data_obj->perdida);
+    fprintf(fp, temp);
+
+    sprintf(temp," : (%d,%d) (%d,%d)\n"
+                              ,temp_boundingbox->topleft.x 
+                              ,temp_boundingbox->topleft.y
+                              ,temp_boundingbox->bottomright.x
+                              ,temp_boundingbox->bottomright.y );
+    fprintf(fp, temp);
+    //print_queue_rectagles(ptemp->data_obj->queue_rectangles, temp, fp);  
+    print_queue_rectagles(ptemp->data_obj->queue_rectangles, fp);  
+    sprintf(temp,"\n");
+    fprintf(fp, temp);
+    //strcat(buffer, temp);
+
+    //char buff[2048];
+    //fprintf(fp, "///////////////////////\n");
+    //sprintf(buff,"Frame numero: %d\n",number_frame);
+    //print_queue_rectagles(ptemp->data_obj->queue_rectangles, buffer);
+    ptemp = ptemp->next;
+    i++;
+  }
+
+  return;
+}
+
+
 
 
 /*

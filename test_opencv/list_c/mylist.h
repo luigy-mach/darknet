@@ -56,11 +56,20 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
 
 void update_perdida(mylist* l, int number_frame);
 void update_per2(mynodelist* pnode, int number_frame);
+void update_perdida_v2(mylist* l, int number_frame);
+
+
+
+
+void limpiar_perdida_recursiva_interior(mynodelist** pnode);
+void limpiar_perdida_recursiva(mylist* l);
 
 void limpiar_perdida(mylist* l);
-//void print_list(mylist* l, char** buffer);
-//void print_list(mylist* l, char buffer[SIZEOF_BUFF],FILE* fp);
+
+
+
 void print_list(mylist* l, FILE* fp);
+void print_list2(mylist* l, FILE* fp);
 
 
 
