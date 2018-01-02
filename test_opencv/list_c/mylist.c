@@ -339,6 +339,7 @@ void limpiar_perdida(mylist* l){
         l->root = pnode->next;
     printf("limpiar_perdida: 55\n");
         l->root->prev = NULL;
+    printf("limpiar_perdida: 55.1\n");
         free_mynodelist( &pnode );
     printf("limpiar_perdida: 66\n");
         printf("llamado a: free_mynodelist11\n");
