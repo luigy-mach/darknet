@@ -323,33 +323,43 @@ void limpiar_perdida_recursiva(mylist* l){
 
 void limpiar_perdida(mylist* l){
     printf("--------------------\n");
-
+  printf("limpiar_perdida: 00\n");
   if( l->root == NULL ){
-    printf("primer caso\n");
+    printf("limpiar_perdida: 11\n");
     return;
   }
+    printf("limpiar_perdida: 22\n");
 
   //printf("*11puntero:%s\n",l->root );
   //printf("*22perdida: %d\n",l->root->data_obj->perdida );
   while( (l->root!=NULL) && (l->root->data_obj->perdida >= LIMIT_PERDIDA)  ){
+    printf("limpiar_perdida: 33\n");
         mynodelist* pnode = l->root;
+    printf("limpiar_perdida: 44\n");
         l->root = pnode->next;
+    printf("limpiar_perdida: 55\n");
         l->root->prev = NULL;
         free_mynodelist( &pnode );
+    printf("limpiar_perdida: 66\n");
         printf("llamado a: free_mynodelist11\n");
+    printf("limpiar_perdida: 77\n");
         free(pnode);
   }
   
+    printf("limpiar_perdida: 77\n");
   if( l->root == NULL ){
-    printf("segundo caso\n");
+    printf("limpiar_perdida: 77\n");
     return;
   }
 
+    printf("limpiar_perdida: 88\n");
   mynodelist* pnode = l->root;        
   //printf("*55puntero:%s\n",pnode->next );
   //printf("*66perdida: %d\n",pnode->next->data_obj->perdida );
   while( pnode->next!=NULL ){
+    printf("limpiar_perdida: 99\n");
     if( pnode->next->next==NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA){
+    printf("limpiar_perdida: 1010\n");
       mynodelist* borrado = pnode->next;
       borrado->next = NULL;
       borrado->prev = NULL;
@@ -360,9 +370,11 @@ void limpiar_perdida(mylist* l){
       free(borrado);
       break;
     }
+    printf("limpiar_perdida: 1111\n");
 
 
     if( pnode->next->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
+    printf("limpiar_perdida: 1212\n");
       mynodelist* temp1 = pnode->next;
       mynodelist* temp2 = pnode->next->next;
 
@@ -375,13 +387,13 @@ void limpiar_perdida(mylist* l){
       printf("llamado a: free_mynodelist33\n");
       free(temp1);
     }else{
+    printf("limpiar_perdida: 1313\n");
       printf("llamado a: paso sin ver\n");
       pnode = pnode->next;
     }
   }  
 
-
-
+    printf("limpiar_perdida: 1414\n");
   printf("la cague\n");
     printf("--------------------\n");
 
