@@ -234,7 +234,7 @@ void limpiar_perdida(mylist* l){
         l->root = pnode->next;
         l->root->prev = NULL;
         free_mynodelist( &pnode );
-        printf("llamado a: free_mynodelist\n");
+        printf("llamado a: free_mynodelist11\n");
         free(pnode);
   }
   
@@ -249,6 +249,7 @@ void limpiar_perdida(mylist* l){
         mynodelist* borrado = pnode->next;
         (*ppnodeAvance) = borrado->next;
         free_mynodelist( &borrado );
+        printf("llamado a: free_mynodelist22\n");
         free(borrado);
         pnode = pnode->next;
   }  
