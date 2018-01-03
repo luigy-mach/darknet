@@ -133,7 +133,7 @@ int main(){
 
   FILE *fp;
 
-  fp = fopen("test22.txt", "a");
+  fp = fopen( MYFILE , "a");
 
   
   int i;
@@ -152,17 +152,17 @@ int main(){
     fprintf(fp, buff);
 
     for(i=0 ; i<max_boundingbox_per_frame ; i++){
-      //int left  = rand()%100;
-      //int right = rand()%100;
-      //int top   = rand()%100;
-      //int bot   = rand()%100;
+      int left  = rand()%100;
+      int right = rand()%100;
+      int top   = rand()%100;
+      int bot   = rand()%100;
 
       
-      int zzz = rand()%300;
-      int left  = zzz;
-      int top   = zzz;
-      int right = zzz+10;
-      int bot   = zzz+10;
+      //int zzz = rand()%300;
+      //int left  = zzz;
+      //int top   = zzz;
+      //int right = zzz+10;
+      //int bot   = zzz+10;
 
       Rectangle* myrect_temp;
       create_myRectangle(&myrect_temp);
@@ -172,10 +172,16 @@ int main(){
     }
     printf("update_perdida\n");
     update_perdida_v2(ll, j);
+    
+    update_distancia(ll);
+
     printf("limpiar_perdida\n");
     
+
     limpiar_perdida(ll);
     print_list2(ll,fp);
+
+
   }
 
 printf("******************************************\n");

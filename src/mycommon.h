@@ -18,6 +18,7 @@
 #define LIMIT_QUEUE 5
 #define VACIOSTRING ""
 #define LIMIT_PERDIDA 10
+#define MYFILE "test221.txt"
 
 
 

@@ -95,6 +95,33 @@ void dequeue_rectangle(queue* myqueue) {
 
 
 
+double eval_distanceTotal_queue(queue* myqueue){
+  mynode* tempFront = myqueue->front;
+  double distanceTotal = 0.0; 
+
+  if(tempFront == NULL){
+    printf("Queue is Empty\n");
+    return distanceTotal;
+  }
+
+  while(tempFront!=NULL){
+    Rectangle* tempRect1 = tempFront->data_rect;
+    if(tempFront->next==NULL){
+      break;
+    }
+    if(tempFront->next!=NULL){
+      Rectangle* tempRect2 = tempFront->next->data_rect;
+      distanceTotal = distanceTotal + distancia_eu_2rect(tempRect1, tempRect2);
+      tempFront = tempFront->next;
+    }
+  }
+  return distanceTotal;
+}
+
+
+
+
+
 
 //void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp)
 void print_queue_rectagles(queue* myqueue,FILE* fp)
@@ -116,6 +143,7 @@ void print_queue_rectagles(queue* myqueue,FILE* fp)
   }
   return;
 }
+
 
 
 

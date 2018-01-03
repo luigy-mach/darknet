@@ -83,9 +83,6 @@ void my_insert_list_rect(mylist* l, Rectangle* myrect, double threshold_rectangl
 
 
 
-
-
-
 void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshold_rectangle, int number_frame){
   
   if(threshold_rectangle < myoverlap_rectangle(pnode->data_obj->bounding_box, myrect)){
@@ -107,6 +104,7 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
     temp_tracking_obj->flag = 1;
     
     temp->data_obj = temp_tracking_obj;
+    update_pointCenter(temp_tracking_obj, temp_tracking_obj->bounding_box);
 
     Rectangle* myrect_temp = NULL;
     create_myRectangle(&myrect_temp);
@@ -122,10 +120,6 @@ void my_insert_list2_rect2(mynodelist* pnode, Rectangle* myrect, double threshol
 
 
 
-
-
-
-
 void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectangle,int number_frame){
 
   if(l->root == NULL){
@@ -138,6 +132,9 @@ void my_insert_list_rect2(mylist* l, Rectangle* myrect, double threshold_rectang
     temp_tracking_obj->flag = 1;
 
     temp_tracking_obj->bounding_box = myrect;
+    //centerRectangle(temp_tracking_obj->bounding_box);
+
+    update_pointCenter(temp_tracking_obj, temp_tracking_obj->bounding_box);
 
     temp->data_obj = temp_tracking_obj;
 
@@ -197,6 +194,25 @@ void update_perdida_v2(mylist* l, int number_frame){
   }
   return;
 }
+
+
+void update_distancia(mylist* l){
+  if(l->root==NULL){
+    return;
+  }
+
+  mynodelist* temp;
+  temp = l->root;
+  while(temp){
+    double distanceTotal = eval_distanceTotal_queue(temp->data_obj->queue_rectangles);
+    temp->data_obj->distancia = distanceTotal;
+    printf("hola: %lf \n", temp->data_obj->distancia);
+    temp = temp->next;
+  }
+
+  return;
+}
+
 
 
 
@@ -321,59 +337,61 @@ void limpiar_perdida_recursiva(mylist* l){
 
 
 
+
+
 void limpiar_perdida(mylist* l){
     printf("--------------------\n");
-  printf("limpiar_perdida: 00\n");
+  //printf("limpiar_perdida: 00\n");
   if( l->root == NULL ){
-    printf("limpiar_perdida: 11\n");
+    //printf("limpiar_perdida: 11\n");
     return;
   }
-    printf("limpiar_perdida: 22\n");
+    //printf("limpiar_perdida: 22\n");
 
   //printf("*11puntero:%s\n",l->root );
   //printf("*22perdida: %d\n",l->root->data_obj->perdida );
   while( (l->root!=NULL) && (l->root->data_obj->perdida >= LIMIT_PERDIDA)  ){
     if(l->root->next == NULL ){
       mynodelist* pnode = l->root;
-      printf("limpiar_perdida: 1-44\n");
+      //printf("limpiar_perdida: 1-44\n");
       l->root = NULL;
-      printf("limpiar_perdida: 1-55\n");
-      printf("limpiar_perdida: 1-55.1\n");
+      //printf("limpiar_perdida: 1-55\n");
+      //printf("limpiar_perdida: 1-55.1\n");
       free_mynodelist( &pnode );
-      printf("limpiar_perdida: 1-66\n");
-      printf("llamado a: free_mynodelist 1-11\n");
+      //printf("limpiar_perdida: 1-66\n");
+      //printf("llamado a: free_mynodelist 1-11\n");
       free(pnode);
-      printf("limpiar_perdida: 1-77\n");
+      //printf("limpiar_perdida: 1-77\n");
     }else{
-      printf("limpiar_perdida: 2-33\n");
+      //printf("limpiar_perdida: 2-33\n");
         mynodelist* pnode = l->root;
-      printf("limpiar_perdida: 2-44\n");
+      //printf("limpiar_perdida: 2-44\n");
         l->root = pnode->next;
-      printf("limpiar_perdida: 2-55\n");
+      //printf("limpiar_perdida: 2-55\n");
         l->root->prev = NULL;
-      printf("limpiar_perdida: 2-55.1\n");
+      //printf("limpiar_perdida: 2-55.1\n");
         free_mynodelist( &pnode );
-      printf("limpiar_perdida: 2-66\n");
+      //printf("limpiar_perdida: 2-66\n");
         printf("llamado a: free_mynodelist 2-11\n");
-      printf("limpiar_perdida: 2-77\n");
+      //printf("limpiar_perdida: 2-77\n");
         free(pnode);
     }
   }
   
-    printf("limpiar_perdida: 77\n");
+    //printf("limpiar_perdida: 77\n");
   if( l->root == NULL ){
     printf("limpiar_perdida: 77\n");
     return;
   }
 
-    printf("limpiar_perdida: 88\n");
+    //printf("limpiar_perdida: 88\n");
   mynodelist* pnode = l->root;        
   //printf("*55puntero:%s\n",pnode->next );
   //printf("*66perdida: %d\n",pnode->next->data_obj->perdida );
   while( pnode->next!=NULL ){
-    printf("limpiar_perdida: 99\n");
+    //printf("limpiar_perdida: 99\n");
     if( pnode->next->next==NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA){
-    printf("limpiar_perdida: 1010\n");
+    //printf("limpiar_perdida: 1010\n");
       mynodelist* borrado = pnode->next;
       borrado->next = NULL;
       borrado->prev = NULL;
@@ -384,11 +402,11 @@ void limpiar_perdida(mylist* l){
       free(borrado);
       break;
     }
-    printf("limpiar_perdida: 1111\n");
+    //printf("limpiar_perdida: 1111\n");
 
 
     if( pnode->next->next!=NULL && pnode->next->data_obj->perdida >= LIMIT_PERDIDA ){
-    printf("limpiar_perdida: 1212\n");
+    //printf("limpiar_perdida: 1212\n");
       mynodelist* temp1 = pnode->next;
       mynodelist* temp2 = pnode->next->next;
 
@@ -401,14 +419,14 @@ void limpiar_perdida(mylist* l){
       printf("llamado a: free_mynodelist33\n");
       free(temp1);
     }else{
-    printf("limpiar_perdida: 1313\n");
-      printf("llamado a: paso sin ver\n");
+    //printf("limpiar_perdida: 1313\n");
+      //printf("llamado a: paso sin ver\n");
       pnode = pnode->next;
     }
   }  
 
-    printf("limpiar_perdida: 1414\n");
-  printf("la cague\n");
+    //printf("limpiar_perdida: 1414\n");
+  //printf("la cague\n");
     printf("--------------------\n");
 
   return;
@@ -464,7 +482,9 @@ void print_list2(mylist* l, FILE* fp){
     //int flag; //0-1
     //int perdida; //maximo 10
 
-    sprintf(temp,"list-(%d): (%s) (perdida:%d)", i
+    sprintf(temp,"list-(%d): [%d,%d] (%s) (perdida:%d)", i
+                              ,ptemp->data_obj->pointcenterX
+                              ,ptemp->data_obj->pointcenterY
                               ,ptemp->data_obj->name
                               ,ptemp->data_obj->perdida);
     fprintf(fp, temp);

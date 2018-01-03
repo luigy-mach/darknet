@@ -51,5 +51,6 @@ void dequeue_rectangle(queue* myqueue);
 //void print_queue_rectagles(queue* myqueue, char buffer[SIZEOF_BUFF],FILE* fp);
 void print_queue_rectagles(queue* myqueue, FILE* fp);
 
+double eval_distanceTotal_queue(queue* myqueue);
 
 #endif //end QUEUE_H
