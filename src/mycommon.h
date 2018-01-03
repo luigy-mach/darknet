@@ -15,9 +15,9 @@
 
 
 #define SIZEOF_BUFF 4096
-#define LIMIT_QUEUE 5
+#define LIMIT_QUEUE 20
 #define VACIOSTRING ""
-#define LIMIT_PERDIDA 10
+#define LIMIT_PERDIDA 20
 #define MYFILE "test221.txt"
 
 
