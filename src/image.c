@@ -854,10 +854,11 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             //draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
-            double temp = buscar_rectangle(demo_list_tracking_obj, left, right, top, bot);                
+            double temp = buscar_rectangle_returnVeloc(demo_list_tracking_obj, left, right, top, bot);                
+            
             //double temp = 59.29374;                
             char  strcat_labelstr_high[20] = {0};
-            sprintf(strcat_labelstr_high,"%lf ",temp);
+            sprintf(strcat_labelstr_high,", %lf ",temp);
 
             strcat(labelstr_high, strcat_labelstr_high);
 
@@ -912,6 +913,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     if((num_frame%5)==0){
         printf("num_frame<<<<<<<<<\n");
         update_distancia(demo_list_tracking_obj);
+        update_velocidad(demo_list_tracking_obj);
     }
     
 

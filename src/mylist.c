@@ -214,6 +214,24 @@ void update_distancia(mylist* l){
 }
 
 
+void update_velocidad(mylist* l){
+  if(l->root==NULL){
+    return;
+  }
+
+  mynodelist* temp;
+  temp = l->root;
+  if(temp->data_obj->queue_rectangles->limit==0){
+    temp->data_obj->velocidad = 0.0;
+    printf("----------------%lf\n", temp->data_obj->velocidad);
+  }else{
+    temp->data_obj->velocidad = (double)(temp->data_obj->distancia)/(double)(temp->data_obj->queue_rectangles->limit); 
+    printf("----------------%lf\n", temp->data_obj->velocidad);
+  }
+
+  return;
+}
+
 
 
 //backup limpiar_perdida

@@ -173,11 +173,13 @@ int main(){
       my_insert_list_rect2(ll, myrect_temp, demo_mythreshold_overlap, j);
       double temp = buscar_rectangle(ll,left, right, top, bot);
       printf(">>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>%lf\n",temp );
+
     }
     printf("update_perdida\n");
     update_perdida_v2(ll, j);
     
     update_distancia(ll);
+    update_velocidad(ll);
 
     printf("limpiar_perdida\n");
     

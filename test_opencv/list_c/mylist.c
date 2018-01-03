@@ -214,6 +214,24 @@ void update_distancia(mylist* l){
 }
 
 
+void update_velocidad(mylist* l){
+  if(l->root==NULL){
+    return;
+  }
+
+  mynodelist* temp;
+  temp = l->root;
+  if(temp->data_obj->queue_rectangles->limit==0){
+    temp->data_obj->velocidad = 0.0;
+    printf("----------------%lf\n", temp->data_obj->velocidad);
+  }else{
+    temp->data_obj->velocidad = (double)(temp->data_obj->distancia)/(double)(temp->data_obj->queue_rectangles->limit); 
+    printf("----------------%lf\n", temp->data_obj->velocidad);
+  }
+
+  return;
+}
+
 
 
 //backup limpiar_perdida
@@ -515,7 +533,7 @@ void print_list2(mylist* l, FILE* fp){
 
 
 
-double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
+double buscar_rectangle_returnDistance(mylist* l, int left, int right, int top, int bot){
   
   mynodelist* ptemp = l->root;
 
@@ -529,18 +547,47 @@ double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
        temp_boundingbox->bottomright.x == right   &&
        temp_boundingbox->bottomright.y == bot   ){
       distance_result = ptemp->data_obj->distancia;
-      printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
-      printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
+      //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
+      //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
       break;
     }
     ptemp = ptemp->next;
   }
   if(distance_result==0.0){
-    printf("ptm!!!!!!!!!!!!!!!!!!!\n");
+    //printf("ptm!!!!!!!!!!!!!!!!!!!\n");
   }
   
   return distance_result;
 }
+
+
+double buscar_rectangle_returnVeloc(mylist* l, int left, int right, int top, int bot){
+  
+  mynodelist* ptemp = l->root;
+
+  double distance_result = 0.0;
+
+
+  while(ptemp){
+    Rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    if(temp_boundingbox->topleft.x     == left  &&
+       temp_boundingbox->topleft.y     == top   &&
+       temp_boundingbox->bottomright.x == right   &&
+       temp_boundingbox->bottomright.y == bot   ){
+      distance_result = ptemp->data_obj->distancia;
+      //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
+      //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
+      break;
+    }
+    ptemp = ptemp->next;
+  }
+  if(distance_result==0.0){
+    //printf("ptm!!!!!!!!!!!!!!!!!!!\n");
+  }
+  
+  return distance_result;
+}
+
 
 
 /*
