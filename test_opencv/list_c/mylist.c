@@ -529,9 +529,14 @@ double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
        temp_boundingbox->bottomright.x == right   &&
        temp_boundingbox->bottomright.y == bot   ){
       distance_result = ptemp->data_obj->distancia;
+      printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
+      printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
       break;
     }
     ptemp = ptemp->next;
+  }
+  if(distanceTotal==0.0){
+    printf("ptm!!!!!!!!!!!!!!!!!!!\n");
   }
   
   return distance_result;
