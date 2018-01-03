@@ -574,7 +574,7 @@ double buscar_rectangle_returnVeloc(mylist* l, int left, int right, int top, int
        temp_boundingbox->topleft.y     == top   &&
        temp_boundingbox->bottomright.x == right   &&
        temp_boundingbox->bottomright.y == bot   ){
-      velocidad_result = ptemp->data_obj->distancia;
+      velocidad_result = ptemp->data_obj->velocidad;
       //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
       //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
       break;
