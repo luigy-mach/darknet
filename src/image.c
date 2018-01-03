@@ -763,7 +763,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         //classes=cantidada de clases del entrenamiento 
         //en este caso 80
         float thresh_temp = 0.0;
-        char  labelstr_high[30] = {0};
+        char  labelstr_high[50] = {0};
 
         for(j = 0; j < classes; ++j){
             if (probs[i][j] > thresh){
@@ -854,12 +854,23 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             //draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
+            double temp = buscar_rectangle(ll,left,  right, top, bot);
+                
+
             //dibuja todos las etiquetas
             //es totalmente independiente
             if (alphabet) {
-                image label = get_label(alphabet, labelstr, (im.h*.03)/10);
+
+                image label = get_label(alphabet, labelstr_high, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
+
+                //image label = get_label(alphabet, labelstr, (im.h*.03)/10);
+                //draw_label(im, top + width, left, label, rgb);
+                //free_image(label);
+
+
+
                 //##char strtemp[]="xxx, yyy, zzzz";
                 //##image label1 = get_label(alphabet, strtemp, (im.h*.03)/10);
                 //##draw_label(im, top + width, left, label1, rgb);
@@ -882,27 +893,29 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
                 free_image(tmask);
             }
             
-        }
-    }
+        } // end: if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) );
+
+
+
+    }// end:  for(i = 0; i < num; ++i)
+
+
     fprintf(fp, "-----------------------\n");
 
     //update_perdida funciona-ok 
     update_perdida_v2(demo_list_tracking_obj, num_frame);
-    update_distancia(demo_list_tracking_obj);
 
-    //if((num_frame%8)==0){
-    //char buffer2[4096]={0};
-    //print_list2(demo_list_tracking_obj, fp);
-    ////printf("%s\n", buffer2);
-    //fprintf(fp, buffer2);
-    //fprintf(fp, "\n");
-
+    if((num_frame%5)==0){
+        printf("num_frame\n");
+        update_distancia(demo_list_tracking_obj);
+    }
+    
 
     //limpiar_perdida funciona-ok 
     limpiar_perdida(demo_list_tracking_obj);
 
+
     print_list2(demo_list_tracking_obj, fp);
-    //}
 
 
     fprintf(fp, "-----------------------\n");

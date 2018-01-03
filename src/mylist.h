@@ -60,11 +60,12 @@ void update_perdida_v2(mylist* l, int number_frame);
 
 
 
-
 void limpiar_perdida_recursiva_interior(mynodelist** pnode);
 void limpiar_perdida_recursiva(mylist* l);
 
 void limpiar_perdida(mylist* l);
+
+
 
 
 
@@ -73,6 +74,7 @@ void print_list2(mylist* l, FILE* fp);
 
 
 
+double buscar_rectangle(mylist* l, int left, int right, int top, int bot);
 
 
 #endif //end MYLIST_H

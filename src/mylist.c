@@ -515,6 +515,29 @@ void print_list2(mylist* l, FILE* fp){
 
 
 
+double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
+  
+  mynodelist* ptemp = l->root;
+
+  double distance_result = 0.0;
+
+
+  while(ptemp){
+    Rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    if(temp_boundingbox->topleft.x     == left  &&
+       temp_boundingbox->topleft.y     == top   &&
+       temp_boundingbox->bottomright.x == bot   &&
+       temp_boundingbox->bottomright.y == right   ){
+      distance_result = ptemp->data_obj->distancia;
+      break;
+    }
+    ptemp = ptemp->next;
+  }
+  
+  return distance_result;
+}
+
+
 /*
 void limpiar_perdida(mylist* l){
   
