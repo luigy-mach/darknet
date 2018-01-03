@@ -888,7 +888,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
     //update_perdida funciona-ok 
     update_perdida_v2(demo_list_tracking_obj, num_frame);
-    update_distancia(ll);
+    update_distancia(demo_list_tracking_obj);
 
     //if((num_frame%8)==0){
     //char buffer2[4096]={0};
