@@ -565,7 +565,7 @@ double buscar_rectangle_returnVeloc(mylist* l, int left, int right, int top, int
   
   mynodelist* ptemp = l->root;
 
-  double distance_result = 0.0;
+  double velocidad_result = 0.0;
 
 
   while(ptemp){
@@ -574,18 +574,18 @@ double buscar_rectangle_returnVeloc(mylist* l, int left, int right, int top, int
        temp_boundingbox->topleft.y     == top   &&
        temp_boundingbox->bottomright.x == right   &&
        temp_boundingbox->bottomright.y == bot   ){
-      distance_result = ptemp->data_obj->distancia;
+      velocidad_result = ptemp->data_obj->distancia;
       //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee11\n");
       //printf("entreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22\n");
       break;
     }
     ptemp = ptemp->next;
   }
-  if(distance_result==0.0){
+  if(velocidad_result==0.0){
     //printf("ptm!!!!!!!!!!!!!!!!!!!\n");
   }
   
-  return distance_result;
+  return velocidad_result;
 }
 
 
