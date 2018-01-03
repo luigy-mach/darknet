@@ -74,7 +74,10 @@ void print_list2(mylist* l, FILE* fp);
 
 
 
-double buscar_rectangle(mylist* l, int left, int right, int top, int bot);
+
+double buscar_rectangle_returnVeloc(mylist* l, int left, int right, int top, int bot);
+double buscar_rectangle_returnDistance(mylist* l, int left, int right, int top, int bot);
+
 
 
 #endif //end MYLIST_H
