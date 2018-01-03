@@ -535,7 +535,7 @@ double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
     }
     ptemp = ptemp->next;
   }
-  if(distanceTotal==0.0){
+  if(distance_result==0.0){
     printf("ptm!!!!!!!!!!!!!!!!!!!\n");
   }
   
