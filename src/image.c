@@ -854,7 +854,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             //draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
-            double temp = buscar_rectangle(ll,left,  right, top, bot);
+            double temp = buscar_rectangle(demo_list_tracking_obj, left,  right, top, bot);
                 
 
             //dibuja todos las etiquetas
