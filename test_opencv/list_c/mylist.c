@@ -526,8 +526,8 @@ double buscar_rectangle(mylist* l, int left, int right, int top, int bot){
     Rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
     if(temp_boundingbox->topleft.x     == left  &&
        temp_boundingbox->topleft.y     == top   &&
-       temp_boundingbox->bottomright.x == bot   &&
-       temp_boundingbox->bottomright.y == right   ){
+       temp_boundingbox->bottomright.x == right   &&
+       temp_boundingbox->bottomright.y == bot   ){
       distance_result = ptemp->data_obj->distancia;
       break;
     }
