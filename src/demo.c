@@ -88,8 +88,8 @@ void *detect_in_thread(void *ptr)
 
     //resultados mientras ejecuta <<<
     //resultados mientras ejecuta <<<
-    printf("\033[2J");
-    printf("\033[1;1H");
+    //printf("\033[2J");
+    //printf("\033[1;1H");
     printf("\nFPS:%.1f\n",fps);
     printf("Objects:\n\n");
     printf("numero de frame: %d\n\n",demo_num_frame);
