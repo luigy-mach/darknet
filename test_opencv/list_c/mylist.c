@@ -221,14 +221,16 @@ void update_velocidad(mylist* l){
 
   mynodelist* temp;
   temp = l->root;
-  if(temp->data_obj->queue_rectangles->limit==0){
-    temp->data_obj->velocidad = 0.0;
-    printf("------44----------%lf\n", temp->data_obj->velocidad);
-  }else{
-    temp->data_obj->velocidad = (double)(temp->data_obj->distancia)/(double)(temp->data_obj->queue_rectangles->limit); 
-    printf("------55----------%lf\n", temp->data_obj->velocidad);
+  while(temp){
+    if(temp->data_obj->queue_rectangles->limit==0){
+      temp->data_obj->velocidad = 0.0;
+      printf("------44----------%lf\n", temp->data_obj->velocidad);
+    }else{
+      temp->data_obj->velocidad = (double)(temp->data_obj->distancia)/(double)(temp->data_obj->queue_rectangles->limit); 
+      printf("------55----------%lf\n", temp->data_obj->velocidad);
+    }
+    temp = temp->next;
   }
-
   return;
 }
 
