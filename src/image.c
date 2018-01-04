@@ -911,10 +911,10 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
     update_perdida_v2(demo_list_tracking_obj, num_frame);
 
     update_distancia(demo_list_tracking_obj);
-    if((num_frame%5)==0){
-        printf("num_frame<<<<<<<<<\n");
-        update_velocidad(demo_list_tracking_obj);
-    }
+    update_velocidad(demo_list_tracking_obj);
+    //if((num_frame%5)==0){
+    //    printf("num_frame<<<<<<<<<\n");
+    //}
     
 
     //limpiar_perdida funciona-ok 
