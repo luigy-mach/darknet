@@ -16,9 +16,9 @@ void init_myPoint(Point* p){
 
 
 void free_myPoint(Point* pp){
-	printf("llamanado a: free(pp);11\n");
+	//printf("llamanado a: free(pp);11\n");
 	free(pp);
-	printf("llamanado a: free(pp);22\n");
+	//printf("llamanado a: free(pp);22\n");
 	return;
 }
 
