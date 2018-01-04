@@ -47,7 +47,7 @@ static int demo_num_frame = 0;
 //static tracking_obj **demo_tracking_array_obj;
 static mylist* demo_list_tracking_obj = NULL;  
 //static int demo_tracking_tam_array_obj=20;
-static double demo_mythreshold_overlap = 0.01;
+static double demo_mythreshold_overlap = 0.2;
 
 
 static int demo_frame = 3;
