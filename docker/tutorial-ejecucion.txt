@@ -129,6 +129,12 @@ luigymach/yolo-ubuntu-xfce-vnc   2.1.0               0b8381ae1f95        7 weeks
 
 
 
-	
 
 
+
+Ref: 
+
+https://pjreddie.com/darknet/yolo/
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1	
+https://github.com/NVIDIA/nvidia-docker
+https://hub.docker.com/r/luigymach/yolo-ubuntu-xfce-vnc/
