@@ -36,16 +36,17 @@
 #instalar nvidia-docker
 	#para poder usar nvidia-docker se debe tener instalado los driver y cuda (lo he probado con cuda8)
 	##(link de referencia) https://github.com/NVIDIA/nvidia-docker
+	
+	$ sudo docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
+	$ sudo apt-get purge -y nvidia-docker
 
-	sudo docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
-	sudo apt-get purge -y nvidia-docker
+	$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+	$ curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/amd64/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+	$ sudo apt-get update
 
-	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-	curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/amd64/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-	sudo apt-get update
+	$ sudo apt-get install -y nvidia-docker
+	$ sudo pkill -SIGHUP dockerd
 
-	sudo apt-get install -y nvidia-docker2
-	sudo pkill -SIGHUP dockerd
 
 
 #abrir imagen (teniendo el .rar descargado)
@@ -93,7 +94,6 @@ $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
 luigymach/yolo-ubuntu-xfce-vnc   2.1.0               0b8381ae1f95        7 weeks ago         8.67GB
-
 
 
 
