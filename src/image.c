@@ -743,6 +743,8 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
 
 void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame, FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold_overlap)
 {
+
+    double threshold_velocidad = 25.0;
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
     printf("1tamano demo_names: %d \n", sizeof(names)/sizeof(names[0]) );
@@ -852,22 +854,27 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
             //dibuja todos los rectagulos
             //es totalmente independiente
 
-            draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            //draw_box_width(im, left, top, right, bot, width, red, green, blue);
             //draw_box_width(im, 15, 15, 30, 30, width, 55, 33, 44);
 
-            double temp = buscar_rectangle_returnVeloc(demo_list_tracking_obj, left, right, top, bot);                
+            double temp_velocidad = buscar_rectangle_returnVeloc(demo_list_tracking_obj, left, right, top, bot);                
             
-            //double temp = 59.29374;                
+            //double temp_velocidad = 59.29374;                
             char  strcat_labelstr_high[20] = {0};
-            sprintf(strcat_labelstr_high,", %lf ",temp);
+            sprintf(strcat_labelstr_high,", %lf ",temp_velocidad);
 
-            strcat(labelstr_high, strcat_labelstr_high);
+            char temp_violencia[20]="Violencia";
 
+            //strcat(labelstr_high, strcat_labelstr_high); <<<
+            
             //dibuja todos las etiquetas
             //es totalmente independiente
-            if (alphabet) {
+            if (alphabet && threshold_velocidad<temp_velocidad ) {
 
-                image label = get_label(alphabet, labelstr_high, (im.h*.03)/10);
+                draw_box_width(im, left, top, right, bot, width, red, green, blue);
+
+                //image label = get_label(alphabet, labelstr_high, (im.h*.03)/10);
+                image label = get_label(alphabet, temp_violencia, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
 

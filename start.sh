@@ -6,5 +6,5 @@
 
 
 
-./darknet detector demo cfg/coco.data cfg/yolo.cfg ../weights/yolo.weights ../video-in/14.mp4 
+./darknet detector demo cfg/coco.data cfg/yolo.cfg ../weights/yolo.weights ../video-in/9.mp4 
 
