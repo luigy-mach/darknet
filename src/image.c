@@ -1255,10 +1255,9 @@ image get_image_from_stream(CvCapture *cap)
 {
     IplImage* src = cvQueryFrame(cap);
     if (!src) return make_empty_image(0,0,0);
-    //image new = 
-    //resize_image
+    
     image im = ipl_to_image(src);
-    //scale_image(im,0.75);
+    //image im_temp = resize_image(im,200,200);
     
     rgbgr_image(im);
     return im;
