@@ -25,7 +25,7 @@ struct point{
 
 void myPoint_create(point** pp);
 
-void myPoint_init_create(point* p);
+void myPoint_init(point* p);
 
 void myPoint_free(point** pp);
 
@@ -45,7 +45,7 @@ void myRectangle_free(rectangle** rect);
 
 
 
-void myRectangle_init_create(rectangle* rect);
+void myRectangle_init(rectangle* rect);
 void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y);
 
 

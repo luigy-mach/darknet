@@ -6,12 +6,12 @@ void myPoint_create(point** pp){
 	point* temp = (point*)malloc(sizeof(point));
 		   //temp->x = -1;
 		   //temp->y = -1;
-	myPoint_init_create(temp);
+	myPoint_init(temp);
 	(*pp) = temp;
 	return;
 }
 
-void myPoint_init_create(point* p){
+void myPoint_init(point* p){
 	p->x = -1;
 	p->y = -1;
 	return;
@@ -40,20 +40,16 @@ void myPoint_free(point** pp){
 
 void myRectangle_create(rectangle** rect){
 	rectangle* temp = (rectangle*)malloc(sizeof(rectangle));
-	myRectangle_init_create(temp);
+	myPoint_init(temp->topleft);
+	myPoint_init(temp->bottomright);
 	(*rect)=temp;
 	return;
 }
 
 
-void myRectangle_init_create(rectangle* rect){
-
-	myPoint_create(rect->topleft);
-	myPoint_init_create(rect->topleft);
-
-	myPoint_create(rect->bottomright);
-	myPoint_init_create(rect->bottomright);
-
+void myRectangle_init(rectangle* rect){
+	myPoint_init(rect->topleft);
+	myPoint_init(rect->bottomright);
 	return;
 }
 

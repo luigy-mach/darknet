@@ -34,14 +34,13 @@ int main(){
   
   int i;
   int number_frame = 50;
+  mylist* ll;
   double demo_mythreshold_overlap = 0.40;
-  
   //create_structure(&ll);
-  //mylist* ll;
-  //myList_create(&ll);
+  myList_create(&ll);
 
+  GSList * my_gslist;
 
-  GSList * mylist = NULL;
 
   int j;
 
@@ -70,20 +69,19 @@ int main(){
 
       rectangle* myrect_temp;
       myRectangle_create(&myrect_temp);
-      //myRectangle_fill(myrect_temp,left,top,right,bot);
+      myRectangle_fill(myrect_temp,left,top,right,bot);
 
       //int num_frame = 12;
 
-      //myList_insert_1_rect2(ll, myrect_temp, demo_mythreshold_overlap, j);
-
-      if(mylist == NULL)
-        mylist = g_list_prepend (mylist, myrect_temp );
+      myList_insert_1_rect2(ll, myrect_temp, demo_mythreshold_overlap, j);
 
 
-      //double temp = myList_buscar_rectangle_returnVeloc(ll, left, right, top, bot);
-      //printf(">>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>%lf\n",temp );
+      my_gslist = g_slist_append(my_gslist,"hola");
+
+      double temp = myList_buscar_rectangle_returnVeloc(ll, left, right, top, bot);
+      printf(">>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>%lf\n",temp );
     }
-    /*
+
     printf("update_perdida\n");
     myList_update_perdida_v2(ll, j);
     
@@ -94,7 +92,7 @@ int main(){
 
     myList_limpiar_perdida(ll);
     myList_print2(ll,fp);
-    */  
+
 
   }
 

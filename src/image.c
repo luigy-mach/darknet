@@ -15,6 +15,7 @@
 #include "mycommon.h"
 
 
+#include <gmodule.h>
 
 
 int windows = 0;
