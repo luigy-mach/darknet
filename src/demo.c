@@ -140,6 +140,32 @@ void *display_in_thread(void *ptr)
     return 0;
 }
 
+
+void *my_display_in_thread(void *ptr)
+{
+
+    show_image_cv(buff[(buff_index + 1)%3], "Demo", ipl);
+    //save_image_png();
+    int c = cvWaitKey(1);
+    if (c != -1) c = c%256;
+    if (c == 27) {
+        demo_done = 1;
+        return 0;
+    } else if (c == 82) {
+        demo_thresh += .02;
+    } else if (c == 84) {
+        demo_thresh -= .02;
+        if(demo_thresh <= .02) demo_thresh = .02;
+    } else if (c == 83) {
+        demo_hier += .02;
+    } else if (c == 81) {
+        demo_hier -= .02;
+        if(demo_hier <= .0) demo_hier = .0;
+    }
+    return 0;
+}
+
+
 void *display_loop(void *ptr)
 {
     while(1){
@@ -236,7 +262,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
             cvSetWindowProperty("Demo", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
         } else {
             cvMoveWindow("Demo", 0, 0);
-            cvResizeWindow("Demo", 720, 480);
+            cvResizeWindow("Demo", 1352, 1013);
         }
     }
 
