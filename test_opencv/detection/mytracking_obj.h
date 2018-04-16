@@ -66,12 +66,14 @@ void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp);
 
 void myTrackingObj_print2(tracking_obj* obj);
 
+
+
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
+
 
 void myTrackingObj_free(tracking_obj* obj);
 //void myTrackingObj_free(tracking_obj** obj);
-
 
 void mytrackingObj_updatePointCenter(tracking_obj* obj, rectangle* rect1);
 
