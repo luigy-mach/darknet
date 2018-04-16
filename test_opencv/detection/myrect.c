@@ -18,14 +18,23 @@ void myPoint_init_create(point* p){
 }
 
 
-void myPoint_free(point** pp){
+void myPoint_free(point* pp){
 	//printf("llamanado a: free(pp);11\n");
-	free(*pp);
-	(*pp)=NULL;
+	free(pp);
+	pp=NULL;
 	//printf("llamanado a: free(pp);22\n");
 	return;
 }
 
+//
+//void myPoint_free(point** pp){
+//	//printf("llamanado a: free(pp);11\n");
+//	free(*pp);
+//	(*pp)=NULL;
+//	//printf("llamanado a: free(pp);22\n");
+//	return;
+//}
+//
 
 
 /////////////////////////////////////////////////////////
@@ -48,29 +57,29 @@ void myRectangle_create(rectangle** rect){
 
 void myRectangle_init_create(rectangle* rect){
 
-	myPoint_create(rect->topleft);
+	myPoint_create( &(rect->topleft) );
 	myPoint_init_create(rect->topleft);
 
-	myPoint_create(rect->bottomright);
+	myPoint_create( &(rect->bottomright) );
 	myPoint_init_create(rect->bottomright);
 
 	return;
 }
 
 
-void myRectangle_free(rectangle** rect){
-	printf("llamando a: myPoint_free-11\n");
-	myPoint_free( &((*rect)->topleft) ) ;
-	//free( &((*rect)->topleft) );
-	printf("llamando a: myPoint_free-22\n");
-
-	printf("llamando a: myPoint_free-11\n");
-	myPoint_free( &((*rect)->bottomright) ) ;
-	//free( &((*rect)->bottomright) );
-	printf("llamando a: myPoint_free-22\n");
-	(*rect) = NULL;
+void myRectangle_free(rectangle* rect){
+	myPoint_free( rect->topleft);
+	myPoint_free( rect->bottomright);
+	rect = NULL;
 	return;
 }
+
+//void myRectangle_free(rectangle** rect){
+//	myPoint_free( &((*rect)->topleft) ) ;
+//	myPoint_free( &((*rect)->bottomright) ) ;
+//	(*rect) = NULL;
+//	return;
+//}
 
 void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y){
 	myrect->topleft->x = p1x;
@@ -112,7 +121,7 @@ int min(int a, int b)
 //agregar caso donde:
 //		-un area menor esta contenida dentro de otra mayor
 //		-el resultado de esto deberia ser 100% 
-double myRectangle_myoverlap(rectangle* rectA, rectangle* rectB)
+double myRectangle_overlap(rectangle* rectA, rectangle* rectB)
 {
 	double overlapp = 0;
 	int w1 = fabs(rectA->bottomright->x - rectA->topleft->x);

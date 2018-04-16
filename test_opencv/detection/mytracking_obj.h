@@ -5,9 +5,9 @@
 
 
 #include "mytracking_obj.h"
-#include "mylist.h"
+//#include "mylist.h"
 #include "myrect.h"
-#include "myqueue.h"
+//#include "myqueue.h"
 
 
 #include <math.h>
@@ -15,11 +15,12 @@
 
 #include "mycommon.h"
 //#define VACIOSTRING "vacio-string"
+#include <gmodule.h>
 
 
 
 //extern struct mynode;
-typedef struct queue queue;
+typedef struct rectangle rectangle;
 //extern typedef struct mynode mynode;
 //extern typedef struct queue queue;
 
@@ -29,8 +30,8 @@ typedef struct tracking_obj tracking_obj;
 
 struct tracking_obj{
    char *name;
-   int   flag; //0-1
-   int   perdida; //maximo 10
+   int   flagUsed; //0-1
+   int   lostBound; //maximo 10
 
    double velocidad;
    double distancia;
@@ -38,25 +39,61 @@ struct tracking_obj{
    int pointcenterX;
    int pointcenterY;
 
-   rectangle* bounding_box;
-   //agregar cola para la persistencia del recorrido.
-   //Rectangle recorrido_bounding_box[10];
-   queue* queue_rectangles;
+   rectangle* rootRect;
+   GQueue* queue_rectangles;
 };
 
 
-void myTrackingObj_create(tracking_obj** obj);
-void myTrackingObj_free(tracking_obj** obj);
 
-void myTrackingObj_update(tracking_obj* obj, rectangle* rect1);
+void myTrackingObj_create(tracking_obj** obj);
+void myTrackingObj_init_create(tracking_obj* obj);
+
+void myTrackingObj_updateRootRect(tracking_obj* obj, rectangle* rect1);
+
+void myTrackingObj_addQueue(tracking_obj* obj, rectangle* rect1);
+
+
+void myTrackingObj_FlagLost(tracking_obj* obj);
+
+void myTrackingObj_updateAllFlags(GList* mylist);
+
+void myTrackingObj_deleletBoundinBoxLost(GList* mylist);
+
+
+void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp);
+
+void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp);
+
+void myTrackingObj_print2(tracking_obj* obj);
+
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+void myTrackingObj_free(tracking_obj* obj);
+//void myTrackingObj_free(tracking_obj** obj);
+
 
 void mytrackingObj_updatePointCenter(tracking_obj* obj, rectangle* rect1);
 
 double myTrackingObj_distancia_eu_2rect(rectangle* rect1, rectangle* rect2);
 
 
+
+
+
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
+
+
+gint myfoo_GCompareFunc(void* a, void* b);
+
+
+
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+
+
 
 
 

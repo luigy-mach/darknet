@@ -69,8 +69,8 @@ void myList_free(mylist** l){
 
 void myList_insert_2_rect2(mynodelist* pnode, rectangle* myrect, double threshold_rectangle, int number_frame){
   
-  if(threshold_rectangle < myRectangle_myoverlap(pnode->data_obj->bounding_box, myrect)){
-    myRectangle_copy(pnode->data_obj->bounding_box, myrect);
+  if(threshold_rectangle < myRectangle_myoverlap(pnode->data_obj->rootRect, myrect)){
+    myRectangle_copy(pnode->data_obj->rootRect, myrect);
     myQueue_enqueue( pnode->data_obj->queue_rectangles, myrect);
     //pnode->data_obj->flag = number_frame % 2;
     pnode->data_obj->flag = 1;
@@ -83,12 +83,12 @@ void myList_insert_2_rect2(mynodelist* pnode, rectangle* myrect, double threshol
 
     tracking_obj* temp_tracking_obj;
     myTrackingObj_create(&temp_tracking_obj);
-    temp_tracking_obj->bounding_box = myrect;
+    temp_tracking_obj->rootRect = myrect;
     //temp_tracking_obj->flag = number_frame % 2;
     temp_tracking_obj->flag = 1;
     
     temp->data_obj = temp_tracking_obj;
-    mytrackingObj_updatePointCenter(temp_tracking_obj, temp_tracking_obj->bounding_box);
+    mytrackingObj_updatePointCenter(temp_tracking_obj, temp_tracking_obj->rootRect);
 
     rectangle* myrect_temp = NULL;
     myRectangle_create(&myrect_temp);
@@ -114,8 +114,8 @@ void myList_insert_1_rect2(mylist* l, rectangle* myrect, double threshold_rectan
                   myTrackingObj_create(&temp_tracking_obj);
                 //temp_tracking_obj->flag = number_frame % 2;
                   temp_tracking_obj->flag = 1;
-                  temp_tracking_obj->bounding_box = myrect;
-                  mytrackingObj_updatePointCenter(temp_tracking_obj, temp_tracking_obj->bounding_box);
+                  temp_tracking_obj->rootRect = myrect;
+                  mytrackingObj_updatePointCenter(temp_tracking_obj, temp_tracking_obj->rootRect);
 
     temp->data_obj = temp_tracking_obj;
 
@@ -441,7 +441,7 @@ void myList_print(mylist* l, FILE* fp){
   int i=0;
 
   while(ptemp){
-    rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    rectangle* temp_boundingbox = ptemp->data_obj->rootRect;
 
     char temp[100]  = {0};
     //sprintf(temp, ", val%d", k);
@@ -473,7 +473,7 @@ void myList_print2(mylist* l, FILE* fp){
   int i=0;
 
   while(ptemp){
-    rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    rectangle* temp_boundingbox = ptemp->data_obj->rootRect;
 
     char temp[100]  = {0};
     
@@ -521,7 +521,7 @@ double myList_buscar_rectangle_returnDistance(mylist* l, int left, int right, in
 
 
   while(ptemp){
-    rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    rectangle* temp_boundingbox = ptemp->data_obj->rootRect;
     if(temp_boundingbox->topleft->x     == left  &&
        temp_boundingbox->topleft->y     == top   &&
        temp_boundingbox->bottomright->x == right   &&
@@ -549,7 +549,7 @@ double myList_buscar_rectangle_returnVeloc(mylist* l, int left, int right, int t
 
 
   while(ptemp){
-    rectangle* temp_boundingbox = ptemp->data_obj->bounding_box;
+    rectangle* temp_boundingbox = ptemp->data_obj->rootRect;
     if(temp_boundingbox->topleft->x     == left  &&
        temp_boundingbox->topleft->y     == top   &&
        temp_boundingbox->bottomright->x == right   &&
