@@ -123,11 +123,22 @@ int min(int a, int b)
 //		-el resultado de esto deberia ser 100% 
 double myRectangle_overlap(rectangle* rectA, rectangle* rectB)
 {
+	printf("              		antes myRectangle_overlap  -> \n");
 	double overlapp = 0;
+	printf("              		debug myRectangle_overlap  -> 11 \n");
+	printf("              		debug myRectangle_overlap  -> 111 \n");
+	printf("              		debug myRectangle_overlap  -> %d \n",rectA->bottomright->x);
+	printf("              		debug myRectangle_overlap  -> 112\n");
+	printf("              		debug myRectangle_overlap  -> %d \n",rectA->topleft->x);
 	int w1 = fabs(rectA->bottomright->x - rectA->topleft->x);
+	printf("              		debug myRectangle_overlap  -> %d \n",w1);
 	int h1 = fabs(rectA->bottomright->y - rectA->topleft->y);
+	printf("              		debug myRectangle_overlap  -> %d \n",h1);
 	int w2 = fabs(rectB->bottomright->x - rectB->topleft->x);
+	printf("              		debug myRectangle_overlap  -> %d \n",w2);
 	int h2 = fabs(rectB->bottomright->y - rectB->topleft->y);
+	printf("              		debug myRectangle_overlap  -> %d \n",h2);
+	printf("              		debug myRectangle_overlap  -> 12 \n");
 
 	double SA = w1*h1;
 	double SB = w2*h2;
@@ -145,6 +156,7 @@ double myRectangle_overlap(rectangle* rectA, rectangle* rectB)
 	//printf("overlap es11: %lf \n",overlapp);
 	//double zzzz = 465;
 	//printf("overlap es22 zzzz: %lf \n",zzzz);
+	printf("              		despues myRectangle_overlap  ->  \n");
 	return overlapp; 
 }
 

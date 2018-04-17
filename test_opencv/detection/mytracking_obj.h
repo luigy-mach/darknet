@@ -66,18 +66,18 @@ void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp);
 
 void myTrackingObj_print2(tracking_obj* obj);
 
-
+void myTrackingObj_updateFlagUsed(tracking_obj* obj);
 
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
-
 
 void myTrackingObj_free(tracking_obj* obj);
 //void myTrackingObj_free(tracking_obj** obj);
 
-void mytrackingObj_updatePointCenter(tracking_obj* obj, rectangle* rect1);
 
-double myTrackingObj_distancia_eu_2rect(rectangle* rect1, rectangle* rect2);
+//void mytrackingObj_updatePointCenter(tracking_obj* obj, rectangle* rect1);
+//
+//double myTrackingObj_distancia_eu_2rect(rectangle* rect1, rectangle* rect2);
 
 
 
@@ -87,7 +87,7 @@ double myTrackingObj_distancia_eu_2rect(rectangle* rect1, rectangle* rect2);
 ///////////////////////////////////////////////////////
 
 
-gint myfoo_GCompareFunc(void* a, void* b);
+int myfoo_GCompareFunc(void* a, void* b);
 
 
 
