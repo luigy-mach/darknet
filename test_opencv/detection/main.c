@@ -38,7 +38,7 @@ int main(){
   //int number_frame = 2;
   //int max_boundingbox_per_frame = 2;
 
-  int number_frame = 4;
+  int number_frame = 5;
   int max_boundingbox_per_frame = 4;
 
   
@@ -161,12 +161,13 @@ int main(){
 
   GList* pfirst = NULL;
   pfirst = g_list_first (mylist);
-  int tam = g_list_length (mylist);
+  int tam1 = g_list_length (mylist);
 
   printf("imprimiendo lista1\n");
-  int g;
-  for (g=0 ; g < tam ; g++){
+  int g1;
+  for (g1=0 ; g1 < tam1 ; g1++){
     //printf("%s,%s,%s,%s \n",pfirst->data->topleft->x,pfirst->data->topleft->y);      
+    printf("<  %i  > \n",((tracking_obj*)(pfirst->data))->lostBound);
     printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
                               ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
                               ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->x
@@ -177,9 +178,11 @@ int main(){
 
   printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 33\n");
   printf("&&&&&&&&&&&&&&&&&&&&XXX!!!&&&&&&&&&&&&&&&&&&& 44\n");
+  
+  myTrackingObj_updateAllFlags(mylist);
 
-  
-  
+  myTrackingObj_deleletALLBoundinBoxLost(mylist);
+
   printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 33\n");
   printf("&&&&&&&&&&&&&&&&&&&&XXX!!!&&&&&&&&&&&&&&&&&&& 44\n");
   
@@ -190,7 +193,8 @@ int main(){
   printf("imprimiendo lista2\n");
   int g;
   for (g=0 ; g < tam ; g++){
-    //printf("%s,%s,%s,%s \n",pfirst2->data->topleft->x,pfirst->data->topleft->y);      
+    //printf("%s,%s,%s,%s \n",pfirst2->data->topleft->x,pfirst2->data->topleft->y);      
+    printf("<  %i  > \n",((tracking_obj*)(pfirst2->data))->lostBound);
     printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(pfirst2->data))->rootRect->topleft->x
                               ,((tracking_obj*)(pfirst2->data))->rootRect->topleft->y
                               ,((tracking_obj*)(pfirst2->data))->rootRect->bottomright->x

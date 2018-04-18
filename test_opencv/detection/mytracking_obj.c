@@ -186,9 +186,9 @@ void myTrackingObj_deleletALLBoundinBoxLost(GList* mylist){
     printf("Error: lista vacia \n");
     return;
   }
+
   int tam = g_list_length(mylist);
-  //int i;
-  
+    
   GList* pfirst = NULL;
   pfirst = g_list_first(mylist);
   
@@ -196,25 +196,42 @@ void myTrackingObj_deleletALLBoundinBoxLost(GList* mylist){
   for(pfirst=mylist ; pfirst ; pfirst=pfirst->next)
   {
     printf("deleletBoundinBoxLost 11\n");
-    if( ((tracking_obj*)(pfirst->data))->lostBound > LIMIT_PERDIDA )
+    if( ((tracking_obj*)(pfirst->data))->lostBound >= LIMIT_PERDIDA )
     {
-    printf("    WHILE - LIMITE SUPERADO 11 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
-      mylist = g_list_remove_link(mylist, pfirst);
-      myTrackingObj_free( (tracking_obj*)(pfirst->data) );
-      g_list_free_1(pfirst);
-    printf("    WHILE - LIMITE SUPERADO 12 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+      printf("    WHILE - LIMITE SUPERADO 11 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+      if( pfirst->prev==NULL )
+      {
+        GList* temp       =  pfirst;
+               temp->next =  NULL;
+               temp->prev =  NULL;
+        pfirst = pfirst->next;
+        printf("    debug  pfirst = pfirst->next;\n");
+        pfirst->prev=NULL;
+        printf("    debug  pfirst->prev = NULL;\n");
+        myTrackingObj_free( (tracking_obj*)(temp->data) );
+        printf("    debug  myTrackingObj_free( (tracking_obj*)(pfirst->data) );\n");
+        g_list_free_1(pfirst);
+        printf("    debug  g_list_free_1(pfirst);\n");
+      }else{
+        printf("      %i >= %i \n",((tracking_obj*)(pfirst->data))->lostBound , LIMIT_PERDIDA );
+          pfirst = g_list_remove_link(mylist, pfirst);
+        printf("    debug  mylist = g_list_remove_link(mylist, pfirst);\n");
+          myTrackingObj_free( (tracking_obj*)(pfirst->data) );
+        printf("    debug  myTrackingObj_free( (tracking_obj*)(pfirst->data) );\n");
+          g_list_free_1(pfirst);
+        //printf("    debug  g_list_free_1(pfirst);\n");
+          //pfirst=mylist;
+
+      }
+      printf("    WHILE - LIMITE SUPERADO 12 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
     }else{
     printf("    WHILE - NO SUPERADO 11 >>>>>>>>\n");
-      //pfirst = (GList*)(pfirst->next);
+    printf("      %i >= %i \n",((tracking_obj*)(pfirst->data))->lostBound , LIMIT_PERDIDA );
     printf("    WHILE - NO SUPERADO 12 >>>>>>>>\n");
     }
     printf("deleletBoundinBoxLost 12\n");
   }
-
-  /////GList* mylist_temp = NULL;
-  /////g_list_foreach(mylist,foo_GFunc_func,mylist_temp);
-
-  //eliminar mylist_temp 
+  mylist = g_list_first(mylist);
   return;
 }
 

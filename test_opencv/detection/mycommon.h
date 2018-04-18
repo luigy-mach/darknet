@@ -25,7 +25,7 @@
 #define SIZEOF_BUFF 4096
 #define LIMIT_QUEUE 3
 #define VACIOSTRING "qwerty"
-#define LIMIT_PERDIDA 10	
+#define LIMIT_PERDIDA 4	
 #define MYFILE "test221.txt"
 
 
