@@ -95,6 +95,7 @@ int main(){
         myTrackingObj_addQueue( mytrack_temp,myrect_temp);
         printf(" debug  <<<<<<<<<<<<<<- 12 \n");
         mylist = g_list_append(mylist, mytrack_temp);
+        mylist = g_list_first(mylist);//reseteando pos
         printf("      despues vacio g_list_find_custom -> add mylist \n");
         printf("      despues vacio g_list_find_custom -> %s \n",mylist);
 
@@ -106,6 +107,7 @@ int main(){
         printf("      antes   no-vacio g_list_find_custom   pointcenterX-> %d \n",((tracking_obj*)(mylist->data))->pointcenterX);
         printf("      antes   no-vacio g_list_find_custom   pointcenterY-> %d \n",((tracking_obj*)(mylist->data))->pointcenterY);
         printf("      antes   no-vacio g_list_find_custom myrect  -> %s \n",myrect_temp);
+        mylist = g_list_first(mylist);//reseteando pos
         pGlist = g_list_find_custom(mylist, myrect_temp, &myfoo_GCompareFunc);
         printf("      despues no-vacio g_list_find_custom myrect  -> %s \n",myrect_temp);
         printf("      despues no-vacio g_list_find_custom -> %s \n",mylist);
@@ -126,6 +128,7 @@ int main(){
             myTrackingObj_addQueue( mytrack_temp,myrect_temp);
         printf(" debug  <<<<<<<<<<<<<<- 12 \n");
             mylist = g_list_append(mylist, mytrack_temp);
+            mylist = g_list_first(mylist);//reseteando pos
         printf(" debug  <<<<<<<<<<<<<<- 13\n");
         printf(" myTrackingObj_addQueue 14\n");
           }
@@ -187,8 +190,8 @@ int main(){
   printf("&&&&&&&&&&&&&&&&&&&&XXX!!!&&&&&&&&&&&&&&&&&&& 44\n");
   
   GList* pfirst2 = NULL;
-  pfirst2 = g_list_first (mylist);
-  int tam = g_list_length (mylist);
+  pfirst2 = g_list_first(mylist);
+  int tam = g_list_length(mylist);
 
   printf("imprimiendo lista2\n");
   int g;

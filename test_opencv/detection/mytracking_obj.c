@@ -187,10 +187,11 @@ void myTrackingObj_deleletALLBoundinBoxLost(GList* mylist){
     return;
   }
 
-  int tam = g_list_length(mylist);
+  //int tam = g_list_length(mylist);
     
   GList* pfirst = NULL;
-  pfirst = g_list_first(mylist);
+  mylist = g_list_first(mylist);
+  pfirst = mylist;
   
   //while(pfirst)
   for(pfirst=mylist ; pfirst ; pfirst=pfirst->next)
