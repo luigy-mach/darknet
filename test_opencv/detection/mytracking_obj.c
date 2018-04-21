@@ -38,13 +38,14 @@ void myTrackingObj_free(tracking_obj* obj){
   //obj->queue_rectangles = NULL;
 
   //free( obj->name );
-  myRectangle_free(obj->rootRect);
-  printf("      yyyyyyyyyyyyyyyyyy 11\n");
-  g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
-  g_queue_free(obj->queue_rectangles);
-  printf("      yyyyyyyyyyyyyyyyyy 12\n");
-  free( obj );
-  obj = NULL;
+  ///////////////myRectangle_free(obj->rootRect);
+  ///////////////printf("      yyyyyyyyyyyyyyyyyy 11\n");
+  ///////////////g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
+  ///////////////g_queue_free(obj->queue_rectangles);
+  ///////////////printf("      yyyyyyyyyyyyyyyyyy 12\n");
+  /////////////////free( obj );
+  ///////////////obj = NULL;
+
   return;
 }
 
@@ -136,6 +137,8 @@ printf("myTrackingObj_updateAllFlags 11\n" );
     pfirst = pfirst->next;      
   }  
 printf("myTrackingObj_updateAllFlags 12\n" );
+  
+  mylist = g_list_first (mylist);
   return;
 }
 
@@ -145,17 +148,20 @@ void myTrackingObj_deleletBoundinBoxLost(GList* mylist){
     printf("Error: lista vacia \n");
     return;
   }
-  int tam = g_list_length(mylist);
+  mylist = g_list_first(mylist);
+  
   //int i;
   
   GList* pfirst = NULL;
-  pfirst = g_list_first(mylist);
+  pfirst = mylist;
+  int tam = g_list_length(pfirst);
+  pfirst = mylist;
   
   //while(pfirst)
   for(pfirst=mylist ; pfirst ; pfirst=pfirst->next)
   {
     printf("deleletBoundinBoxLost 11\n");
-    if( ((tracking_obj*)(pfirst->data))->lostBound > LIMIT_PERDIDA )
+    if( ((tracking_obj*)(pfirst->data))->lostBound >= LIMIT_PERDIDA )
     {
     printf("    WHILE - LIMITE SUPERADO 11 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
       mylist = g_list_remove_link(mylist, pfirst);
@@ -181,58 +187,90 @@ void myTrackingObj_deleletBoundinBoxLost(GList* mylist){
 
 
 
-void myTrackingObj_deleletALLBoundinBoxLost(GList* mylist){
-  if(mylist==NULL){
+void myTrackingObj_deleletALLBoundinBoxLost(GList** mylist1){
+
+  if((*mylist1)==NULL){
     printf("Error: lista vacia \n");
     return;
   }
 
   //int tam = g_list_length(mylist);
-    
+
+  GList* mylist = NULL;
+  mylist = (*mylist1);
+
   GList* pfirst = NULL;
   mylist = g_list_first(mylist);
   pfirst = mylist;
   
-  //while(pfirst)
-  for(pfirst=mylist ; pfirst ; pfirst=pfirst->next)
+  //for(pfirst=mylist ; pfirst ; pfirst=pfirst->next)
+  while(pfirst)
   {
+    printf("    deleletBoundinBoxLost data\n");
+    printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
+                              ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
+                              ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->x
+                              ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->y ); 
+    printf("    deleletBoundinBoxLost data\n");
     printf("deleletBoundinBoxLost 11\n");
     if( ((tracking_obj*)(pfirst->data))->lostBound >= LIMIT_PERDIDA )
     {
-      printf("    WHILE - LIMITE SUPERADO 11 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
-      if( pfirst->prev==NULL )
-      {
-        GList* temp       =  pfirst;
-               temp->next =  NULL;
-               temp->prev =  NULL;
-        pfirst = pfirst->next;
+      
+      printf("\n    WHILE - LIMITE SUPERADO 11 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+      ////////////if( pfirst->prev==NULL )
+      ////////////{
+      ////////////  printf("      soy el primero\n");
+        /*
+        /////GList* temp=pfirst;
+        /////pfirst=pfirst->next;
+        /////       temp->next =  NULL;
+        /////       temp->prev =  NULL;
         printf("    debug  pfirst = pfirst->next;\n");
-        pfirst->prev=NULL;
+        /////pfirst->prev=NULL;
+        /////mylist=pfirst;
+
+        mylist = g_list_remove_link(mylist, pfirst);
+        myTrackingObj_free (pfirst->data);
+
         printf("    debug  pfirst->prev = NULL;\n");
-        myTrackingObj_free( (tracking_obj*)(temp->data) );
+        myTrackingObj_free( (tracking_obj*)(pfirst->data));
         printf("    debug  myTrackingObj_free( (tracking_obj*)(pfirst->data) );\n");
-        g_list_free_1(pfirst);
+        g_list_free(pfirst);
         printf("    debug  g_list_free_1(pfirst);\n");
-      }else{
+        */
+      //}else{
+
         printf("      %i >= %i \n",((tracking_obj*)(pfirst->data))->lostBound , LIMIT_PERDIDA );
-          pfirst = g_list_remove_link(mylist, pfirst);
+          mylist = g_list_remove_link(mylist, pfirst);
         printf("    debug  mylist = g_list_remove_link(mylist, pfirst);\n");
-          myTrackingObj_free( (tracking_obj*)(pfirst->data) );
+          //myTrackingObj_free( (tracking_obj*)(pfirst->data));
         printf("    debug  myTrackingObj_free( (tracking_obj*)(pfirst->data) );\n");
           g_list_free_1(pfirst);
         //printf("    debug  g_list_free_1(pfirst);\n");
-          //pfirst=mylist;
+          mylist = g_list_first(mylist);
+          pfirst=mylist;
 
-      }
-      printf("    WHILE - LIMITE SUPERADO 12 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+        printf("    debug  todo de nuevo\n");
+
+      //}
+      printf("    WHILE - LIMITE SUPERADO 12 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n\n");
     }else{
-    printf("    WHILE - NO SUPERADO 11 >>>>>>>>\n");
-    printf("      %i >= %i \n",((tracking_obj*)(pfirst->data))->lostBound , LIMIT_PERDIDA );
-    printf("    WHILE - NO SUPERADO 12 >>>>>>>>\n");
+      printf("\n    WHILE - NO SUPERADO 11 >>>>>>>>\n");
+      printf("      %i >= %i \n",((tracking_obj*)(pfirst->data))->lostBound , LIMIT_PERDIDA );
+      printf("      WHILE - NO SUPERADO 12 >>>>>>>>\n\n");
+      pfirst = pfirst->next;
     }
     printf("deleletBoundinBoxLost 12\n");
   }
   mylist = g_list_first(mylist);
+
+    printf("    >>>>deleletBoundinBoxLost data mylist\n");
+    printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(mylist->data))->rootRect->topleft->x
+                              ,((tracking_obj*)(mylist->data))->rootRect->topleft->y
+                              ,((tracking_obj*)(mylist->data))->rootRect->bottomright->x
+                              ,((tracking_obj*)(mylist->data))->rootRect->bottomright->y ); 
+    printf("    >>>>deleletBoundinBoxLost data mylist\n");
+  (*mylist1)=mylist;
   return;
 }
 
@@ -266,12 +304,14 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
   int i;
   
   GList* pfirst = NULL;
-  pfirst = g_list_first(mylist);
+  mylist = g_list_first(mylist);
+  pfirst = mylist;
   int tam = g_list_length(mylist);
+  pfirst = mylist;
 
   //for(i=0 ; i<tam ; i++){
-  printf("&&&&&&&&&&&&&&&&&&& inicio while printListObjInFile \n");
-  printf("&&&&&&&&&&&&&&&&&&& tam %d printListObjInFile \n", tam );
+  printf("  &&&&&&&&&&&&&&&&&&& inicio while printListObjInFile \n");
+  printf("  &&&&&&&&&&&&&&&&&&& tam %d printListObjInFile \n", tam );
   while(pfirst){
     char temp[100]  = {0};
     printf("    tam > %d printListObjInFile \n", tam );
@@ -284,33 +324,33 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
     myTrackingObj_printTrackingObjInFile((tracking_obj*)(pfirst->data),fp);       
     pfirst = pfirst->next;    
   }
-  printf("&&&&&&&&&&&&&&&&&&& fin while printListObjInFile \n");
+  printf("  &&&&&&&&&&&&&&&&&&& fin while printListObjInFile \n");
   //return;
 }
 
 
 void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp){
 
-  printf("inicio myTrackingObj_printTrackingObjInFile\n");
+  printf("      inicio myTrackingObj_printTrackingObjInFile\n");
   int tam_queue = g_queue_get_length(obj->queue_rectangles);
   int i;
 
-  printf("inicio for\n");
-  printf("//&&SS>>%d\n",tam_queue );
-  printf("&&&&&&&&&&&&&&&&&&& tam %d printListObjInFile \n", tam_queue );
+  printf("   inicio for\n");
+  printf("      //&&SS>>%d\n",tam_queue );
+  printf("      &&&&&&&&&&&&&&&&&&& tam %d printListObjInFile \n", tam_queue );
 
   for(i=0 ; i<tam_queue ; i++){
     char temp[100]  = {0};
-    printf("printTrackingObjInFile for inicio %d>>>\n",i );
+    printf("     printTrackingObjInFile for inicio %d>>>\n",i );
     rectangle* myrect = g_queue_peek_nth (obj->queue_rectangles, i );
     sprintf(temp,"      (%i,%i,%i,%i) \n" ,myrect->topleft->x
                                           ,myrect->topleft->y
                                           ,myrect->bottomright->x
                                           ,myrect->bottomright->y );      
     fprintf(fp, temp);
-    printf("printTrackingObjInFile for fin %d>>>\n",i );
+    printf("     printTrackingObjInFile for fin %d>>>\n",i );
   }
-  printf("fin for\n");
+  printf("      fin for\n");
 
   return;
 }
@@ -424,3 +464,4 @@ int myfoo_GCompareFunc(void* a, void* b){
   //return  thresholdZZ <= doubleOverlap ? 0:-1;
 }
 
+///gcc *.c `pkg-config --cflags glib-2.0 pkg-config --libs glib-2.0` -lm

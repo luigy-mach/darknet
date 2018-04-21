@@ -38,8 +38,8 @@ int main(){
   //int number_frame = 2;
   //int max_boundingbox_per_frame = 2;
 
-  int number_frame = 5;
-  int max_boundingbox_per_frame = 4;
+  int number_frame = 100;
+  int max_boundingbox_per_frame = 100;
 
   
   double demo_mythreshold_overlap = 0.40;
@@ -87,15 +87,15 @@ int main(){
     printf("  55555555555555555 debug 11\n");
       if( mylist==NULL){
         printf("      antes   vacio g_list_find_custom   -> %s \n",mylist);
-        tracking_obj* mytrack_temp = NULL;
-        myTrackingObj_create( &mytrack_temp );
+          tracking_obj* mytrack_temp = NULL;
+          myTrackingObj_create(&mytrack_temp);
         printf(" debug  <<<<<<<<<<<<<<- 10 \n");
-        myTrackingObj_init_create( mytrack_temp);
+          myTrackingObj_init_create(mytrack_temp);
         printf(" debug  <<<<<<<<<<<<<<- 11 \n");
-        myTrackingObj_addQueue( mytrack_temp,myrect_temp);
+          myTrackingObj_addQueue(mytrack_temp,myrect_temp);
         printf(" debug  <<<<<<<<<<<<<<- 12 \n");
-        mylist = g_list_append(mylist, mytrack_temp);
-        mylist = g_list_first(mylist);//reseteando pos
+          //mylist = g_list_first(mylist);//ya es primero
+          mylist = g_list_append(mylist,mytrack_temp);
         printf("      despues vacio g_list_find_custom -> add mylist \n");
         printf("      despues vacio g_list_find_custom -> %s \n",mylist);
 
@@ -109,43 +109,45 @@ int main(){
         printf("      antes   no-vacio g_list_find_custom myrect  -> %s \n",myrect_temp);
         mylist = g_list_first(mylist);//reseteando pos
         pGlist = g_list_find_custom(mylist, myrect_temp, &myfoo_GCompareFunc);
+        mylist = g_list_first(mylist);//reseteando pos
         printf("      despues no-vacio g_list_find_custom myrect  -> %s \n",myrect_temp);
         printf("      despues no-vacio g_list_find_custom -> %s \n",mylist);
 
         printf("  55555555555555555 debug 12\n");
           if( pGlist != NULL ){
-        printf(" myTrackingObj_addQueue 10\n");
+        printf(" myTrackingObj_addQueue1 10\n");
             myTrackingObj_addQueue( (tracking_obj*)(pGlist->data),
                                     myrect_temp );
-        printf(" myTrackingObj_addQueue 11\n");
+        printf(" myTrackingObj_addQueue1 11\n");
           }else{
-        printf(" myTrackingObj_addQueue 13\n");
+        printf(" myTrackingObj_addQueue1 13\n");
             tracking_obj* mytrack_temp = NULL;
-            myTrackingObj_create( &mytrack_temp );
+            myTrackingObj_create(&mytrack_temp);
         printf(" debug  <<<<<<<<<<<<<<- 10 \n");
-            myTrackingObj_init_create( mytrack_temp);
+            myTrackingObj_init_create(mytrack_temp);
         printf(" debug  <<<<<<<<<<<<<<- 11 \n");
-            myTrackingObj_addQueue( mytrack_temp,myrect_temp);
+            myTrackingObj_addQueue(mytrack_temp,myrect_temp);
         printf(" debug  <<<<<<<<<<<<<<- 12 \n");
+            mylist = g_list_first(mylist);//reseteando pos
             mylist = g_list_append(mylist, mytrack_temp);
             mylist = g_list_first(mylist);//reseteando pos
         printf(" debug  <<<<<<<<<<<<<<- 13\n");
-        printf(" myTrackingObj_addQueue 14\n");
+        printf(" myTrackingObj_addQueue1 14\n");
           }
       }
       //double temp = myList_buscar_rectangle_returnVeloc(ll, left, right, top, bot);
     printf("88888888888888888888888888888888888888888888888 for secundario fin %d \n",i);
     }
     
-  printf("777777777777777777777777777777777 my-fun 11 \n");
+  printf(" main myTrackingObj_updateAllFlags 11 \n");
     myTrackingObj_updateAllFlags(mylist);
-  printf("777777777777777777777777777777777 my-fun 12 \n");
-    myTrackingObj_deleletBoundinBoxLost(mylist);
-  printf("777777777777777777777777777777777 my-fun 13 \n");
+  printf(" main myTrackingObj_deleletBoundinBoxLost 12 \n");
+    //myTrackingObj_deleletBoundinBoxLost(mylist);
+  printf(" main myTrackingObj_printListObjInFile my-fun 13 \n");
     //printf("··························································11\n");
-    myTrackingObj_printListObjInFile(mylist,fp);    
+    //myTrackingObj_printListObjInFile(mylist,fp);    
     //printf("··························································12\n");
-  printf("777777777777777777777777777777777 my-fun 14 \n");
+  printf(" main FIN my-fun 14 \n");
 
     //myList_update_distancia(ll);
     //myList_update_velocidad(ll);
@@ -163,8 +165,15 @@ int main(){
 
 
   GList* pfirst = NULL;
-  pfirst = g_list_first (mylist);
-  int tam1 = g_list_length (mylist);
+  printf("main error 11\n");
+  mylist = g_list_first(mylist);
+  printf("main error 12\n");
+  pfirst = mylist;
+  printf("main error 13\n");
+  int tam1 = g_list_length (pfirst);
+  printf("main error 14\n");
+  pfirst = mylist;
+  printf("main error 15\n");
 
   printf("imprimiendo lista1\n");
   int g1;
@@ -181,18 +190,38 @@ int main(){
 
   printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 33\n");
   printf("&&&&&&&&&&&&&&&&&&&&XXX!!!&&&&&&&&&&&&&&&&&&& 44\n");
-  
-  myTrackingObj_updateAllFlags(mylist);
+  /*
+  //myTrackingObj_updateAllFlags(mylist);
+  //myTrackingObj_updateAllFlags(mylist);
+  ////myTrackingObj_updateAllFlags(mylist);
+  ////myTrackingObj_updateAllFlags(mylist);
 
-  myTrackingObj_deleletALLBoundinBoxLost(mylist);
+  //myTrackingObj_deleletALLBoundinBoxLost(&mylist);
 
   printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 33\n");
   printf("&&&&&&&&&&&&&&&&&&&&XXX!!!&&&&&&&&&&&&&&&&&&& 44\n");
   
+   printf("    >>>>main data mylist1\n");
+    printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(mylist->data))->rootRect->topleft->x
+                              ,((tracking_obj*)(mylist->data))->rootRect->topleft->y
+                              ,((tracking_obj*)(mylist->data))->rootRect->bottomright->x
+                              ,((tracking_obj*)(mylist->data))->rootRect->bottomright->y ); 
+    printf("    >>>>main data mylist2\n");
   GList* pfirst2 = NULL;
-  pfirst2 = g_list_first(mylist);
-  int tam = g_list_length(mylist);
+  mylist = g_list_first(mylist);
+  pfirst2 = mylist;  
+  int tam = g_list_length(pfirst2);
+  pfirst2 = mylist;
 
+
+
+
+
+
+  if(pfirst2==NULL)
+  {
+    printf("    lista vacia>>>>>>\n");
+  }
   printf("imprimiendo lista2\n");
   int g;
   for (g=0 ; g < tam ; g++){
@@ -206,7 +235,7 @@ int main(){
     pfirst2 = pfirst2->next;      
   }
 
-
+  */
   
   printf("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
   printf("&&&&&&&&&&&&&&&&&&&xxx12&&&&&&&&&&&&&&&&&&&&&\n");

@@ -57,7 +57,7 @@ void myTrackingObj_FlagLost(tracking_obj* obj);
 
 void myTrackingObj_updateAllFlags(GList* mylist);
 
-void myTrackingObj_deleletBoundinBoxLost(GList* mylist);
+void myTrackingObj_deleletALLBoundinBoxLost(GList** mylist1);
 
 
 void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp);
