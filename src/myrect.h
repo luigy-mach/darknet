@@ -9,38 +9,46 @@
 
 
 
-typedef struct Point Point;
-typedef struct Rectangle Rectangle;
+typedef struct point point;
+typedef struct rectangle rectangle;
 
-struct Point{
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+struct point{
 	int x;
 	int y;
 };
 
-
-void create_myPoint(Point** pp);
-void init_myPoint(Point* p);
-void free_myPoint(Point* pp);
-
+void myPoint_create(point** pp);
+void myPoint_init_create(point* p);
+void myPoint_free(point* pp);
 
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 
-struct Rectangle{
-	Point topleft;
-	Point bottomright;
+struct rectangle{
+	point* topleft;
+	point* bottomright;
 };
 
-void free_myRectangle(Rectangle** rect);
+void myRectangle_create(rectangle** rect);
+void myRectangle_free(rectangle* rect);
 
-void create_myRectangle(Rectangle** rect);
-void fill_myRectangle(Rectangle* myrect, int p1x, int p1y, int p2x, int p2y);
+void myRectangle_init_create(rectangle* rect);
+void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y);
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
 int max(int a, int b);
 int min(int a, int b);
-float my_overlap(Rectangle A, Rectangle B);
-double myoverlap_rectangle(Rectangle* A, Rectangle* B);
 
-void copy_rectangle(Rectangle* rect1, Rectangle* rect2);
+double myRectangle_overlap(rectangle* rectA, rectangle* rectB);
+
+void myRectangle_copy(rectangle* rect1, rectangle* rect2);
+
+double myRectangle_distancia_eu_2rect(rectangle* rect1, rectangle* rect2);
 
 
 #endif //end RECT_H
