@@ -227,8 +227,27 @@ void myTrackingObj_print(GList* mylist){
   pfirst = mylist;
   
   int g1;
-  for (g1=0 ; g1 < tam1 ; g1++){
-    //printf("lostBound <  %i  > \n",((tracking_obj*)(pfirst->data))->lostBound);
+  for (g1=0 ; g1 < tam1 ; g1++)
+  {
+
+    ///obj->name         = VACIOSTRING;
+    ///obj->flagUsed     = 0;
+    ///obj->lostBound    = 0;
+    ///obj->velocidad    = 0;
+    ///obj->distancia    = 0.0;
+    ///obj->pointcenterX = 0;
+    ///obj->pointcenterY = 0;
+    ///obj->rootRect     = NULL;
+    ///obj->queue_rectangles = NULL;
+
+    printf("name         <  %s  > \n",((tracking_obj*)(pfirst->data))->name);
+    printf("flagUsed     <  %d  > \n",((tracking_obj*)(pfirst->data))->flagUsed);
+    printf("lostBound    <  %d  > \n",((tracking_obj*)(pfirst->data))->lostBound);
+    printf("velocidad    <  %lf  > \n",((tracking_obj*)(pfirst->data))->velocidad);
+    printf("distancia    <  %lf  > \n",((tracking_obj*)(pfirst->data))->distancia);
+    printf("pointcenterX <  %i  > \n",((tracking_obj*)(pfirst->data))->pointcenterX);
+    printf("pointcenterY <  %i  > \n",((tracking_obj*)(pfirst->data))->pointcenterY);
+    
     printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
                               ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
                               ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->x
@@ -292,19 +311,10 @@ void myTrackingObj_updateSpeed(tracking_obj* obj)
     return;
   }
   
-  rectangle* temp1 = (rectangle*)(obj->queue_rectangles->head->data);
-  //printf("    temp1 = %s .\n",temp1);
-  rectangle* temp2 = NULL;
-  if(obj->queue_rectangles->length <= 2){
-    //printf("    cola muy pequenha .\n");
-    return; 
-  }
-  temp2 = (rectangle*)(obj->queue_rectangles->head->next->data);
-  obj->distancia += myRectangle_distancia_eu_2rect(temp1,temp2);
-  //printf("    obj->distancia = %lf .\n",obj->distancia);
+  double mytime = (double)obj->queue_rectangles->length;
+  double mydist = (double)obj->distancia;
+  obj->velocidad = mydist*mytime;
   return;
-
-
 }
 
 
