@@ -5,6 +5,12 @@
 #include <string.h>
 #include <pthread.h>
 
+//////////////////////////////////////////////////
+#include "mycommon.h"
+//#include <gmodule.h>
+//////////////////////////////////////////////////
+
+
 #define SECRET_NUM -1234
 extern int gpu_index;
 
@@ -731,13 +737,18 @@ float box_iou(box a, box b);
 data load_all_cifar10();
 box_label *read_boxes(char *filename, int *n);
 box float_to_box(float *f, int stride);
+
+
 void draw_detections(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
-//void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
-void my_draw_detections_test(image im, detection *dets, int num, 
-                             float thresh, char **names, image **alphabet,
-                             int classes, int num_frame);
-                             //FILE *fp, mylist* demo_list_tracking_obj,
-                             //double demo_mythreshold_overlap)
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//#include "mycommon.h"
+//#include <gmodule.h>
+void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
+
+//////////////////////////////////////////////////
+
+
 
 
 matrix network_predict_data(network *net, data test);

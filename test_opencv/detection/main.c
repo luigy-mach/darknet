@@ -8,9 +8,9 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include <gmodule.h>
 
 #include "mycommon.h"
+#include <gmodule.h>
 
 
 //#define SIZEOF_BUFF 4096

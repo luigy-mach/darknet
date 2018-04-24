@@ -11,7 +11,15 @@
 #include "stb_image_write.h"
 
 
-FILE *fp;
+
+//////////////////////////////////////////////////
+//#include "mycommon.h"
+//#include <gmodule.h>
+//
+//////////////////////////////////////////////////
+
+
+
 
 
 
@@ -315,33 +323,17 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 }
 
 
-//void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes)
-void my_draw_detections_test(image im, detection *dets, int num, 
-                             float thresh, char **names, image **alphabet,
-                             int classes, int num_frame)
-                             //FILE *fp, mylist* demo_list_tracking_obj,
-                             //double demo_mythreshold_overlap)
+void my_draw_detections_test(image im, detection *dets, int num, float thresh, 
+                             char **names, image **alphabet, int classes
+                             )
 {
     int i,j;
 
-    for(i = 0; i < num; ++i)
-    {
+    for(i = 0; i < num; ++i){
         char labelstr[4096] = {0};
         int class = -1;
-
-        //classes=cantidada de clases del entrenamiento 
-        //en este caso 80
-        float thresh_temp = 0.0;
-        char  labelstr_high[50] = {0};
-
-        for(j=0; j<classes; ++j)
-        {
-            if (dets[i].prob[j] > thresh)
-            {
-                //if(thresh_temp < thresh){
-                //    thresh_temp = thresh;
-                //    sprintf(labelstr_high, "%s", names[j] );
-                //}
+        for(j = 0; j < classes; ++j){
+            if (dets[i].prob[j] > thresh){
                 if (class < 0) {
                     strcat(labelstr, names[j]);
                     class = j;
@@ -349,24 +341,10 @@ void my_draw_detections_test(image im, detection *dets, int num,
                     strcat(labelstr, ", ");
                     strcat(labelstr, names[j]);
                 }
-                //modificacion!!!
-                //printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
-                char strtemp[]="person";
-                if(0==strcmp(names[j],strtemp))
-                    printf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
+                printf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
             }
         }
-
-        //##if(labelstr[0])
-        //##    printf("::     %s     ::\n", labelstr_high);
-
-        //labelstr_high: solo tiene la etiqueta de mayor thresh 
-        //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
-        char strtemp[]="person";
-    
-        //if(class >= 0)
-        if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) )
-        {
+        if(class >= 0){
             int width = im.h * .006;
 
             /*
@@ -401,22 +379,12 @@ void my_draw_detections_test(image im, detection *dets, int num,
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
 
-
-
-
-
-
-
-
-
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
-            if (alphabet)
-            {
+            if (alphabet) {
                 image label = get_label(alphabet, labelstr, (im.h*.03));
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
             }
-
             if (dets[i].mask){
                 image mask = float_to_image(14, 14, 1, dets[i].mask);
                 image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
@@ -426,23 +394,11 @@ void my_draw_detections_test(image im, detection *dets, int num,
                 free_image(resized_mask);
                 free_image(tmask);
             }
-
-
-        }// end (class >= 0)
-
-
-    }// end for(i = 0; i < num; ++i)
-
-    fprintf(fp, "-----------------------\n");
-
-    //myTrackingObj_updateAllFlags(mylist);
-    //myTrackingObj_deleletALLBoundingBoxLost(&mylist);
-    //myTrackingObj_printListObjInFile(mylist,fp);    
-       
-
-    fprintf(fp, "-----------------------\n");
-
+        }
+    }
 }
+
+
 
 
 void transpose_image(image im)

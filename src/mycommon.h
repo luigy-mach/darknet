@@ -2,12 +2,17 @@
 //#ifndef MYCOMMON_H
 //#define MYCOMMON_H
 
+#ifndef __CUDACC__
+//#ifndef GPU
+//#define __CUDACC__
+
+#include "mytracking_obj.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
-#include "mytracking_obj.h"
 //#include "mylist.h"
 #include "myrect.h"
 //#include "myqueue.h"
@@ -30,3 +35,6 @@
 #define THRESHOLD  0.70
 
 //#endif //end MYCOMMON_H
+
+#endif //end MYCOMMON_H
+
