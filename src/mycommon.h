@@ -31,7 +31,7 @@
 #define LIMIT_QUEUE 10
 #define VACIOSTRING "qwerty"
 #define LIMIT_PERDIDA 5	
-#define MYFILE "test221.txt"
+#define MYFILE "test.txt"
 #define THRESHOLD  0.70
 
 //#endif //end MYCOMMON_H

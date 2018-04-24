@@ -41,6 +41,16 @@ double demo_time;
 //#include "mycommon.h"
 //#include <gmodule.h>
 
+//open file
+//static FILE* demo_filePointer = NULL;
+static FILE* demo_filePointer = NULL;
+
+//array de obj-tracking
+//probaremos con solo 50 objetos del tipo "tracking_obj" como maximo
+//static tracking_obj tracking_array_obj[50]={0};
+//static tracking_obj **demo_tracking_array_obj;
+static GList* demo_list_tracking_obj = NULL;  
+
 //////////////////////////////////////////////////
 
 
@@ -140,7 +150,10 @@ void *detect_in_thread(void *ptr)
     printf("\nFPS:%.1f\n",fps);
     printf("Objects:\n\n");
     image display = buff[(buff_index+2) % 3];
-    draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes);
+
+    //draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes);
+    my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes, demo_list_tracking_obj, demo_filePointer);
+
     free_detections(dets, nboxes);
 
     demo_index = (demo_index + 1)%demo_frame;
@@ -274,7 +287,9 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
         pthread_join(detect_thread, 0);
         ++count;
     }
-}
+    fclose(demo_filePointer);
+
+  }
 
 /*
    void demo_compare(char *cfg1, char *weight1, char *cfg2, char *weight2, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)

@@ -70,7 +70,8 @@ int main(){
       myRectangle_fill(myrect_temp, left, top, right, bot);
 
       GList* pGlist = NULL;
-      if( mylist==NULL){
+      if( mylist==NULL)
+      {
         tracking_obj* mytrack_temp = NULL;
         myTrackingObj_create(&mytrack_temp);
         myTrackingObj_init_create(mytrack_temp);
@@ -108,7 +109,9 @@ int main(){
         }
 
         //myTrackingObj_print(mylist);
-      }
+      }//fin - if( mylist==NULL)
+
+
     printf("    88888888888888888888888888888888888888888888888 for secundario fin %d \n",i);
     }
     

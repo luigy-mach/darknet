@@ -155,23 +155,23 @@ void myTrackingObj_deleletALLBoundingBoxLost(GList** mylist1){
 
 void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
 
-  int i;
   
-  GList* pfirst = NULL;
   mylist = g_list_first(mylist);
+
+  GList* pfirst = NULL;
   pfirst = mylist;
-  int tam = g_list_length(mylist);
+  int tam = g_list_length(pfirst);
   pfirst = mylist;
 
-  //for(i=0 ; i<tam ; i++){
-  while(pfirst){
+  while(pfirst)
+  {
     char temp[100]  = {0};
     sprintf(temp,"(%i,%i,%i,%i)<<<<<< \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
                                           ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
                                           ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->x
                                           ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->y );      
     fprintf(fp, temp);
-    myTrackingObj_printTrackingObjInFile((tracking_obj*)(pfirst->data),fp);       
+    //myTrackingObj_printTrackingObjInFile((tracking_obj*)(pfirst->data),fp);       
     pfirst = pfirst->next;    
   }
   return;

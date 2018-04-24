@@ -28,7 +28,7 @@ LDFLAGS= -lm -pthread
 COMMON= -Iinclude/ -Isrc/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lglib-2.0 -lm
 
 #COMMON-NVCC= -Iinclude/ -Isrc/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lglib-2.0 -lm
-COMMON-NVCC= -Iinclude/ -Isrc/ 
+COMMON-NVCC= -Iinclude/ -Isrc/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lglib-2.0 -lm
 
 #LDFLAGS= -lm -pthread `pkg-config --libs glib-2.0`
 #COMMON= -Iinclude/ -Isrc/  `pkg-config --cflags glib-2.0` 
@@ -97,20 +97,19 @@ all: obj  results $(SLIB) $(ALIB) $(EXEC)
 
 
 $(EXEC): $(EXECOBJ) $(ALIB)
-	$(CC) $(COMMON) $(CFLAGS) $^ -o $@ $(LDFLAGS) $(ALIB)
+	$(CC)  $^ -o $@ $(LDFLAGS) $(ALIB)  $(COMMON) $(CFLAGS)
 
 $(ALIB): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(SLIB): $(OBJS)
-	$(CC) $(CFLAGS) -shared $^ -o $@ $(LDFLAGS)
+	$(CC)  -shared $^ -o $@ $(LDFLAGS) $(CFLAGS)
 
 $(OBJDIR)%.o: %.c $(DEPS)
-	$(CC) $(COMMON) $(CFLAGS) -c $< -o $@
+	$(CC)  -c $< -o $@  $(COMMON) $(CFLAGS)
 
 $(OBJDIR)%.o: %.cu $(DEPS)
-	$(NVCC) $(ARCH) $(COMMON-NVCC) --compiler-options "$(CFLAGS-ONLYNVCC)" -c $< -o $@
-	#$(NVCC) $(ARCH) $(COMMON) --compiler-options "$(CFLAGS)" -c $< -o $@
+	$(NVCC) -c $< -o $@   $(ARCH) $(COMMON-NVCC) --compiler-options "$(CFLAGS-ONLYNVCC)" 
 
 obj:
 	mkdir -p obj

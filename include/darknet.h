@@ -5,10 +5,7 @@
 #include <string.h>
 #include <pthread.h>
 
-//////////////////////////////////////////////////
-#include "mycommon.h"
-//#include <gmodule.h>
-//////////////////////////////////////////////////
+
 
 
 #define SECRET_NUM -1234
@@ -742,10 +739,19 @@ box float_to_box(float *f, int stride);
 void draw_detections(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
-//#include "mycommon.h"
-//#include <gmodule.h>
-void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes);
+#include "mycommon.h"
 
+                        
+#ifndef __CUDACC__
+#include <gmodule.h>
+
+//#define __CUDACC__
+void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * filePointer, GList* mylist);
+
+#endif
+// __CUDACC__
+
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
 
