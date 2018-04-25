@@ -115,9 +115,9 @@ int main(){
     printf("    88888888888888888888888888888888888888888888888 for secundario fin %d \n",i);
     }
     
-    myTrackingObj_updateAllFlags(mylist);
-    myTrackingObj_deleletALLBoundingBoxLost(&mylist);
-    myTrackingObj_printListObjInFile(mylist,fp);    
+    //myTrackingObj_updateAllFlags(mylist);
+    //myTrackingObj_deleletALLBoundingBoxLost(&mylist);
+    //myTrackingObj_printListObjInFile(mylist,fp);    
        
     printf("88888888888888888888888888888888888888888888888 for principal fin %d \n",j);
   }

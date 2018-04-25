@@ -38,12 +38,12 @@ double demo_time;
 
 
 //////////////////////////////////////////////////
-//#include "mycommon.h"
+#include "mycommon.h"
 //#include <gmodule.h>
 
 //open file
 //static FILE* demo_filePointer = NULL;
-static FILE* demo_filePointer = NULL;
+static FILE *demo_filePointer;
 
 //array de obj-tracking
 //probaremos con solo 50 objetos del tipo "tracking_obj" como maximo
@@ -105,6 +105,7 @@ detection *avg_predictions(network *net, int *nboxes)
 
 void *detect_in_thread(void *ptr)
 {
+
     running = 1;
     float nms = .4;
 
@@ -145,14 +146,16 @@ void *detect_in_thread(void *ptr)
 
     if (nms > 0) do_nms_obj(dets, nboxes, l.classes, nms);
 
-    printf("\033[2J");
-    printf("\033[1;1H");
+    //printf("\033[2J");
+    //printf("\033[1;1H");
     printf("\nFPS:%.1f\n",fps);
     printf("Objects:\n\n");
     image display = buff[(buff_index+2) % 3];
 
     //draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes);
-    my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes, demo_list_tracking_obj, demo_filePointer);
+    printf("debug my_draw 11\n"); 
+    my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, demo_list_tracking_obj);
+    printf("debug my_draw 11\n"); 
 
     free_detections(dets, nboxes);
 
@@ -207,6 +210,34 @@ void *detect_loop(void *ptr)
 
 void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)
 {
+
+    demo_filePointer = fopen(MYFILE, "w");
+    if( demo_filePointer == NULL ){
+      printf("error al abrir MYFILE\n");
+      return;
+    }
+    
+    //demo_list_tracking_obj = g_list_alloc ();
+
+    rectangle* myrect_temp;
+    myRectangle_create( &myrect_temp );
+    myRectangle_fill(myrect_temp, -1, -1, -1, -1);
+
+    GList* pGlist = NULL;
+  
+    tracking_obj* mytrack_temp = NULL;
+    myTrackingObj_create(&mytrack_temp);
+    myTrackingObj_init_create(mytrack_temp);
+    myTrackingObj_addQueue(mytrack_temp,myrect_temp);
+    //mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
+    //myTrackingObj_updateDistance(mytrack_temp);
+    //myTrackingObj_updateSpeed(mytrack_temp);
+    demo_list_tracking_obj = g_list_prepend(demo_list_tracking_obj,mytrack_temp);
+
+
+
+    ///////////////////////////////////////////////////////
+
     //demo_frame = avg_frames;
     image **alphabet = load_alphabet();
     demo_names = names;
@@ -270,7 +301,10 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 
     demo_time = what_time_is_it_now();
 
+    int x=0;
     while(!demo_done){
+        printf("while init nro: %i\n",x);
+
         buff_index = (buff_index + 1) %3;
         if(pthread_create(&fetch_thread, 0, fetch_in_thread, 0)) error("Thread creation failed");
         if(pthread_create(&detect_thread, 0, detect_in_thread, 0)) error("Thread creation failed");
@@ -286,10 +320,12 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
         pthread_join(fetch_thread, 0);
         pthread_join(detect_thread, 0);
         ++count;
+         printf("while fin nro: %i\n",x);
+        x++;
     }
     fclose(demo_filePointer);
 
-  }
+}
 
 /*
    void demo_compare(char *cfg1, char *weight1, char *cfg2, char *weight2, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)

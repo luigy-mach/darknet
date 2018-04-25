@@ -241,6 +241,8 @@ image **load_alphabet()
 
 void draw_detections(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes)
 {
+
+
     int i,j;
 
     for(i = 0; i < num; ++i){
@@ -320,20 +322,14 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 #include "mycommon.h"
 #include <gmodule.h>
 /// //////////////////////////////////////////////////
-void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names,
-                             image **alphabet, int classes, FILE * demo_filePointer, GList* mylist)
+void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * demo_filePointer, GList* mylist)
 {
-
-
-
-    fprintf(demo_filePointer, "///////////////////////\n");
-
-
 
     int i,j;
 
     for(i = 0; i < num; ++i)
     {
+        printf("inicio my_draw_detections_test 11\n");
         char labelstr[4096] = {0};
         int class = -1;
 
@@ -414,10 +410,11 @@ void my_draw_detections_test(image im, detection *dets, int num, float thresh, c
 
 
 
-
+            printf("    break point debug for 11\n");
             GList* pGlist = NULL;
             if( mylist==NULL)
             {
+                printf("        break point insert  11\n");   
               tracking_obj* mytrack_temp = NULL;
               myTrackingObj_create(&mytrack_temp);
               myTrackingObj_init_create(mytrack_temp);
@@ -429,18 +426,27 @@ void my_draw_detections_test(image im, detection *dets, int num, float thresh, c
               //mylist = g_list_first(mylist);//ya es primero
               //myTrackingObj_print(mylist);
   
-              }else{
+            }else{
+                printf("        break point insert  12\n");   
                 mylist = g_list_first(mylist);//reseteando pos
                 pGlist = mylist;
+                printf("        break point insert  121 x\n");  
+                if(pGlist==NULL) printf("        pGlist: %s \n",pGlist);
+                printf("        break point insert  122 x\n");   
+                if(myrect_temp==NULL) printf("        myrect_temp: %s\n",myrect_temp);
+                printf("        break point insert  123 x\n");   
                 pGlist = g_list_find_custom(pGlist, myrect_temp, &myfoo_GCompareFunc);
+
                 if( pGlist != NULL )
                 {
+                    printf("        break point insert  13\n");   
                   myTrackingObj_addQueue((tracking_obj*)(pGlist->data),myrect_temp);
                   mytrackingObj_updatePointCenter((tracking_obj*)(pGlist->data),myrect_temp);
                   tracking_obj* temp = (tracking_obj*)(pGlist->data);
                   myTrackingObj_updateDistance(temp);
                   myTrackingObj_updateSpeed(temp);
                 }else{
+                    printf("        break point insert  14\n");   
                   tracking_obj* mytrack_temp = NULL;
                   myTrackingObj_create(&mytrack_temp);
                   myTrackingObj_init_create(mytrack_temp);
@@ -455,9 +461,10 @@ void my_draw_detections_test(image im, detection *dets, int num, float thresh, c
                 }
   
                 //myTrackingObj_print(mylist);
-              }//fin - if( mylist==NULL)
+            }//fin - if( mylist==NULL)
 
   
+        printf("    break point debug for 12\n");
 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if(alphabet)
@@ -478,14 +485,15 @@ void my_draw_detections_test(image im, detection *dets, int num, float thresh, c
                 free_image(tmask);
             }//if(dets[i].mask)
 
-        }// if(class >= 0  && (0==strcmp(labelstr_high,strtemp)) )
+        } // if(class >= 0  && (0==strcmp(labelstr_high,strtemp)) )
+        printf("    break point debug for 13\n");
 
-    }//for(i = 0; i < num; ++i){
+    } //for(i = 0; i < num; ++i){
 
     myTrackingObj_updateAllFlags(mylist);
     myTrackingObj_deleletALLBoundingBoxLost(&mylist);
-    //myTrackingObj_printListObjInFile(mylist,demo_filePointer);    
-
+    myTrackingObj_printListObjInFile(mylist,demo_filePointer);    
+    printf("fin my_draw_detections_test 12\n");
 }// fin my_draw_detections_test
 
 

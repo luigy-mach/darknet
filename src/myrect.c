@@ -47,12 +47,24 @@ void myRectangle_free(rectangle* rect){
 	rect = NULL;
 	return;
 }
-
+/*
 void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y){
 	myrect->topleft->x = p1x;
 	myrect->topleft->y = p1y;
+
 	myrect->bottomright->x = p2x;
 	myrect->bottomright->y = p2y;
+	return;
+}
+*/
+
+
+void myRectangle_fill(rectangle* myrect, int left, int top, int right, int bot){
+	myrect->topleft->x = left;
+	myrect->topleft->y = top;
+
+	myrect->bottomright->x = right;
+	myrect->bottomright->y = bot;
 	return;
 }
 
@@ -94,7 +106,7 @@ double myRectangle_overlap(rectangle* rectA, rectangle* rectB)
 
 	double iLeft    = max(rectA->topleft->x     ,rectB->topleft->x);
 	double iRight   = min(rectA->bottomright->x ,rectB->bottomright->x);
-	double iTop  	  = max(rectA->topleft->y     ,rectB->topleft->y);
+	double iTop  	= max(rectA->topleft->y     ,rectB->topleft->y);
 	double iBottom  = min(rectA->bottomright->y ,rectB->bottomright->y);
 
 	double si = max(0, iRight - iLeft) * max(0, iBottom - iTop);
@@ -139,11 +151,11 @@ double myRectangle_distancia_eu_2rect(rectangle* rect1, rectangle* rect2){
 
   //printf("(%d,%d,%d,%d)\n",rect1->topleft->x,rect1->topleft->y,rect2->topleft->x,rect2->topleft->y);
 
-  int x1 = rect1->topleft->x + (rect1->bottomright->x - rect1->topleft->x)/2;
-  int y1 = rect1->topleft->y + (rect1->bottomright->y - rect1->topleft->y)/2;
+  double x1 = rect1->topleft->x + abs(rect1->bottomright->x - rect1->topleft->x)/2;
+  double y1 = rect1->topleft->y + abs(rect1->bottomright->y - rect1->topleft->y)/2;
 
-  int x2 = rect2->topleft->x + (rect2->bottomright->x - rect2->topleft->x)/2;
-  int y2 = rect2->topleft->y + (rect2->bottomright->y - rect2->topleft->y)/2;
+  double x2 = rect2->topleft->x + abs(rect2->bottomright->x - rect2->topleft->x)/2;
+  double y2 = rect2->topleft->y + abs(rect2->bottomright->y - rect2->topleft->y)/2;
 
   double dist = sqrt( pow(x1-x2,2) + pow(y1-y2,2) );
 

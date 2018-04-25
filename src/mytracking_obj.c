@@ -156,6 +156,7 @@ void myTrackingObj_deleletALLBoundingBoxLost(GList** mylist1){
 void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
 
   
+  fprintf(fp, "/////////////////////myTrackingObj_printListObjInFile////////////////////////////11\n");
   mylist = g_list_first(mylist);
 
   GList* pfirst = NULL;
@@ -163,17 +164,37 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
   int tam = g_list_length(pfirst);
   pfirst = mylist;
 
+  int i=0;
   while(pfirst)
   {
-    char temp[100]  = {0};
-    sprintf(temp,"(%i,%i,%i,%i)<<<<<< \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
+    char temp[300]  = {0};
+    //int   flagUsed; //0-1
+    //int   lostBound; //maximo 10
+    //double velocidad;
+    //double distancia;
+    //int pointcenterX;
+    //int pointcenterY;
+    fprintf(fp, temp);
+
+    sprintf(temp,"flagUsed:%i \n,lostBound:%i \n,velocidad:%lf \n,distancia:%lf \n"
+                  ,((tracking_obj*)(pfirst->data))->flagUsed
+                  ,((tracking_obj*)(pfirst->data))->lostBound
+                  ,((tracking_obj*)(pfirst->data))->velocidad
+                  ,((tracking_obj*)(pfirst->data))->distancia);      
+    fprintf(fp, temp);
+
+    sprintf(temp,"(%i,%i,%i,%i)<<%i>> \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
                                           ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
                                           ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->x
-                                          ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->y );      
+                                          ,((tracking_obj*)(pfirst->data))->rootRect->bottomright->y
+                                          ,i );      
     fprintf(fp, temp);
-    //myTrackingObj_printTrackingObjInFile((tracking_obj*)(pfirst->data),fp);       
+
+    myTrackingObj_printTrackingObjInFile((tracking_obj*)(pfirst->data),fp);       
     pfirst = pfirst->next;    
+    i++;
   }
+  fprintf(fp, "/////////////////////myTrackingObj_printListObjInFile////////////////////////////12\n");
   return;
 }
 
@@ -186,10 +207,11 @@ void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp){
   for(i=0 ; i<tam_queue ; i++){
     char temp[100]  = {0};
     rectangle* myrect = g_queue_peek_nth (obj->queue_rectangles, i );
-    sprintf(temp,"      (%i,%i,%i,%i) \n" ,myrect->topleft->x
-                                          ,myrect->topleft->y
-                                          ,myrect->bottomright->x
-                                          ,myrect->bottomright->y );      
+    sprintf(temp,"      (%i,%i,%i,%i) <<%i>>\n" ,myrect->topleft->x
+                                                ,myrect->topleft->y
+                                                ,myrect->bottomright->x
+                                                ,myrect->bottomright->y
+                                                ,i );      
     fprintf(fp, temp);
   }
   return;
@@ -313,7 +335,7 @@ void myTrackingObj_updateSpeed(tracking_obj* obj)
   
   double mytime = (double)obj->queue_rectangles->length;
   double mydist = (double)obj->distancia;
-  obj->velocidad = mydist*mytime;
+  obj->velocidad = mydist/mytime;
   return;
 }
 
@@ -326,6 +348,7 @@ void myTrackingObj_updateSpeed(tracking_obj* obj)
 
                       //GList* a, rectangle* b
 int myfoo_GCompareFunc(void* a, void* b){
+  printf("        myfoo_GCompareFunc");
   rectangle* p1 = (rectangle*)(((tracking_obj*)(a))->rootRect);
   rectangle* p2 = (rectangle*)(b);
   if( p1 == NULL )
@@ -341,14 +364,14 @@ int myfoo_GCompareFunc(void* a, void* b){
   
   
   double doubleOverlap = myRectangle_overlap(p1,p2);
-//  printf("    doubleOverlap = %lf .\n",doubleOverlap);
-  return  (THRESHOLD <= doubleOverlap)?0:-1;
-  //if(THRESHOLD <= doubleOverlap)
-  //{
-  //  return 0;
-  //}else{
-  //  return -1;
-  //}
+  printf("    doubleOverlap = %lf .\n",doubleOverlap);
+  //return  (THRESHOLD <= doubleOverlap)?0:-1;
+  if(THRESHOLD <= doubleOverlap)
+  {
+    return 0;
+  }else{
+    return -1;
+  }
 }
 
 

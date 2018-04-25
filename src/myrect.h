@@ -37,8 +37,8 @@ void myRectangle_create(rectangle** rect);
 void myRectangle_free(rectangle* rect);
 
 void myRectangle_init_create(rectangle* rect);
-void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y);
-
+//void myRectangle_fill(rectangle* myrect, int p1x, int p1y, int p2x, int p2y);
+void myRectangle_fill(rectangle* myrect, int left, int top, int right, int bot);
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 
