@@ -18,7 +18,7 @@ void myTrackingObj_init_create(tracking_obj* obj){
   obj->pointcenterY = 0;
   obj->rootRect     = NULL;
   obj->queue_rectangles = NULL;
-
+  obj->isPoint      = 0;
   myRectangle_create( &(obj->rootRect) );
   obj->queue_rectangles = g_queue_new();
   
@@ -38,9 +38,9 @@ void myTrackingObj_free(tracking_obj* obj){
   //obj->queue_rectangles = NULL;
 
   //free( obj->name ); //error extranho
-  myRectangle_free(obj->rootRect);
-  g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
-  free( obj );
+  //myRectangle_free(obj->rootRect);
+  //g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
+  //free( obj );
   obj = NULL;
 
   return;
@@ -76,6 +76,16 @@ void myTrackingObj_addQueue(tracking_obj* obj, rectangle* rect1){
     return;
   }
 
+
+  
+  int _isPoint = myRectangle_isPoint(rect1);
+  if(_isPoint == -1){
+    printf(" update point\n");
+    obj->isPoint=_isPoint;
+  }
+  printf("Error, myRectangle_isPoint 13.\n");
+
+
   myTrackingObj_updateRootRect(obj,rect1);
 
   g_queue_push_head(obj->queue_rectangles,rect1);
@@ -98,9 +108,11 @@ void myTrackingObj_updateFlagUsed(tracking_obj* obj){
 
 
 void myTrackingObj_updateAllFlags(GList* mylist){
+  printf("    myTrackingObj_updateAllFlags 11\n");
   int i;
   GList* pfirst = NULL;
   pfirst = g_list_first (mylist);
+  printf("    myTrackingObj_updateAllFlags 12\n");
   while(pfirst)
   {
     if( ((tracking_obj*)(pfirst->data))->flagUsed == 0 )
@@ -115,41 +127,46 @@ void myTrackingObj_updateAllFlags(GList* mylist){
     pfirst = pfirst->next;      
   }  
  
+  printf("    myTrackingObj_updateAllFlags 13\n");
   mylist = g_list_first (mylist);
+  printf("    myTrackingObj_updateAllFlags 14\n");
   return;
 }
 
 
-void myTrackingObj_deleletALLBoundingBoxLost(GList** mylist1){
+void myTrackingObj_deleteALLBoundingBoxLost(GList** mylist1){
   if((*mylist1)==NULL){
     printf("Error: lista vacia \n");
     return;
   }
 
-  GList* mylist = NULL;
-  mylist = (*mylist1);
+  //GList* mylist = NULL;
+  //mylist = (*mylist1);
+
+  (*mylist1) = g_list_first(*mylist1);
 
   GList* pfirst = NULL;
-  mylist = g_list_first(mylist);
-  pfirst = mylist;
+  pfirst = *mylist1;
   
   while(pfirst)
   {
+    //if( ((tracking_obj*)(pfirst->data))->isPoint==-1 || ((tracking_obj*)(pfirst->data))->lostBound >= LIMIT_PERDIDA )
     if( ((tracking_obj*)(pfirst->data))->lostBound >= LIMIT_PERDIDA )
     {
+      *mylist1 = g_list_remove_link(*mylist1, pfirst);
+
+      myTrackingObj_free( (tracking_obj*)(pfirst->data)); /// corregir <<<<<<<<<<<<<<<<<<
+      //pfirst->data = NULL;                              /// corregir <<<<<<<<<<<<<<<<<<
+      //g_list_free(pfirst);                              /// corregir <<<<<<<<<<<<<<<<<<
+      *mylist1 = g_list_first(*mylist1);
       
-      mylist = g_list_remove_link(mylist, pfirst);
-      myTrackingObj_free( (tracking_obj*)(pfirst->data));
-      pfirst->data = NULL;
-      g_list_free_1(pfirst);
-      mylist = g_list_first(mylist);
-      pfirst=mylist;
+      pfirst=*mylist1;
     }else{
       pfirst = pfirst->next;
     }
   }
-  mylist = g_list_first(mylist);
-  (*mylist1)=mylist;
+  *mylist1 = g_list_first(*mylist1);
+  //(*mylist1)=mylist;
   return;
 }
 
@@ -176,11 +193,12 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
     //int pointcenterY;
     fprintf(fp, temp);
 
-    sprintf(temp,"flagUsed:%i \n,lostBound:%i \n,velocidad:%lf \n,distancia:%lf \n"
+    sprintf(temp,"flagUsed:%i \n,lostBound:%i \n,velocidad:%lf \n,distancia:%lf \n,isPoint = %i\n"
                   ,((tracking_obj*)(pfirst->data))->flagUsed
                   ,((tracking_obj*)(pfirst->data))->lostBound
                   ,((tracking_obj*)(pfirst->data))->velocidad
-                  ,((tracking_obj*)(pfirst->data))->distancia);      
+                  ,((tracking_obj*)(pfirst->data))->distancia
+                  ,((tracking_obj*)(pfirst->data))->isPoint);      
     fprintf(fp, temp);
 
     sprintf(temp,"(%i,%i,%i,%i)<<%i>> \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x

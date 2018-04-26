@@ -35,6 +35,8 @@ struct tracking_obj{
    int pointcenterX;
    int pointcenterY;
 
+   int isPoint;
+
    rectangle* rootRect;
    GQueue* queue_rectangles;
 };
@@ -50,7 +52,7 @@ void myTrackingObj_addQueue(tracking_obj* obj, rectangle* rect1);
 
 void myTrackingObj_updateAllFlags(GList* mylist);
 
-void myTrackingObj_deleletALLBoundingBoxLost(GList** mylist1);
+void myTrackingObj_deleteALLBoundingBoxLost(GList** mylist1);
 
 void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp);
 void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp);

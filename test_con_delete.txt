@@ -1,0 +1,579 @@
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<0>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:1 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<0>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(276,111,331,296)<<0>> 
+      (276,111,331,296) <<0>>
+flagUsed:0 
+,lostBound:2 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(275,111,331,298)<<0>> 
+      (275,111,331,298) <<0>>
+      (276,111,331,296) <<1>>
+flagUsed:0 
+,lostBound:3 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.471405 
+,distancia:1.414214 
+,isPoint = 0
+(274,111,330,300)<<0>> 
+      (274,111,330,300) <<0>>
+      (275,111,331,298) <<1>>
+      (276,111,331,296) <<2>>
+flagUsed:0 
+,lostBound:4 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.707107 
+,distancia:2.828427 
+,isPoint = 0
+(272,110,330,303)<<0>> 
+      (272,110,330,303) <<0>>
+      (274,111,330,300) <<1>>
+      (275,111,331,298) <<2>>
+      (276,111,331,296) <<3>>
+flagUsed:0 
+,lostBound:5 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.765685 
+,distancia:3.828427 
+,isPoint = 0
+(271,107,329,305)<<0>> 
+      (271,107,329,305) <<0>>
+      (272,110,330,303) <<1>>
+      (274,111,330,300) <<2>>
+      (275,111,331,298) <<3>>
+      (276,111,331,296) <<4>>
+flagUsed:0 
+,lostBound:6 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.638071 
+,distancia:3.828427 
+,isPoint = 0
+(271,105,329,307)<<0>> 
+      (271,105,329,307) <<0>>
+      (271,107,329,305) <<1>>
+      (272,110,330,303) <<2>>
+      (274,111,330,300) <<3>>
+      (275,111,331,298) <<4>>
+      (276,111,331,296) <<5>>
+flagUsed:0 
+,lostBound:7 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.689775 
+,distancia:4.828427 
+,isPoint = 0
+(271,108,329,306)<<0>> 
+      (271,108,329,306) <<0>>
+      (271,105,329,307) <<1>>
+      (271,107,329,305) <<2>>
+      (272,110,330,303) <<3>>
+      (274,111,330,300) <<4>>
+      (275,111,331,298) <<5>>
+      (276,111,331,296) <<6>>
+flagUsed:0 
+,lostBound:8 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.728553 
+,distancia:5.828427 
+,isPoint = 0
+(271,111,329,305)<<0>> 
+      (271,111,329,305) <<0>>
+      (271,108,329,306) <<1>>
+      (271,105,329,307) <<2>>
+      (271,107,329,305) <<3>>
+      (272,110,330,303) <<4>>
+      (274,111,330,300) <<5>>
+      (275,111,331,298) <<6>>
+      (276,111,331,296) <<7>>
+flagUsed:0 
+,lostBound:9 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = -1
+(0,0,0,0)<<1>> 
+      (0,0,0,0) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.804738 
+,distancia:7.242641 
+,isPoint = 0
+(271,115,328,303)<<0>> 
+      (271,115,328,303) <<0>>
+      (271,111,329,305) <<1>>
+      (271,108,329,306) <<2>>
+      (271,105,329,307) <<3>>
+      (271,107,329,305) <<4>>
+      (272,110,330,303) <<5>>
+      (274,111,330,300) <<6>>
+      (275,111,331,298) <<7>>
+      (276,111,331,296) <<8>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(271,116,328,303)<<0>> 
+      (271,116,328,303) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(272,115,329,303)<<0>> 
+      (272,115,329,303) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(271,113,331,304)<<0>> 
+      (271,113,331,304) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(272,111,331,306)<<0>> 
+      (272,111,331,306) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(272,112,331,306)<<0>> 
+      (272,112,331,306) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(273,115,331,306)<<0>> 
+      (273,115,331,306) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(273,117,331,305)<<0>> 
+      (273,117,331,305) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(274,118,331,305)<<0>> 
+      (274,118,331,305) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(274,117,333,301)<<0>> 
+      (274,117,333,301) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(273,118,334,298)<<0>> 
+      (273,118,334,298) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(272,119,334,294)<<0>> 
+      (272,119,334,294) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(270,123,334,288)<<0>> 
+      (270,123,334,288) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(268,104,335,278)<<0>> 
+      (268,104,335,278) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(265,99,336,279)<<0>> 
+      (265,99,336,279) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(262,96,337,281)<<0>> 
+      (262,96,337,281) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(262,96,341,282)<<0>> 
+      (262,96,341,282) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(263,97,344,284)<<0>> 
+      (263,97,344,284) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(267,100,346,282)<<0>> 
+      (267,100,346,282) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(267,98,345,285)<<0>> 
+      (267,98,345,285) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(269,94,345,287)<<0>> 
+      (269,94,345,287) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(268,89,344,292)<<0>> 
+      (268,89,344,292) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(255,103,310,278)<<0>> 
+      (255,103,310,278) <<0>>
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(270,90,343,290)<<1>> 
+      (270,90,343,290) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(256,106,309,277)<<0>> 
+      (256,106,309,277) <<0>>
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(272,94,342,289)<<1>> 
+      (272,94,342,289) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(257,109,310,276)<<0>> 
+      (257,109,310,276) <<0>>
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(273,98,342,288)<<1>> 
+      (273,98,342,288) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(252,129,295,280)<<0>> 
+      (252,129,295,280) <<0>>
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(273,101,342,287)<<1>> 
+      (273,101,342,287) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(270,100,342,288)<<0>> 
+      (270,100,342,288) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(268,101,341,288)<<0>> 
+      (268,101,341,288) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(265,107,342,299)<<0>> 
+      (265,107,342,299) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(265,111,341,299)<<0>> 
+      (265,111,341,299) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(263,113,340,298)<<0>> 
+      (263,113,340,298) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(260,112,340,298)<<0>> 
+      (260,112,340,298) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(247,113,334,294)<<0>> 
+      (247,113,334,294) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(246,110,334,295)<<0>> 
+      (246,110,334,295) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(247,108,333,295)<<0>> 
+      (247,108,333,295) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(249,107,329,284)<<0>> 
+      (249,107,329,284) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(250,107,328,281)<<0>> 
+      (250,107,328,281) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(248,108,325,278)<<0>> 
+      (248,108,325,278) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(246,109,321,277)<<0>> 
+      (246,109,321,277) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(243,112,318,276)<<0>> 
+      (243,112,318,276) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////11
+flagUsed:0 
+,lostBound:0 
+,velocidad:0.000000 
+,distancia:0.000000 
+,isPoint = 0
+(243,112,317,275)<<0>> 
+      (243,112,317,275) <<0>>
+/////////////////////myTrackingObj_printListObjInFile////////////////////////////12

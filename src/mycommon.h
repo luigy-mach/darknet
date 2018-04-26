@@ -26,7 +26,7 @@
 #define VACIOSTRING "qwerty"
 #define LIMIT_PERDIDA 40	
 #define MYFILE "test.txt"
-#define THRESHOLD  0.70
+#define THRESHOLD  0.4
 
 //#endif //end MYCOMMON_H
 

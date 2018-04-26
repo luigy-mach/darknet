@@ -221,14 +221,13 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 
     rectangle* myrect_temp;
     myRectangle_create( &myrect_temp );
-    myRectangle_fill(myrect_temp, -1, -1, -1, -1);
+    myRectangle_fill(myrect_temp, 0, 0, 0, 0);
 
-    GList* pGlist = NULL;
-  
-    tracking_obj* mytrack_temp = NULL;
+     tracking_obj* mytrack_temp = NULL;
     myTrackingObj_create(&mytrack_temp);
     myTrackingObj_init_create(mytrack_temp);
     myTrackingObj_addQueue(mytrack_temp,myrect_temp);
+    
     //mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
     //myTrackingObj_updateDistance(mytrack_temp);
     //myTrackingObj_updateSpeed(mytrack_temp);

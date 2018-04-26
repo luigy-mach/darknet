@@ -68,6 +68,31 @@ void myRectangle_fill(rectangle* myrect, int left, int top, int right, int bot){
 	return;
 }
 
+
+int myRectangle_isPoint(rectangle* myrect){
+	// -1  es un punto
+	//  0  es cuadrado
+	//  1  es linea
+	if(myrect->topleft->x != myrect->bottomright->x)
+	{
+		if(myrect->topleft->y != myrect->bottomright->y)
+		{
+			return 0; 
+		}
+		return 1;
+	}
+	if(myrect->topleft->y != myrect->bottomright->y)
+	{
+		if(myrect->topleft->x != myrect->bottomright->x)
+		{
+			return 0;
+		}
+		return 1;
+	}
+	return -1;
+}
+
+
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
@@ -151,11 +176,11 @@ double myRectangle_distancia_eu_2rect(rectangle* rect1, rectangle* rect2){
 
   //printf("(%d,%d,%d,%d)\n",rect1->topleft->x,rect1->topleft->y,rect2->topleft->x,rect2->topleft->y);
 
-  double x1 = rect1->topleft->x + abs(rect1->bottomright->x - rect1->topleft->x)/2;
-  double y1 = rect1->topleft->y + abs(rect1->bottomright->y - rect1->topleft->y)/2;
+  double x1 = rect1->topleft->x + fabs(rect1->bottomright->x - rect1->topleft->x)/2;
+  double y1 = rect1->topleft->y + fabs(rect1->bottomright->y - rect1->topleft->y)/2;
 
-  double x2 = rect2->topleft->x + abs(rect2->bottomright->x - rect2->topleft->x)/2;
-  double y2 = rect2->topleft->y + abs(rect2->bottomright->y - rect2->topleft->y)/2;
+  double x2 = rect2->topleft->x + fabs(rect2->bottomright->x - rect2->topleft->x)/2;
+  double y2 = rect2->topleft->y + fabs(rect2->bottomright->y - rect2->topleft->y)/2;
 
   double dist = sqrt( pow(x1-x2,2) + pow(y1-y2,2) );
 
