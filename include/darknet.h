@@ -746,7 +746,8 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 #include <gmodule.h>
 
 //#define __CUDACC__
-void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * filePointer, GList* mylist);
+//void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * filePointer, GList* mylist);
+void my_draw_detections_testv2(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * filePointer, GList** mylist);
 
 #endif
 // __CUDACC__

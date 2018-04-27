@@ -154,7 +154,8 @@ void *detect_in_thread(void *ptr)
 
     //draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes);
     printf("debug my_draw 11\n"); 
-    my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, demo_list_tracking_obj);
+    //my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, demo_list_tracking_obj);
+    my_draw_detections_testv2(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, &demo_list_tracking_obj);
     printf("debug my_draw 11\n"); 
 
     free_detections(dets, nboxes);
@@ -218,7 +219,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
     }
     
     //demo_list_tracking_obj = g_list_alloc ();
-
+/*
     rectangle* myrect_temp;
     myRectangle_create( &myrect_temp );
     myRectangle_fill(myrect_temp, 0, 0, 0, 0);
@@ -232,7 +233,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
     //myTrackingObj_updateDistance(mytrack_temp);
     //myTrackingObj_updateSpeed(mytrack_temp);
     demo_list_tracking_obj = g_list_prepend(demo_list_tracking_obj,mytrack_temp);
-
+*/
 
 
     ///////////////////////////////////////////////////////

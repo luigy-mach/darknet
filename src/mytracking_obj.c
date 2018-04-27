@@ -37,10 +37,10 @@ void myTrackingObj_free(tracking_obj* obj){
   //obj->rootRect     = NULL;
   //obj->queue_rectangles = NULL;
 
-  //free( obj->name ); //error extranho
-  //myRectangle_free(obj->rootRect);
-  //g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
-  //free( obj );
+  free( obj->name ); //error extranho
+  myRectangle_free(obj->rootRect);
+  g_queue_free_full(obj->queue_rectangles,&myRectangle_free);
+  free( obj );
   obj = NULL;
 
   return;
@@ -155,11 +155,11 @@ void myTrackingObj_deleteALLBoundingBoxLost(GList** mylist1){
     {
       *mylist1 = g_list_remove_link(*mylist1, pfirst);
 
-      myTrackingObj_free( (tracking_obj*)(pfirst->data)); /// corregir <<<<<<<<<<<<<<<<<<
+      //myTrackingObj_free( (tracking_obj*)(pfirst->data)); /// corregir <<<<<<<<<<<<<<<<<<
       //pfirst->data = NULL;                              /// corregir <<<<<<<<<<<<<<<<<<
       //g_list_free(pfirst);                              /// corregir <<<<<<<<<<<<<<<<<<
-      *mylist1 = g_list_first(*mylist1);
       
+      *mylist1 = g_list_first(*mylist1);
       pfirst=*mylist1;
     }else{
       pfirst = pfirst->next;
