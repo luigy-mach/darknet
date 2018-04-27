@@ -1,13 +1,9 @@
-
-
 #ifndef RECT_H
 #define RECT_H
 
 
-
 #include "mycommon.h"
 #include "mycommon.h"
-
 
 
 typedef struct point point;
