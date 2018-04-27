@@ -30,7 +30,8 @@ struct tracking_obj{
    int   lostBound; //maximo 10
 
    double velocidad;
-   double distancia;
+   double distanceTotal;
+   double distanceCurr;
    
    int pointcenterX;
    int pointcenterY;
@@ -73,6 +74,7 @@ void myTrackingObj_updateDistance(tracking_obj* obj);
 
 void myTrackingObj_updateSpeed(tracking_obj* obj);
 
+double myTrackingObj_averageVelocity(rectangle* rectO, rectangle* rectF, int timeO, int timeF);
 
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////

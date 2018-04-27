@@ -1,0 +1,2431 @@
+Demo
+video file: ../video-in/violencia-abuelita.mp4
+while init nro: 0
+
+FPS:30393.5
+Objects:
+
+debug my_draw 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+Error: lista vacia 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 0
+while init nro: 1
+
+FPS:5.7
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+Error: lista vacia 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 1
+while init nro: 2
+
+FPS:26.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.026384 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.070392 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 2
+while init nro: 3
+
+FPS:27.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.965065 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.068122 .
+        myfoo_GCompareFunc    doubleOverlap = 0.017831 .
+        myfoo_GCompareFunc    doubleOverlap = 0.964286 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.950077 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 3
+while init nro: 4
+
+FPS:24.5
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+person: 100%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.973759 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.070434 .
+        myfoo_GCompareFunc    doubleOverlap = 0.017943 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990826 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.966167 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.954758 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 4
+while init nro: 5
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.926484 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.069886 .
+        myfoo_GCompareFunc    doubleOverlap = 0.008959 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990826 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.897619 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.945808 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 5
+while init nro: 6
+
+FPS:25.5
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.944460 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.068333 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.948718 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.971154 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 6
+while init nro: 7
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.984615 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.065410 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990741 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.867498 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.895232 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 7
+while init nro: 8
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.969231 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.067607 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.890200 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.961655 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 8
+while init nro: 9
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.944594 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.073630 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.972808 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.720141 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 76%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.968421 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 9
+while init nro: 10
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.070558 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.022011 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975180 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.938640 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 69%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.945946 .
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 10
+while init nro: 11
+
+FPS:25.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.061733 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990566 .
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.044054 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.931827 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 70%
+        myfoo_GCompareFunc    doubleOverlap = 0.744681 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 64%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.894819 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 52%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 11
+while init nro: 12
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.063029 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.090253 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.948886 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 76%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.730759 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 75%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.965297 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 53%
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 12
+while init nro: 13
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.012492 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.972877 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.883837 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.160518 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.786768 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 81%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.965795 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 13
+while init nro: 14
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.949211 .
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.003097 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.982456 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.186956 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.956674 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 85%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989583 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 14
+while init nro: 15
+
+FPS:24.7
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.003115 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.982456 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.179705 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.961538 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 86%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975610 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 69%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.894145 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 15
+while init nro: 16
+
+FPS:27.6
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.198259 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.978391 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 85%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.941550 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 69%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.694215 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 16
+while init nro: 17
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.152695 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.952644 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.919932 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.981132 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 85%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 17
+while init nro: 18
+
+FPS:25.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.156208 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.974026 .
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.962963 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990476 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 81%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.965197 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 18
+while init nro: 19
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.133872 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.910134 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990566 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.951535 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 69%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989796 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 19
+while init nro: 20
+
+FPS:25.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.127988 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.939759 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.950946 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 60%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.955362 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 20
+while init nro: 21
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.123175 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.944152 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.971039 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 56%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.947368 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 21
+while init nro: 22
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.134574 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.939975 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 86%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.914047 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 61%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.936831 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 52%
+        myfoo_GCompareFunc    doubleOverlap = 0.929825 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 22
+while init nro: 23
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.035977 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.764270 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 66%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990099 .
+inicio my_draw_detections_test 11
+person: 66%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.895674 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 52%
+        myfoo_GCompareFunc    doubleOverlap = 0.981132 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 23
+while init nro: 24
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.017012 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.895578 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.982456 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 68%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.632397 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 56%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.709677 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 52%
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 24
+while init nro: 25
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.073597 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.867956 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 77%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.673092 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 65%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.962963 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 25
+while init nro: 26
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.071131 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.921019 .
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.982456 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 84%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.980000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 57%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.971788 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 26
+while init nro: 27
+
+FPS:25.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 99%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.022416 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.779512 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.938205 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990654 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 51%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.971154 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 27
+while init nro: 28
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 71%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.651667 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 28
+while init nro: 29
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989691 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990654 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 61%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.901829 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 29
+while init nro: 30
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.974359 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.982143 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 30
+while init nro: 31
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.951220 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.990654 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 31
+while init nro: 32
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 53%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.516060 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 32
+while init nro: 33
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.976190 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 53%
+        myfoo_GCompareFunc    doubleOverlap = 0.074229 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.355025 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.098592 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 33
+while init nro: 34
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989691 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.981481 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 34
+while init nro: 35
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.976190 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.018366 .
+        myfoo_GCompareFunc    doubleOverlap = 0.718109 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 51%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.492588 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 35
+while init nro: 36
+
+FPS:24.9
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.979381 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.018310 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 52%
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 36
+while init nro: 37
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 89%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.670076 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 37
+while init nro: 38
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 54%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.567934 .
+        myfoo_GCompareFunc    doubleOverlap = 0.086591 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.171415 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.130882 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 38
+while init nro: 39
+
+FPS:24.8
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975610 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 91%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 64%
+        myfoo_GCompareFunc    doubleOverlap = 0.923357 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 39
+while init nro: 40
+
+FPS:25.0
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 83%
+        myfoo_GCompareFunc    doubleOverlap = 0.721786 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 40
+while init nro: 41
+
+FPS:24.7
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975610 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 86%
+        myfoo_GCompareFunc    doubleOverlap = 0.955525 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 41
+while init nro: 42
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975000 .
+inicio my_draw_detections_test 11
+person: 92%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.975610 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 88%
+        myfoo_GCompareFunc    doubleOverlap = 0.955617 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 42
+while init nro: 43
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 88%
+        myfoo_GCompareFunc    doubleOverlap = 0.963586 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 43
+while init nro: 44
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989583 .
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.965588 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 90%
+        myfoo_GCompareFunc    doubleOverlap = 0.990476 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 44
+while init nro: 45
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989583 .
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 93%
+        myfoo_GCompareFunc    doubleOverlap = 0.963794 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 51%
+        myfoo_GCompareFunc    doubleOverlap = 0.005282 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.337857 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 45
+while init nro: 46
+
+FPS:25.3
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.974359 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.005249 .
+        myfoo_GCompareFunc    doubleOverlap = 0.972808 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989474 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 60%
+        myfoo_GCompareFunc    doubleOverlap = 0.955556 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 46
+while init nro: 47
+
+FPS:25.2
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.955433 .
+inicio my_draw_detections_test 11
+person: 95%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 58%
+        myfoo_GCompareFunc    doubleOverlap = 0.961481 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 47
+while init nro: 48
+
+FPS:25.4
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.897594 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.974359 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989474 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 57%
+        myfoo_GCompareFunc    doubleOverlap = 0.782222 .
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 48
+while init nro: 49
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 98%
+        myfoo_GCompareFunc    doubleOverlap = 0.013803 .
+        myfoo_GCompareFunc    doubleOverlap = 0.923871 .
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.989474 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.976190 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 80%
+        myfoo_GCompareFunc    doubleOverlap = 0.848912 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 49
+while init nro: 50
+
+FPS:25.1
+Objects:
+
+debug my_draw 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 97%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 1.000000 .
+inicio my_draw_detections_test 11
+person: 96%
+        myfoo_GCompareFunc    doubleOverlap = 0.040099 .
+        myfoo_GCompareFunc    doubleOverlap = 0.966667 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.000000 .
+        myfoo_GCompareFunc    doubleOverlap = 0.979167 .
+inicio my_draw_detections_test 11
+person: 94%
+        myfoo_GCompareFunc    doubleOverlap = 0.667695 .
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+inicio my_draw_detections_test 11
+    myTrackingObj_updateAllFlags 
+    myTrackingObj_updateAllFlags 11
+    myTrackingObj_updateAllFlags 12
+    myTrackingObj_updateAllFlags 13
+    myTrackingObj_updateAllFlags 14
+    myTrackingObj_deleteALLBoundingBoxLost 
+    myTrackingObj_printListObjInFile 
+fin my_draw_detections_test 12
+debug my_draw 11
+while fin nro: 50

@@ -22,11 +22,11 @@
 
 
 #define SIZEOF_BUFF 4096
-#define LIMIT_QUEUE 40
+#define LIMIT_QUEUE 10
 #define VACIOSTRING "qwerty"
-#define LIMIT_PERDIDA 40	
+#define LIMIT_PERDIDA 15	
 #define MYFILE "test.txt"
-#define THRESHOLD  0.4
+#define THRESHOLD  0.6
 
 //#endif //end MYCOMMON_H
 

@@ -591,13 +591,12 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
             myRectangle_fill(myrect_temp, left, top, right, bot);
 
 
-
-            printf("    break point debug for 11\n");
+            tracking_obj* mytrack_temp = NULL;
             GList* pGlist = NULL;
+
             if( *demo_list_tracking_obj==NULL)
             {
-                printf("        break point insert  11\n");   
-                tracking_obj* mytrack_temp = NULL;
+                mytrack_temp = NULL;
                 myTrackingObj_create(&mytrack_temp);
                 myTrackingObj_init_create(mytrack_temp);
                 myTrackingObj_addQueue(mytrack_temp,myrect_temp);
@@ -609,48 +608,54 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
                 //myTrackingObj_print(*demo_list_tracking_obj);
   
             }else{
-                printf("        break point insert  12\n");   
                 *demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
                 pGlist = *demo_list_tracking_obj;
-                printf("        break point insert  121 x\n");  
-                if(pGlist==NULL) printf("        pGlist: %s \n",pGlist);
-                printf("        break point insert  122 x\n");   
-                if(myrect_temp==NULL) printf("        myrect_temp: %s\n",myrect_temp);
-                printf("        break point insert  123 x\n");
-                printf("        break point insert  123 x\n");
+                if(pGlist==NULL)
+                {
+                    printf("        Error pGlist NULL: %s \n",pGlist);
+                    return;
+                }
+                if(myrect_temp==NULL)
+                {
+                    printf("        Error myrect_temp NULL: %s\n",myrect_temp);
+                    return;
+                }
                 pGlist = g_list_find_custom(pGlist, myrect_temp, &myfoo_GCompareFunc);
-                printf("        break point insert  124 x\n");   
+                
 
                 if( pGlist != NULL )
                 {
-                    printf("        break point insert  13\n");   
-                  myTrackingObj_addQueue((tracking_obj*)(pGlist->data),myrect_temp);
-                  mytrackingObj_updatePointCenter((tracking_obj*)(pGlist->data),myrect_temp);
-                  tracking_obj* temp = (tracking_obj*)(pGlist->data);
-                  myTrackingObj_updateDistance(temp);
-                  myTrackingObj_updateSpeed(temp);
+                    myTrackingObj_addQueue((tracking_obj*)(pGlist->data),myrect_temp);
+                    mytrackingObj_updatePointCenter((tracking_obj*)(pGlist->data),myrect_temp);
+                    tracking_obj* temp = (tracking_obj*)(pGlist->data);
+                    myTrackingObj_updateDistance(temp);
+                    myTrackingObj_updateSpeed(temp);
                 }else{
-                    printf("        break point insert  14\n");   
-                  tracking_obj* mytrack_temp = NULL;
-                  myTrackingObj_create(&mytrack_temp);
-                  myTrackingObj_init_create(mytrack_temp);
-                  myTrackingObj_addQueue(mytrack_temp,myrect_temp);
-                  mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
-                  myTrackingObj_updateDistance(mytrack_temp);
-                  myTrackingObj_updateSpeed(mytrack_temp);
-                  //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
-                  //*demo_list_tracking_obj = g_list_append(*demo_list_tracking_obj, mytrack_temp);
-                  *demo_list_tracking_obj = g_list_prepend(*demo_list_tracking_obj, mytrack_temp);
-                  //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
+                    mytrack_temp = NULL;
+                    myTrackingObj_create(&mytrack_temp);
+                    myTrackingObj_init_create(mytrack_temp);
+                    myTrackingObj_addQueue(mytrack_temp,myrect_temp);
+                    mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
+                    myTrackingObj_updateDistance(mytrack_temp);
+                    myTrackingObj_updateSpeed(mytrack_temp);
+                    //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
+                    //*demo_list_tracking_obj = g_list_append(*demo_list_tracking_obj, mytrack_temp);
+                    *demo_list_tracking_obj = g_list_prepend(*demo_list_tracking_obj, mytrack_temp);
+                    //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
                 }
-  
-                //myTrackingObj_print(*demo_list_tracking_obj);
             }//fin - if( *demo_list_tracking_obj==NULL)
 
-  
-        printf("    break point debug for 12\n");
+            GList* tempGlist = NULL;
+            tempGlist = g_list_find_custom(tempGlist, myrect_temp, &myfoo_GCompareFunc);
 
+            char strtemp[100];
+            if(tempGlist!=NULL){
+                double velocity = ((tracking_obj*)tempGlist->data)->velocidad;            
+                printf("velocity %lf\n",velocity );
+            }
+            
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            
             if(alphabet)
             {
                 image label = get_label(alphabet, labelstr, (im.h*.03));
@@ -670,7 +675,6 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
             }//if(dets[i].mask)
 
         } // if(class >= 0  && (0==strcmp(labelstr_high,strtemp)) )
-        printf("    break point debug for 13\n");
 
     } //for(i = 0; i < num; ++i){
 

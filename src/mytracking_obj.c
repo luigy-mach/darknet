@@ -13,7 +13,8 @@ void myTrackingObj_init_create(tracking_obj* obj){
   obj->flagUsed     = 0;
   obj->lostBound    = 0;
   obj->velocidad    = 0;
-  obj->distancia    = 0.0;
+  obj->distanceTotal    = 0.0;
+  obj->distanceCurr    = 0.0;
   obj->pointcenterX = 0;
   obj->pointcenterY = 0;
   obj->rootRect     = NULL;
@@ -31,7 +32,8 @@ void myTrackingObj_free(tracking_obj* obj){
   //obj->flagUsed     = 0;
   //obj->lostBound    = 0;
   //obj->velocidad    = 0;
-  //obj->distancia    = 0.0;
+  //obj->distanceTotal    = 0.0;
+  //obj->distanceCurr    = 0.0;
   //obj->pointcenterX = 0;
   //obj->pointcenterY = 0;
   //obj->rootRect     = NULL;
@@ -83,8 +85,6 @@ void myTrackingObj_addQueue(tracking_obj* obj, rectangle* rect1){
     printf(" update point\n");
     obj->isPoint=_isPoint;
   }
-  printf("Error, myRectangle_isPoint 13.\n");
-
 
   myTrackingObj_updateRootRect(obj,rect1);
 
@@ -188,16 +188,17 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
     //int   flagUsed; //0-1
     //int   lostBound; //maximo 10
     //double velocidad;
-    //double distancia;
+    //double distanceTotal;
     //int pointcenterX;
     //int pointcenterY;
     fprintf(fp, temp);
 
-    sprintf(temp,"flagUsed:%i \n,lostBound:%i \n,velocidad:%lf \n,distancia:%lf \n,isPoint = %i\n"
+    sprintf(temp,"flagUsed:%i \n,lostBound:%i \n,velocidad:%lf \n,distanceTotal:%lf \n,distanceCurr:%lf \n,isPoint = %i\n"
                   ,((tracking_obj*)(pfirst->data))->flagUsed
                   ,((tracking_obj*)(pfirst->data))->lostBound
                   ,((tracking_obj*)(pfirst->data))->velocidad
-                  ,((tracking_obj*)(pfirst->data))->distancia
+                  ,((tracking_obj*)(pfirst->data))->distanceTotal
+                  ,((tracking_obj*)(pfirst->data))->distanceCurr
                   ,((tracking_obj*)(pfirst->data))->isPoint);      
     fprintf(fp, temp);
 
@@ -274,19 +275,20 @@ void myTrackingObj_print(GList* mylist){
     ///obj->flagUsed     = 0;
     ///obj->lostBound    = 0;
     ///obj->velocidad    = 0;
-    ///obj->distancia    = 0.0;
+    ///obj->distanceTotal    = 0.0;
     ///obj->pointcenterX = 0;
     ///obj->pointcenterY = 0;
     ///obj->rootRect     = NULL;
     ///obj->queue_rectangles = NULL;
 
-    printf("name         <  %s  > \n",((tracking_obj*)(pfirst->data))->name);
-    printf("flagUsed     <  %d  > \n",((tracking_obj*)(pfirst->data))->flagUsed);
-    printf("lostBound    <  %d  > \n",((tracking_obj*)(pfirst->data))->lostBound);
-    printf("velocidad    <  %lf  > \n",((tracking_obj*)(pfirst->data))->velocidad);
-    printf("distancia    <  %lf  > \n",((tracking_obj*)(pfirst->data))->distancia);
-    printf("pointcenterX <  %i  > \n",((tracking_obj*)(pfirst->data))->pointcenterX);
-    printf("pointcenterY <  %i  > \n",((tracking_obj*)(pfirst->data))->pointcenterY);
+    printf("name         <%s>  \n",((tracking_obj*)(pfirst->data))->name);
+    printf("flagUsed     <%d>  \n",((tracking_obj*)(pfirst->data))->flagUsed);
+    printf("lostBound    <%d>  \n",((tracking_obj*)(pfirst->data))->lostBound);
+    printf("velocidad    <%lf> \n",((tracking_obj*)(pfirst->data))->velocidad);
+    printf("distanceTotal<%lf> \n",((tracking_obj*)(pfirst->data))->distanceTotal);
+    printf("distanceCurr <%lf> \n",((tracking_obj*)(pfirst->data))->distanceTotal);
+    printf("pointcenterX <%i>  \n",((tracking_obj*)(pfirst->data))->pointcenterX);
+    printf("pointcenterY <%i>  \n",((tracking_obj*)(pfirst->data))->pointcenterY);
     
     printf("(%i,%i,%i,%i) \n" ,((tracking_obj*)(pfirst->data))->rootRect->topleft->x
                               ,((tracking_obj*)(pfirst->data))->rootRect->topleft->y
@@ -331,15 +333,14 @@ void myTrackingObj_updateDistance(tracking_obj* obj)
   }
   
   rectangle* temp1 = (rectangle*)(obj->queue_rectangles->head->data);
-  //printf("    temp1 = %s .\n",temp1);
   rectangle* temp2 = NULL;
-  if(obj->queue_rectangles->length <= 2){
-    //printf("    cola muy pequenha .\n");
+  if(obj->queue_rectangles->length < 2){
     return; 
   }
   temp2 = (rectangle*)(obj->queue_rectangles->head->next->data);
-  obj->distancia += myRectangle_distancia_eu_2rect(temp1,temp2);
-  //printf("    obj->distancia = %lf .\n",obj->distancia);
+  obj->distanceCurr   = myRectangle_distancia_eu_2rect(temp1,temp2);
+  obj->distanceTotal += obj->distanceCurr;
+  //printf("    obj->distanceTotal = %lf .\n",obj->distanceTotal);
   return;
 }
 
@@ -351,10 +352,29 @@ void myTrackingObj_updateSpeed(tracking_obj* obj)
     return;
   }
   
-  double mytime = (double)obj->queue_rectangles->length;
-  double mydist = (double)obj->distancia;
-  obj->velocidad = mydist/mytime;
+  rectangle* temp1 = (rectangle*)(obj->queue_rectangles->head->data);
+  rectangle* temp2 = NULL;
+  if(obj->queue_rectangles->length < 2){
+    return; 
+  }
+  temp2 = (rectangle*)(obj->queue_rectangles->head->next->data);
+
+  
+  //double mytime = (double)obj->queue_rectangles->length;
+  //double mydist = (double)obj->distanceTotal;
+  //obj->velocidad = mydist/mytime;
+  //XXXXXXXXXXXXXXXXX
+  obj->velocidad =  myTrackingObj_averageVelocity(temp1,temp2,0,1);
+  
   return;
+}
+
+
+//velocidad media
+double myTrackingObj_averageVelocity(rectangle* rectO, rectangle* rectF, int timeO, int timeF){
+  double deltaPos  = myRectangle_distancia_eu_2rect(rectO,rectF); 
+  double deltaTime = timeF-timeO;
+  return deltaPos/deltaTime;
 }
 
 
