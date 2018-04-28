@@ -22,10 +22,10 @@
 
 
 #define SIZEOF_BUFF 4096
-#define LIMIT_QUEUE 10
+#define LIMIT_QUEUE 40
 #define VACIOSTRING "qwerty"
 #define LIMIT_PERDIDA 15	
-#define MYFILE "test.txt"
+#define DIROUTFILE "/home/tesista1/yolo/video-out-txt/"
 #define THRESHOLD  0.6
 
 //#endif //end MYCOMMON_H

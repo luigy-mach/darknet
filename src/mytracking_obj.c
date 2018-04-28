@@ -416,4 +416,37 @@ int myfoo_GCompareFunc(void* a, void* b){
 
 
 
+void myTrackingObj_printListObjInFile_velocity(GList* mylist, FILE* fp){
+
+  
+  mylist = g_list_first(mylist);
+
+  GList* pfirst = NULL;
+  pfirst = mylist;
+  int tam = g_list_length(pfirst);
+  pfirst = mylist;
+
+  int i=0;
+  while(pfirst)
+  {
+    char temp[300]  = {0};
+    //int   flagUsed; //0-1
+    //int   lostBound; //maximo 10
+    //double velocidad;
+    //double distanceTotal;
+    //int pointcenterX;
+    //int pointcenterY;
+    fprintf(fp, temp);
+
+    sprintf(temp,"%lf \n",((tracking_obj*)(pfirst->data))->velocidad);      
+    fprintf(fp, temp);
+
+    fprintf(fp, temp);
+
+    pfirst = pfirst->next;    
+    i++;
+  }
+  return;
+}
+
 

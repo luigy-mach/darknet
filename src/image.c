@@ -547,9 +547,9 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
 
         //labelstr_high: solo tiene la etiqueta de mayor thresh 
         //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
-        char strtemp[]="person";
+        char strtempPerson[]="person";
 
-        if(class >= 0  && (0==strcmp(labelstr_high,strtemp)) )
+        if(class >= 0  && (0==strcmp(labelstr_high,strtempPerson)) )
         {
             int width = im.h * .006;
 
@@ -646,19 +646,33 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
             }//fin - if( *demo_list_tracking_obj==NULL)
 
             GList* tempGlist = NULL;
+            *demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);
+            tempGlist = (*demo_list_tracking_obj);
+
             tempGlist = g_list_find_custom(tempGlist, myrect_temp, &myfoo_GCompareFunc);
 
-            char strtemp[100];
-            if(tempGlist!=NULL){
-                double velocity = ((tracking_obj*)tempGlist->data)->velocidad;            
-                printf("velocity %lf\n",velocity );
+            char strtemp[100]={0};
+            double velocity = ((tracking_obj*)tempGlist->data)->velocidad;            
+            /*
+            if(velocity >=4 ){
+                //sprintf(strtemp,"%lf",velocity);
+                //strcat(labelstr_high, strtemp);
+                //strcat(labelstr_high, strtemp);
+                sprintf(labelstr_high,"anomalo" );
+                rgb[0] = 255;
+                rgb[1] = 0;
+                rgb[2] = 0;
+
+            }else{
+                continue;
             }
-            
+            */
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             
             if(alphabet)
             {
-                image label = get_label(alphabet, labelstr, (im.h*.03));
+                //image label = get_label(alphabet, labelstr, (im.h*.03));
+                image label = get_label(alphabet, labelstr_high, (im.h*.03));
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
             }// if(alphabet)
@@ -674,7 +688,7 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
                 free_image(tmask);
             }//if(dets[i].mask)
 
-        } // if(class >= 0  && (0==strcmp(labelstr_high,strtemp)) )
+        } // if(class >= 0  && (0==strcmp(labelstr_high,strtempPerson)) )
 
     } //for(i = 0; i < num; ++i){
 
@@ -683,7 +697,8 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
     printf("    myTrackingObj_deleteALLBoundingBoxLost \n");
     myTrackingObj_deleteALLBoundingBoxLost(demo_list_tracking_obj);
     printf("    myTrackingObj_printListObjInFile \n");
-    myTrackingObj_printListObjInFile(*demo_list_tracking_obj,demo_filePointer);    
+    //myTrackingObj_printListObjInFile(*demo_list_tracking_obj,demo_filePointer);    
+    myTrackingObj_printListObjInFile_velocity(*demo_list_tracking_obj,demo_filePointer);
     printf("fin my_draw_detections_test 12\n");
 }// fin my_draw_detections_test
 

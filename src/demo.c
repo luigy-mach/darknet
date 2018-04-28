@@ -40,6 +40,7 @@ double demo_time;
 //////////////////////////////////////////////////
 #include "mycommon.h"
 //#include <gmodule.h>
+#include <libgen.h>
 
 //open file
 //static FILE* demo_filePointer = NULL;
@@ -211,10 +212,19 @@ void *detect_loop(void *ptr)
 
 void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int delay, char *prefix, int avg_frames, float hier, int w, int h, int frames, int fullscreen)
 {
+    //////
+    char *bname;
+    char *path2 = strdup(filename);
+    bname = basename(path2);  
+    /////
 
-    demo_filePointer = fopen(MYFILE, "w");
+    char * temp_file[100]={0};
+    sprintf(temp_file,"%s%s.txt",DIROUTFILE,bname);
+    printf("%s\n",temp_file );
+    demo_filePointer = fopen(temp_file, "w");
+
     if( demo_filePointer == NULL ){
-      printf("error al abrir MYFILE\n");
+      printf("error al abrir DIROUTFILE\n");
       return;
     }
     
