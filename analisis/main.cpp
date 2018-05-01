@@ -43,8 +43,8 @@ int main(){
 	std::vector<string> a;
 	std::vector<int> b;
 	ifstream infile;
-    //infile.open ("all-noFigths.txt", ifstream::in);
-    infile.open ("all-figths.txt", ifstream::in);
+    infile.open ("all-noFigths.txt", ifstream::in);
+    //infile.open ("all-figths.txt", ifstream::in);
 
 
 	string delimiter = ",";
@@ -113,7 +113,7 @@ int main(){
 
     while(it_mymap2!=mymap.end()){
     	
-    	cout<<it_mymap2->first<<":"<<it_mymap2->second.x<<","<<it_mymap2->second.y<<endl; 
+    	cout<<it_mymap2->first<<","<<it_mymap2->second.x<<","<<it_mymap2->second.y<<endl; 
     	//cout<<it_mymap2->first<<","; 
     	double tempX = it_mymap2->second.x;
     			mediaX = (mediaX+tempX)/2;
