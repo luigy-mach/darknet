@@ -742,7 +742,11 @@ void my_draw_detections3(image im, int num, float thresh, box *boxes, float **pr
 
 
 
-void my_draw_detections_list(image im, int num, float thresh, box *boxes, float **probs, float **masks, char **names, image **alphabet, int classes, int num_frame, FILE *fp, mylist* demo_list_tracking_obj, double demo_mythreshold_overlap)
+void my_draw_detections_list(image im, int num, float thresh, box *boxes,
+                             float **probs, float **masks, char **names,
+                             image **alphabet, int classes,
+                             int num_frame, FILE *fp, mylist* demo_list_tracking_obj,
+                             double demo_mythreshold_overlap)
 {
     printf("1demo_num_frame: %d \n", num_frame );
     printf("1demo_detections: %d \n", num );
@@ -766,8 +770,10 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         float thresh_temp = 0.0;
         char  labelstr_high[50] = {0};
 
-        for(j = 0; j < classes; ++j){
-            if (probs[i][j] > thresh){
+        for(j = 0; j < classes; ++j)
+        {
+            if (probs[i][j] > thresh)
+            {
                 if(thresh_temp < thresh){
                     thresh_temp=thresh;
                     sprintf(labelstr_high, "%s", names[j] );
@@ -793,11 +799,9 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
         char strtemp[]="person";
     
-        if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
-                   
+        if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) )
+        {
             
-            
-
             //int width = im.h * .1006; //test grosor linea recuadro (box)
             int width = im.h * .006;
 
@@ -865,7 +869,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
             //dibuja todos las etiquetas
             //es totalmente independiente
-            if (alphabet) {
+            if (alphabet)
+            {
 
                 image label = get_label(alphabet, labelstr_high, (im.h*.03)/10);
                 draw_label(im, top + width, left, label, rgb);
@@ -889,7 +894,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
             //no es importante
             //quitandolo no sucede nada
-            if (masks){
+            if (masks)
+            {
                 image mask         = float_to_image(14, 14, 1, masks[i]);
                 image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
                 image tmask        = threshold_image(resized_mask, .5);
@@ -903,7 +909,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
 
 
-    }// end:  for(i = 0; i < num; ++i)
+    } // end:  for(i = 0; i < num; ++i)
 
 
     fprintf(fp, "-----------------------\n");

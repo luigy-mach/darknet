@@ -82,7 +82,8 @@ int main(){
         //mylist = g_list_first(mylist);//ya es primero
         //myTrackingObj_print(mylist);
 
-      }else{
+      }else
+      {
         mylist = g_list_first(mylist);//reseteando pos
         pGlist = mylist;
         pGlist = g_list_find_custom(pGlist, myrect_temp, &myfoo_GCompareFunc);
