@@ -403,8 +403,8 @@ int myfoo_GCompareFunc(void* a, void* b){
   
   double doubleOverlap = myRectangle_overlap(p1,p2);
   printf("    doubleOverlap = %lf .\n",doubleOverlap);
-  //return  (THRESHOLD <= doubleOverlap)?0:-1;
-  if(THRESHOLD <= doubleOverlap)
+  //return  (THRESHOLD_IOU <= doubleOverlap)?0:-1;
+  if(THRESHOLD_IOU <= doubleOverlap)
   {
     return 0;
   }else{
@@ -450,3 +450,48 @@ void myTrackingObj_printListObjInFile_velocity(GList* mylist, FILE* fp){
 }
 
 
+void myTrackingObj_printListObjInFile_anomalusORnot(GList* mylist, FILE* fp, char* demo_basename_filename, double velocity)
+{
+
+
+
+  mylist = g_list_first(mylist);
+
+  GList* pfirst = NULL;
+  pfirst = mylist;
+  int tam = g_list_length(pfirst);
+  pfirst = mylist;
+
+
+    char temp[300]  = {0};
+    if(velocity >= (THRESHOLD_VELOCITY+DESV_DESVIACION_VELOCITY) ){
+      //sprintf(temp,"%s,%s \n",demo_basename_filename,"anomalo");      
+      sprintf(temp,"%s,%d \n",demo_basename_filename,1);      
+      fprintf(fp, temp);
+    }else{
+      sprintf(temp,"%s,%d \n",demo_basename_filename,0);      
+      //sprintf(temp,"%s,%s \n",demo_basename_filename,"no anomalo");      
+      fprintf(fp, temp);
+    }
+  
+            
+  /*int i=0;
+  while(pfirst)
+  {
+    char temp[300]  = {0};
+    if(velocity >= (THRESHOLD_VELOCITY+DESV_DESVIACION_VELOCITY) ){
+      sprintf(temp,"%s,%d \n",demo_basename_filename,1);      
+      fprintf(fp, temp);
+    }else{
+      sprintf(temp,"%s,%d \n",demo_basename_filename,0);      
+      fprintf(fp, temp);
+    }  
+
+    pfirst = pfirst->next;    
+    i++;
+  }
+  return;
+  */
+
+  return;
+}

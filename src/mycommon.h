@@ -23,10 +23,15 @@
 
 #define SIZEOF_BUFF 4096
 #define LIMIT_QUEUE 40
-#define VACIOSTRING "qwerty"
 #define LIMIT_PERDIDA 15	
-#define DIROUTFILE "/home/tesista1/yolo/video-out-txt/"
-#define THRESHOLD  0.6
+
+#define VACIOSTRING "qwerty"
+#define DIROUTFILE "/home/tesista1/yolo/video-out-anomalusORnot2/"
+
+#define THRESHOLD_VELOCITY  1.9
+#define DESV_DESVIACION_VELOCITY  0.703
+
+#define THRESHOLD_IOU  0.6
 
 //#endif //end MYCOMMON_H
 

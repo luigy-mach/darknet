@@ -81,7 +81,7 @@ double myTrackingObj_averageVelocity(rectangle* rectO, rectangle* rectF, int tim
 
 int myfoo_GCompareFunc(void* a, void* b);
 void myTrackingObj_printListObjInFile_velocity(GList* mylist, FILE* fp);
-
+void myTrackingObj_printListObjInFile_anomalusORnot(GList* mylist, FILE* fp, char* demo_basename_filename, double velocity);
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 

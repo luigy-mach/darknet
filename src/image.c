@@ -521,16 +521,20 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
         char  labelstr_high[50] = {0};
 
 
-        for(j = 0; j < classes; ++j){
-            if (dets[i].prob[j] > thresh){
-                if(thresh_temp < thresh){
+        for(j = 0; j < classes; ++j)
+        {
+            if (dets[i].prob[j] > thresh)
+            {
+                if(thresh_temp < thresh)
+                {
                     thresh_temp=thresh;
                     sprintf(labelstr_high, "%s", names[j] );
                 }
-                if (class < 0) {
+                if (class < 0)
+                {
                     strcat(labelstr, names[j]);
                     class = j;
-                } else {
+                }else{
                     strcat(labelstr, ", ");
                     strcat(labelstr, names[j]);
                 }
@@ -704,6 +708,196 @@ void my_draw_detections_testv2(image im, detection *dets, int num, float thresh,
 
 
 
+void my_draw_detections_testv3(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * demo_filePointer, GList** demo_list_tracking_obj, char* demo_basename_filename)
+{
+
+    int i,j;
+
+    for(i = 0; i < num; ++i)
+    {
+        printf("inicio my_draw_detections_test 11\n");
+        char labelstr[4096] = {0};
+        int class = -1;
+
+        //classes=cantidada de clases del entrenamiento 
+        //en este caso 80
+        float thresh_temp = 0.0;
+        char  labelstr_high[50] = {0};
+
+
+        for(j = 0; j < classes; ++j)
+        {
+            if (dets[i].prob[j] > thresh)
+            {
+                if(thresh_temp < thresh)
+                {
+                    thresh_temp=thresh;
+                    sprintf(labelstr_high, "%s", names[j] );
+                }
+                if (class < 0)
+                {
+                    strcat(labelstr, names[j]);
+                    class = j;
+                }else{
+                    strcat(labelstr, ", ");
+                    strcat(labelstr, names[j]);
+                }
+                //modificacion!!!
+                //printf("%s: %.0f%%\n", names[j], probs[i][j]*100);
+                char strtemp[]="person";
+                if(0==strcmp(names[j],strtemp))
+                    printf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
+            }
+        }
+
+        //##if(labelstr[0])
+        //##    printf("::     %s     ::\n", labelstr_high);
+
+        //labelstr_high: solo tiene la etiqueta de mayor thresh 
+        //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
+        char strtempPerson[]="person";
+
+        if(class >= 0  && (0==strcmp(labelstr_high,strtempPerson)) )
+        {
+            int width = im.h * .006;
+
+            /*
+               if(0){
+               width = pow(prob, 1./2.)*10+1;
+               alphabet = 0;
+               }
+             */
+
+            //printf("%d %s: %.0f%%\n", i, names[class], prob*100);
+            int offset = class*123457 % classes;
+            float red = get_color(2,offset,classes);
+            float green = get_color(1,offset,classes);
+            float blue = get_color(0,offset,classes);
+            float rgb[3];
+
+            //width = prob*20+2;
+
+            rgb[0] = red;
+            rgb[1] = green;
+            rgb[2] = blue;
+            box b = dets[i].bbox;
+            //printf("%f %f %f %f\n", b.x, b.y, b.w, b.h);
+
+            int left  = (b.x-b.w/2.)*im.w;
+            int right = (b.x+b.w/2.)*im.w;
+            int top   = (b.y-b.h/2.)*im.h;
+            int bot   = (b.y+b.h/2.)*im.h;
+
+            if(left < 0) left = 0;
+            if(right > im.w-1) right = im.w-1;
+            if(top < 0) top = 0;
+            if(bot > im.h-1) bot = im.h-1;
+
+
+            rectangle* myrect_temp;
+            myRectangle_create( &myrect_temp );
+            myRectangle_fill(myrect_temp, left, top, right, bot);
+
+
+            tracking_obj* mytrack_temp = NULL;
+            GList* pGlist = NULL;
+
+            if( *demo_list_tracking_obj==NULL)
+            {
+                mytrack_temp = NULL;
+                myTrackingObj_create(&mytrack_temp);
+                myTrackingObj_init_create(mytrack_temp);
+                myTrackingObj_addQueue(mytrack_temp,myrect_temp);
+                mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
+                myTrackingObj_updateDistance(mytrack_temp);
+                myTrackingObj_updateSpeed(mytrack_temp);
+                *demo_list_tracking_obj = g_list_prepend(*demo_list_tracking_obj,mytrack_temp);
+                //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//ya es primero
+                //myTrackingObj_print(*demo_list_tracking_obj);
+  
+            }else{
+                *demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
+                pGlist = *demo_list_tracking_obj;
+                if(pGlist==NULL)
+                {
+                    printf("        Error pGlist NULL: %s \n",pGlist);
+                    return;
+                }
+                if(myrect_temp==NULL)
+                {
+                    printf("        Error myrect_temp NULL: %s\n",myrect_temp);
+                    return;
+                }
+                pGlist = g_list_find_custom(pGlist, myrect_temp, &myfoo_GCompareFunc);
+                
+
+                if( pGlist != NULL )
+                {
+                    myTrackingObj_addQueue((tracking_obj*)(pGlist->data),myrect_temp);
+                    mytrackingObj_updatePointCenter((tracking_obj*)(pGlist->data),myrect_temp);
+                    tracking_obj* temp = (tracking_obj*)(pGlist->data);
+                    myTrackingObj_updateDistance(temp);
+                    myTrackingObj_updateSpeed(temp);
+                }else{
+                    mytrack_temp = NULL;
+                    myTrackingObj_create(&mytrack_temp);
+                    myTrackingObj_init_create(mytrack_temp);
+                    myTrackingObj_addQueue(mytrack_temp,myrect_temp);
+                    mytrackingObj_updatePointCenter(mytrack_temp,myrect_temp);
+                    myTrackingObj_updateDistance(mytrack_temp);
+                    myTrackingObj_updateSpeed(mytrack_temp);
+                    //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
+                    //*demo_list_tracking_obj = g_list_append(*demo_list_tracking_obj, mytrack_temp);
+                    *demo_list_tracking_obj = g_list_prepend(*demo_list_tracking_obj, mytrack_temp);
+                    //*demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);//reseteando pos
+                }
+            }//fin - if( *demo_list_tracking_obj==NULL)
+
+            GList* tempGlist = NULL;
+            *demo_list_tracking_obj = g_list_first(*demo_list_tracking_obj);
+            tempGlist = (*demo_list_tracking_obj);
+
+            tempGlist = g_list_find_custom(tempGlist, myrect_temp, &myfoo_GCompareFunc);
+
+            char strtemp[100]={0};
+            double velocity = ((tracking_obj*)tempGlist->data)->velocidad;            
+            
+            myTrackingObj_printListObjInFile_anomalusORnot(*demo_list_tracking_obj, demo_filePointer, demo_basename_filename, velocity);
+            
+            draw_box_width(im, left, top, right, bot, width, red, green, blue);
+            
+            if(alphabet)
+            {
+                //image label = get_label(alphabet, labelstr, (im.h*.03));
+                image label = get_label(alphabet, labelstr_high, (im.h*.03));
+                draw_label(im, top + width, left, label, rgb);
+                free_image(label);
+            }// if(alphabet)
+
+            if(dets[i].mask)
+            {
+                image mask = float_to_image(14, 14, 1, dets[i].mask);
+                image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
+                image tmask = threshold_image(resized_mask, .5);
+                embed_image(tmask, im, left, top);
+                free_image(mask);
+                free_image(resized_mask);
+                free_image(tmask);
+            }//if(dets[i].mask)
+
+        } // if(class >= 0  && (0==strcmp(labelstr_high,strtempPerson)) )
+
+    } //for(i = 0; i < num; ++i){
+
+    printf("    myTrackingObj_updateAllFlags \n");
+    myTrackingObj_updateAllFlags(*demo_list_tracking_obj);
+    printf("    myTrackingObj_deleteALLBoundingBoxLost \n");
+    myTrackingObj_deleteALLBoundingBoxLost(demo_list_tracking_obj);
+    printf("    myTrackingObj_printListObjInFile \n");
+    //myTrackingObj_printListObjInFile(*demo_list_tracking_obj,demo_filePointer);    
+    //myTrackingObj_printListObjInFile_velocity(*demo_list_tracking_obj,demo_filePointer);
+    printf("fin my_draw_detections_test 12\n");
+}// fin my_draw_detections_test
 
 
 

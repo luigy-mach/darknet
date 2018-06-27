@@ -51,7 +51,7 @@ static FILE *demo_filePointer;
 //static tracking_obj tracking_array_obj[50]={0};
 //static tracking_obj **demo_tracking_array_obj;
 static GList* demo_list_tracking_obj = NULL;  
-
+static char* demo_basename_filename;
 //////////////////////////////////////////////////
 
 
@@ -156,7 +156,8 @@ void *detect_in_thread(void *ptr)
     //draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes);
     printf("debug my_draw 11\n"); 
     //my_draw_detections_test(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, demo_list_tracking_obj);
-    my_draw_detections_testv2(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, &demo_list_tracking_obj);
+    //my_draw_detections_testv2(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, &demo_list_tracking_obj);
+    my_draw_detections_testv3(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes,demo_filePointer, &demo_list_tracking_obj, demo_basename_filename);
     printf("debug my_draw 11\n"); 
 
     free_detections(dets, nboxes);
@@ -216,6 +217,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
     char *bname;
     char *path2 = strdup(filename);
     bname = basename(path2);  
+    demo_basename_filename = bname;
     /////
 
     char * temp_file[100]={0};

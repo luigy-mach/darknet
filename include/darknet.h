@@ -747,7 +747,8 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
 
 //#define __CUDACC__
 //void my_draw_detections_test(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * filePointer, GList* mylist);
-void my_draw_detections_testv2(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * demo_filePointer, GList** demo_list_tracking_obj);
+//void my_draw_detections_testv2(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * demo_filePointer, GList** demo_list_tracking_obj);
+void my_draw_detections_testv3(image im, detection *dets, int num, float thresh, char **names, image **alphabet, int classes, FILE * demo_filePointer, GList** demo_list_tracking_obj, char* demo_basename_filename);
 
 
 #endif
