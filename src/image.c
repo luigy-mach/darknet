@@ -756,7 +756,8 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
 
     
 
-    for(i = 0; i < num; ++i)
+    //for(i = 0; i < num && num_frame%20==0 ; ++i)
+      for(i = 0; i < num ; ++i)
     {    
         char labelstr[4096] = {0};
         int class = -1;
@@ -792,7 +793,7 @@ void my_draw_detections_list(image im, int num, float thresh, box *boxes, float 
         //ahora puedo dibujar solo los boxes[i] que coincidan con labelstr_high
         char strtemp[]="person";
     
-        if(class >= 0 && (0==strcmp(labelstr_high,strtemp)) ){
+        if(class >= 0 && (0==strcmp(labelstr_high,strtemp))){
                    
             
             

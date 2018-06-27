@@ -187,7 +187,10 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
     if(filename){
         printf("video file: %s\n", filename);
         cap = cvCaptureFromFile(filename);
+        //printf("ENTRE FILE %s\n", filename);
     }else{
+    	printf("ENTRE CAMARA %s\n", filename);
+        //cap = cvCaptureFromCAM("rtsp://admin:admin123@192.168.10.213:554/cam/realmonitor?channel=1&subtype=0");
         cap = cvCaptureFromCAM(cam_index);
 
         if(w){
