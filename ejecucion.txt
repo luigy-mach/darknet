@@ -13,7 +13,7 @@ para ejecutar
 
 $ cd darknet-pollo
 $ make
-$ ./darknet detector demo -prefix asalto cfg/coco.data cfg/yolo.cfg yolo.weights nombredevideo.mp4
+$ ./darknet detector demo -prefix <nombredevideo> cfg/coco.data cfg/yolo.cfg yolo.weights nombredevideo.mp4
 
 
 tienes q estar en la misma carpeta donde se encuentra el archivo "nombredevideo.mp4.txt"
