@@ -239,10 +239,11 @@ void myTrackingObj_printListObjInFile_points(GList* mylist, FILE* fp){
     //int pointcenterX;
     //int pointcenterY;
   
-    int xx = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x + ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x;
-        xx = xx/2;
-    int yy = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y + ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y;
-        yy = yy=2;
+    int xx = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x - ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x;
+        xx = xx>0? xx/2:(-1*xx)/2;
+    int yy = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y - ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y;
+        yy = yy>0? yy/2:(-1*yy)/2;
+
     sprintf(temp,"%i %i \n",xx,yy);      
     fprintf(fp, temp);
 
