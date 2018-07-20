@@ -894,7 +894,8 @@ void my_draw_detections_testv3(image im, detection *dets, int num, float thresh,
     printf("    myTrackingObj_deleteALLBoundingBoxLost \n");
     myTrackingObj_deleteALLBoundingBoxLost(demo_list_tracking_obj);
     printf("    myTrackingObj_printListObjInFile \n");
-    myTrackingObj_printListObjInFile(*demo_list_tracking_obj,demo_filePointer);    
+    //myTrackingObj_printListObjInFile(*demo_list_tracking_obj,demo_filePointer);    
+    myTrackingObj_printListObjInFile_points(*demo_list_tracking_obj,demo_filePointer);    
     //myTrackingObj_printListObjInFile_velocity(*demo_list_tracking_obj,demo_filePointer);
     printf("fin my_draw_detections_test 12\n");
 }// fin my_draw_detections_test

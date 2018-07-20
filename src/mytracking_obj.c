@@ -218,6 +218,44 @@ void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp){
 }
 
 
+void myTrackingObj_printListObjInFile_points(GList* mylist, FILE* fp){
+
+  
+  mylist = g_list_first(mylist);
+
+  GList* pfirst = NULL;
+  pfirst = mylist;
+  int tam = g_list_length(pfirst);
+  pfirst = mylist;
+
+  int i=0;
+  while(pfirst)
+  {
+    char temp[300]  = {0};
+    //int   flagUsed; //0-1
+    //int   lostBound; //maximo 10
+    //double velocidad;
+    //double distanceTotal;
+    //int pointcenterX;
+    //int pointcenterY;
+  
+    int xx = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x + ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x;
+        xx = xx/2;
+    int yy = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y + ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y;
+        yy = yy=2;
+    sprintf(temp,"%i %i \n",xx,yy);      
+    fprintf(fp, temp);
+
+    pfirst = pfirst->next;    
+    i++;
+  }
+  
+  return;
+}
+
+
+
+
 void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp){
 
   int tam_queue = g_queue_get_length(obj->queue_rectangles);

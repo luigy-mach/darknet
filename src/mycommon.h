@@ -26,7 +26,7 @@
 #define LIMIT_PERDIDA 15	
 
 #define VACIOSTRING "qwerty"
-#define DIROUTFILE "/home/tesista1/yolo/video-out-anomalusORnot/"
+#define DIROUTFILE "./"
 
 #define THRESHOLD_VELOCITY  1.9
 #define DESV_DESVIACION_VELOCITY  0.703

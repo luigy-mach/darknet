@@ -56,6 +56,7 @@ void myTrackingObj_updateAllFlags(GList* mylist);
 void myTrackingObj_deleteALLBoundingBoxLost(GList** mylist1);
 
 void myTrackingObj_printListObjInFile(GList* mylist, FILE* fp);
+void myTrackingObj_printListObjInFile_points(GList* mylist, FILE* fp);
 void myTrackingObj_printTrackingObjInFile(tracking_obj* obj, FILE* fp);
 
 void myTrackingObj_print2(tracking_obj* obj);
