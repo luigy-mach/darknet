@@ -862,7 +862,7 @@ void my_draw_detections_testv3(image im, detection *dets, int num, float thresh,
             char strtemp[100]={0};
             double velocity = ((tracking_obj*)tempGlist->data)->velocidad;            
             
-            myTrackingObj_printListObjInFile_anomalusORnot(*demo_list_tracking_obj, demo_filePointer, demo_basename_filename, velocity);
+            //myTrackingObj_printListObjInFile_anomalusORnot(*demo_list_tracking_obj, demo_filePointer, demo_basename_filename, velocity);
             
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             
