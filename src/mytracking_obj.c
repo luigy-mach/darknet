@@ -238,11 +238,18 @@ void myTrackingObj_printListObjInFile_points(GList* mylist, FILE* fp){
     //double distanceTotal;
     //int pointcenterX;
     //int pointcenterY;
-  
-    int xx = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x - ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x;
-        xx = xx>0? xx/2:(-1*xx)/2;
-    int yy = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y - ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y;
-        yy = yy>0? yy/2:(-1*yy)/2;
+    int xx =0;
+    int xx_min = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x > ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x ? ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x  : ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x;
+    int xx_max = ((tracking_obj*)(pfirst->data))->rootRect->topleft->x < ((tracking_obj*)(pfirst->data))->rootRect->bottomright->x ? ((tracking_obj*)(pfirst->data))->rootRect->topleft->x      : ((tracking_obj*)(pfirst->data))->rootRect->topleft->x;
+        xx = xx_max-xx_min;
+        xx = xx/2 + xx_min;
+
+    int yy =0;
+    int yy_min = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y > ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y ? ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y : ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y;
+    int yy_max = ((tracking_obj*)(pfirst->data))->rootRect->topleft->y < ((tracking_obj*)(pfirst->data))->rootRect->bottomright->y ? ((tracking_obj*)(pfirst->data))->rootRect->topleft->y     : ((tracking_obj*)(pfirst->data))->rootRect->topleft->y;
+        yy = yy_max-yy_min;
+        yy = yy/2 + yy_min;
+
 
     sprintf(temp,"%i %i \n",xx,yy);      
     fprintf(fp, temp);
