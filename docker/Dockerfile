@@ -49,8 +49,8 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get -y update
+RUN apt-get -y upgrade
 RUN apt-get install -y git 
 
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
@@ -60,7 +60,7 @@ RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavfo
     apt-get install -y python3.5-dev python3-numpy libtbb2 libtbb-dev \
     apt-get install -y libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev lbtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev \
     apt-get install -y curl
-    
+
 RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
     apt-get install -y python3.5-dev python3-numpy libtbb2 libtbb-dev \
     apt-get install -y libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev lbtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev
