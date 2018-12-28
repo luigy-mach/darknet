@@ -17,11 +17,11 @@ ENV DISPLAY=:1 \
     NO_VNC_PORT=6901
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
-ENV HOME=/home/luigy \
+ENV HOME=/home/luigyDesktop/ \
     TERM=xterm \
-    STARTUPDIR=/home/luigy/dockerstartup \
-    INST_SCRIPTS=/home/luigy/install \
-    NO_VNC_HOME=/home/luigy/noVNC \
+    STARTUPDIR=/home/luigy/Desktop/dockerstartup \
+    INST_SCRIPTS=/home/luigy/Desktop/install \
+    NO_VNC_HOME=/home/luigy/Desktop/noVNC \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1280x1024 \
@@ -49,8 +49,23 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
+
+RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
+RUN git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
+    apt-get install -y python3.5-dev python3-numpy libtbb2 libtbb-dev \
+    apt-get install -y libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev lbtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev
+RUN mkdir /opt/opencv/release
+RUN cd /opt/opencv/release
+RUN cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
+RUN make -j4
+RUN make install
+RUN ldconfig
+
 USER 0
 
-ENTRYPOINT ["/home/luigy/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/home/luigy/Desktop/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
 
