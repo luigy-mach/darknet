@@ -50,8 +50,8 @@ ADD ./common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 
-RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
-RUN git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
+RUN /bin/sh -c git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
+RUN /bin/sh -c git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
 RUN apt-get update
 RUN apt-get upgrade
 RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
@@ -59,10 +59,10 @@ RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavfo
     apt-get install -y libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev lbtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev
 RUN mkdir /opt/opencv/release
 RUN cd /opt/opencv/release
-RUN cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
-RUN make -j4
-RUN make install
-RUN ldconfig
+RUN /bin/sh -c cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
+RUN /bin/sh -c make -j4
+RUN /bin/sh -c make install
+RUN /bin/sh -c ldconfig
 
 USER 0
 
