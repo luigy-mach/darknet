@@ -51,6 +51,6 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 USER 0
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/home/luigy/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
 
