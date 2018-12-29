@@ -57,7 +57,7 @@ RUN apt-get install -y git
 USER 0
 
 RUN apt-get install -y git 
-RUN apt-get install -y openssh-server openssh-client
+RUN apt-get install -y openssh-server openssh-client unzip
 
 RUN apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
     python3.5-dev python3-numpy libtbb2 libtbb-dev \
