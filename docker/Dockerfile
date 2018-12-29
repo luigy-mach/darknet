@@ -59,6 +59,9 @@ USER 0
 RUN apt-get install -y git 
 RUN apt-get install -y openssh-server openssh-client
 
+ADD https://github.com/opencv/opencv.git
+ADD https://github.com/opencv/opencv_contrib.git
+
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
 
