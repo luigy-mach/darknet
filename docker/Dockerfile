@@ -56,6 +56,13 @@ RUN apt-get install -y git
 
 USER 0
 
+RUN apt-get install -y git 
+RUN apt-get install -y openssh-server openssh-client
+RUN mkdir -p /home/luigy/.ssh/ && \
+    echo "$SSH_KEY" > /home/luigy/.ssh/id_rsa && \
+    chmod -R 600 /home/luigy/.ssh/ && \
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
 
