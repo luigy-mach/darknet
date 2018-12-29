@@ -33,10 +33,12 @@ ADD ./common/install/ $INST_SCRIPTS/
 ADD ./ubuntu/install/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 
-RUN $INST_SCRIPTS/install_cuda9.1.sh
+
 
 RUN $INST_SCRIPTS/tools.sh
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
+
+RUN $INST_SCRIPTS/install_cuda9.1.sh
 
 RUN $INST_SCRIPTS/tigervnc.sh
 RUN $INST_SCRIPTS/no_vnc.sh
