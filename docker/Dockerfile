@@ -49,9 +49,12 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
+
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get install -y git 
+
+USER 0
 
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv.git /opt/opencv
 RUN git clone --branch 3.3.1 https://github.com/opencv/opencv_contrib.git /opt/opencv
@@ -71,7 +74,6 @@ RUN make -j4
 RUN make install
 RUN ldconfig
 
-USER 0
 
 ENTRYPOINT ["/home/luigy/Desktop/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
