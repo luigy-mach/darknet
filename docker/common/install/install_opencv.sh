@@ -2,6 +2,7 @@
 set -e
 
 echo "Install Opencv 3.3.1"
+cd /opt
 wget -O /opt/opencv.zip https://github.com/opencv/opencv/archive/3.3.1.zip
 wget -O /opt/opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/3.3.1.zip 
 
