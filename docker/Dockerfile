@@ -17,11 +17,11 @@ ENV DISPLAY=:1 \
     NO_VNC_PORT=6901
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
-ENV HOME=/home/luigy/Desktop/ \
+ENV HOME=/home/luigy/ \
     TERM=xterm \
-    STARTUPDIR=/home/luigy/Desktop/dockerstartup \
-    INST_SCRIPTS=/home/luigy/Desktop/install \
-    NO_VNC_HOME=/home/luigy/Desktop/noVNC \
+    STARTUPDIR=/home/luigy/dockerstartup \
+    INST_SCRIPTS=/home/luigy/install \
+    NO_VNC_HOME=/home/luigy/noVNC \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1280x1024 \
@@ -56,6 +56,7 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get install -y git 
+RUN apt-get install -y gnome-system-monitor iputils-ping vim 
 
 USER 0
 
@@ -76,6 +77,6 @@ RUN $INST_SCRIPTS/install_opencv.sh
 
 
 
-ENTRYPOINT ["/home/luigy/Desktop/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/home/luigy/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
 
